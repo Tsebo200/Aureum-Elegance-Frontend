@@ -23,5 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  /* We exluding tsconfig.app.json code within src/electron as we are going to define our own typescript config for electron */
+  "exclude": ["src/electron"]
 }
