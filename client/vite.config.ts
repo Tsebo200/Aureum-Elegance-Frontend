@@ -8,4 +8,9 @@ export default defineConfig({
   build:{
     outDir: 'dist-react',
   },
+  // configuring the HotModule reloading server
+  server: {
+    port: 5123, // port for the dev server 
+    strictPort: true, //the server will not try to use another port other than 5123
+  },
 })
