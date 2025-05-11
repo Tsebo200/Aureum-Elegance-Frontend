@@ -1,9 +1,10 @@
 import { useState } from 'react'
 // @ts-ignore
 // import reactLogo from './assets/react.svg'
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Login from './Pages/login'
+import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Pages/login';
+import AddStock from './Pages/AddStock';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login/>}/>
+        <Route path="/" element={<AddStock/>}/>
         </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">

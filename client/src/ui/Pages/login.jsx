@@ -13,7 +13,7 @@ export function Login() {
     <main className="page-container">
       <img src={backgroundImage} alt="Login page background" className="background-image" />
       <div className="content-wrapper">
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className="form-container-login" onSubmit={handleSubmit}>
           <div className="logo-text">
             <img src={logo} alt="Company logo" />
           </div>

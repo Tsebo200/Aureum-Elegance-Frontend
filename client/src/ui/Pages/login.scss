@@ -1,3 +1,4 @@
+//should not be visible behind contents
 .page-container {
   display: flex;
   flex-direction: column;
@@ -35,7 +36,7 @@
   }
 }
 
-.form-container {
+.form-container-login {
   border-radius: 25px;
   border: 12px solid transparent;
   border-image-source: url('../assets/Login Background Gradient.png');
