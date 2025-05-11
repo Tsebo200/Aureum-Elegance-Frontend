@@ -9,19 +9,15 @@ html, body {
 
 .mainContainer{
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: $background;
+  float: left;
 }
 
 .left{
-    width: 100%;
+    width: 20%;
     height: 100%;
-        .navbar{
-        width: 200px;
-        height: 100%;
-        background: $primary;
-        float: left;
-        }   
+    float: left;
 }
 
 .right{
@@ -34,16 +30,15 @@ html, body {
     float: left;
 
     .stockRequestHeading{
-        margin-top: 70px;
+        margin-top: 117px;
         margin-left: 430px;
         float: left;
     };
 
     .horLine{
-        width: 880px;
+        width: 1100px;
         height: 1px;
         margin-top: 10px;
-        margin-left: 90px;
         background: black;
         float: left;
     }
@@ -57,34 +52,35 @@ html, body {
 
     .spacer{
         width: 100%;
-        height: 150px;
+        height: 170px;
         // background: grey;
         float: left;
     }
     .formContainer{
-        width: 80%;
+        width: 100%;
         height: 490px;
-        margin-left: 90px;
         // background: blue;
         float: left;
 
         .topContainer{
             width: 100%;
             height: 110px;
+            // background: grey;
             float: left;
 
             .firstFormContainer{
-                width: 288px;
+                width: 360px;
                 height: 110px;
+                // background: red;
                 float: left;
 
                 .itemHeading{
                     // margin-top: 30px;
                 }
-
+                
                 .itemRequestForm{
-                    width: 180px;
-                    height: 45px;
+                    width: 250px;
+                    height: 50px;
                     margin-left: 55px;
                     border-radius: 35px;
                     background: $tertiary;
@@ -92,13 +88,14 @@ html, body {
                 }
             }
             .secondFormContainer{
-                width: 288px;
+                width: 360px;
                 height: 110px;
+                // background: blue;
                 float: left;
 
                 .WarehouseToForm{
-                    width: 180px;
-                    height: 45px;
+                    width: 250px;
+                    height: 50px;
                     margin-left: 55px;
                     border-radius: 35px;
                     background: $tertiary;
@@ -106,20 +103,20 @@ html, body {
                 }
             }
             .thirdFormContainer{
-                width: 288px;
+                width: 360px;
                 height: 110px;
+                // background: green;
                 float: left;
 
                 .WarehouseFromForm{
-                    width: 180px;
-                    height: 45px;
+                    width: 250px;
+                    height: 50px;
                     margin-left: 55px;
                     border-radius: 35px;
                     background: $tertiary;
                     float: left;
                 }
             }
-           
         }
 
         .middleContainer{
@@ -130,14 +127,14 @@ html, body {
             float: left;
 
             .fourthFormContainer{
-                width: 288px;
+                width: 360px;
                 height: 110px;
                 // background: $primary;
                 float: left;
 
                 .amountForm{
-                    width: 180px;
-                    height: 45px;
+                    width: 250px;
+                    height: 50px;
                     margin-left: 55px;
                     border-radius: 35px;
                     background: $tertiary;
@@ -156,17 +153,17 @@ html, body {
             .fifthFormContainer{
                 width: 288px;
                 height: 100%;
-                margin-left: 290px;
+                margin-left: 400px;
                 border-radius: 35px;
-                background: $primary;
+                background: $accent;
                 float: left
             }
 
             .submitHeading{
                 font-size: 18px;
                 margin-top: 15px;
+                color: white;
             }
-            
         }
     }
 }
