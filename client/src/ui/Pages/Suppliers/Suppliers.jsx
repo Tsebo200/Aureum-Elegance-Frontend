@@ -1,9 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import styles from './Suppliers.module.scss';
-import sidenavStyles from './Sidenav.module.scss';
-import Logo from '../../assets/Logo.png';
-import { Button, TextField, Tabs, Tab, useMediaQuery } from '@mui/material';
+import styles from '../Suppliers/Suppliers.module.scss';
+import logo from '../../assets/Wordmark Logo.png';
+import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
+
+const Sidebar = () => {
+  const navItems = [
+    "Dashboard",
+    "Production",
+    "Stock Request",
+    "Add Stock",
+    "Warehouse Stock",
+    "User Management",
+    "Stock Management",
+  ];
+  return (
+    <aside className={styles.sidebar}>
+      <div className={styles.logo}>
+        <img src={logo} alt="Company logo" />
+      </div>
+      <nav className={styles.navigation}>
+        {navItems.map((item, i) => (
+          <a key={i} href="#" className={styles['nav-item']}>
+            {item}
+          </a>
+        ))}
+      </nav>
+    </aside>
+  );
+};
 
 export default function Suppliers() {
   const [tab, setTab] = React.useState(0);
@@ -13,13 +37,7 @@ export default function Suppliers() {
 
   return (
     <div className={styles.container}>
-      <aside className={sidenavStyles.sidenav}>
-        <img src={Logo} alt="Logo" className={sidenavStyles.logo} />
-        <ul className={sidenavStyles.nav}>
-          {['Dashboard','Production','Stock Request','Add Stock','Warehouse Stock','User Management','Stock Management']
-            .map(item => <li key={item}>{item}</li>)}
-        </ul>
-      </aside>
+      <Sidebar />
 
       <main className={styles.main}>
         <Tabs
@@ -56,21 +74,37 @@ export default function Suppliers() {
             <form className={styles.form}>
               <div className={styles.field}>
                 <label>Supplier Name</label>
-                <TextField placeholder="..." fullWidth variant="filled" />
+                <TextField 
+                   placeholder="..." 
+                   fullWidth 
+                   variant="filled" 
+                   InputProps={{ disableUnderline: true }} 
+                />
               </div>
               <div className={styles.field}>
                 <label>Contact Person</label>
-                <TextField placeholder="..." fullWidth variant="filled" />
-              </div>
+                <TextField 
+                   placeholder="..." 
+                   fullWidth 
+                   variant="filled" 
+                   InputProps={{ disableUnderline: true }} 
+                />              </div>
               <div className={styles.field}>
                 <label>Contact Number</label>
-                <TextField placeholder="..." fullWidth variant="filled" />
-              </div>
+                <TextField 
+                   placeholder="..." 
+                   fullWidth 
+                   variant="filled" 
+                   InputProps={{ disableUnderline: true }} 
+                />              
+                </div>
+                <br/>
               <Button variant="contained" className={styles.addBtn}>
                 Add Supplier
               </Button>
             </form>
           </section>
+          
         )}
       </main>
     </div>
