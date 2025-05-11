@@ -1,4 +1,5 @@
-@import './Suppliers.module.scss';
+@use '../Suppliers/Suppliers.module.scss' as suppliers;
+
 
 .container {
   display: flex;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import styles from './Suppliers.module.scss';
 import sidenavStyles from './Sidenav.module.scss';
-import Logo from '../assets/Logo.png';
+import Logo from '../../assets/Logo.png';
 import { Button, TextField, Tabs, Tab, useMediaQuery } from '@mui/material';
 
 export default function Suppliers() {

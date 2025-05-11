@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styles from './FinishedProducts.module.scss';
-import sidebarStyles from './Sidebar.module.scss';
-import Logo from '../assets/Logo.png';
+import sidebarStyles from '../Suppliers/Suppliers';
+import Logo from '../../assets/Logo.png';
 import { Tabs, Tab, useMediaQuery, Button } from '@mui/material';
 
 export default function FinishedProducts() {
