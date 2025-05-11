@@ -3,9 +3,10 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import FinishedProducts from './Pages/FinishedProducts/FinishedProducts';
-import Suppliers from './Pages/Suppliers/Suppliers';
-
+import StockRequest from './Pages/StockRequest.jsx';
+import Suppliers from './Pages/Suppliers/Suppliers.jsx';
+import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.jsx';
+import WarehouseStock from './Pages/WarehouseStock.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,10 +14,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/FinishedProducts" element={<FinishedProducts/>}/>
-        <Route path="/Suppliers" element={<Suppliers/>}/>
-
-        </Routes>
+        <Route path="/StockRequests" element={<StockRequest/>}/>
+        <Route path="/Suppliers" element={<Suppliers />} />
+        <Route path="/" element={<WarehouseStock />} />
+        <Route path="/FinsihedProducts" element={<FinishedProducts />} />
+      </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -35,7 +37,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */}
     </>
-  )
+  );
 }
 
 export default App
