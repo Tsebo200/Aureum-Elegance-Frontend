@@ -3,8 +3,7 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Suppliers from './Pages/Suppliers/Suppliers.jsx';
-import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.jsx';
+import Suppliers from './Pages/Suppliers/Suppliers';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,9 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<StockRequest/>}/>
-        <Route path="/Suppliers" element={<Suppliers />} />
-        <Route path="/FinishedProducts" element={<FinishedProducts />} />
+        <Route path="/" element={<Suppliers/>}/>
         </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">
