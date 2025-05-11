@@ -3,7 +3,9 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import StockRequest from './Pages/StockRequest';
+import StockRequest from '/Pages/StockRequest';
+import Suppliers from './Pages/Suppliers/Suppliers.jsx';
+import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<StockRequest/>}/>
+        <Route path="/Suppliers" element={<Suppliers />} />
+        <Route path="/FinishedProducts" element={<FinishedProducts />} />
         </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">
