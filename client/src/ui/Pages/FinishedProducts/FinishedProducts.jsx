@@ -1,26 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import styles from './FinishedProducts.module.scss';
-import sidebarStyles from './Sidebar.module.scss';
-import Logo from '../assets/Logo.png';
+import styles from '../FinishedProducts/FinishedProducts.module.scss';
+import logo from '../../assets/Wordmark Logo.png';
 import { Tabs, Tab, useMediaQuery, Button } from '@mui/material';
 
-export default function FinishedProducts() {
-  const [tab, setTab] = React.useState(4); // Default to "Finished Products" tab
-  const isMobile = useMediaQuery('(max-width:768px)');
+const Sidebar = () => {
+  const navItems = [
+    "Dashboard",
+    "Production",
+    "Stock Request",
+    "Add Stock",
+    "Warehouse Stock",
+    "User Management",
+    "Stock Management",
+  ];
+  return (
+    <aside className={styles.sidebar}>
+      <div className={styles.logo}>
+        <img src={logo} alt="Company logo" />
+      </div>
+      <nav className={styles.nav}>
+        {navItems.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </nav>
+    </aside>
+  );
+};
 
+export default function FinishedProducts() {
+  const [tab, setTab] = React.useState(4);
+  const isMobile = useMediaQuery('(max-width:768px)');
   const handleTabChange = (e, val) => setTab(val);
 
   return (
     <div className={styles.container}>
-      <aside className={sidebarStyles.sidebar}>
-        <img src={Logo} alt="AE Logo" className={sidebarStyles.logo} />
-        <ul className={sidebarStyles.nav}>
-          {['Dashboard', 'Production', 'Stock Request', 'Add Stock', 'Warehouse Stock', 'User Management', 'Stock Management']
-            .map(item => <li key={item}>{item}</li>)}
-        </ul>
-      </aside>
-
+      <Sidebar />
       <main className={styles.main}>
         <div className={styles.warehouseTabs}>
           <Button className={styles.warehouseBtn}>Warehouse 1</Button>
@@ -41,28 +55,32 @@ export default function FinishedProducts() {
           <Tab label="Finished Products" />
         </Tabs>
 
-        <section className={styles.content}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Ingredients</th>
-                <th>Cost per unit</th>
-                <th>Status</th>
-                <th>Batches Finished</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Moonlit Jasmine</td>
-                <td>Bergamot Oil, Vanillin Powder, Stabilizers</td>
-                <td>R 45, 00</td>
-                <td>In Progress</td>
-                <td>100</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+        {tab === 4 && (
+          <section className={styles.content}>
+            <h1>Finished Products</h1>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Ingredients</th>
+                  <th>Cost per unit</th>
+                  <th>Status</th>
+                  <th>Batches Finished</th>
+                </tr>
+                <hr/>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Moonlit Jasmine</td>
+                  <td>Bergamot Oil, Vanillin Powder, Stabilizers</td>
+                  <td>R 45.00</td>
+                  <td>In Progress</td>
+                  <td>100</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        )}
       </main>
     </div>
   );
