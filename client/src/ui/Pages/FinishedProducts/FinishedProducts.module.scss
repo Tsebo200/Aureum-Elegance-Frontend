@@ -1,0 +1,73 @@
+@import './Suppliers.module.scss';
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #FEF3E6;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.warehouseTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.warehouseBtn {
+  background: #D44C4C !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 2rem !important;
+  text-transform: none !important;
+}
+
+.tabs {
+  background: #FECC7D;
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 1rem;
+
+  .MuiTabs-flexContainer {
+    justify-content: start;
+  }
+
+  .MuiTab-root {
+    text-transform: none;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+
+    &.Mui-selected {
+      background: #FFB464;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+}
+
+.content {
+  background: #F6D2A5;
+  border-radius: 0 20px 20px 20px;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  th, td {
+    text-align: left;
+    padding: 1rem;
+  }
+  th {
+    font-weight: 500;
+  }
+  td {
+    vertical-align: top;
+  }
+  tr:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+}
