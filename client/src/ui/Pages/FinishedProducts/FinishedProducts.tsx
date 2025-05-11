@@ -30,7 +30,7 @@ const Sidebar = () => {
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
   const isMobile = useMediaQuery('(max-width:768px)');
-  const handleTabChange = (e, val) => setTab(val);
+  const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
   return (
     <div className={styles.container}>
