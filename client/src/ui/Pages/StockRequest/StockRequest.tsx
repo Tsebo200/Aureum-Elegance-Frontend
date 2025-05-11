@@ -1,39 +1,9 @@
-import React from 'react'
 import styles from './StockRequest.module.scss'
 import Sidebar from '../../Components/Sidebar/Sidebar'
-// import logo from '../../assets/Wordmark Logo.png';
-
-// const Sidebar = () => {
-//   const navItems = [
-//     "Dashboard",
-//     "Production",
-//     "Stock Request",
-//     "Add Stock",
-//     "Warehouse Stock",
-//     "User Management",
-//     "Stock Management",
-//   ];
-//   return (
-//     <aside className={styles.sidebar}>
-//       <div className={styles.logo}>
-//         <img src={logo} alt="Company logo" />
-//       </div>
-//       <nav className={styles.navigation}>
-//         {navItems.map((item, i) => (
-//           <a key={i} href="#" className={styles['nav-item']}>
-//             {item}
-//           </a>
-//         ))}
-//       </nav>
-//     </aside>
-//   );
-// };
-
-
 
 function StockRequest() {
   return (
-    <div >
+    <div>
       <div className={styles.mainContainer}>
         <div className={styles.left}>
           {/* <div className={styles.navbar}></div> */}
@@ -42,7 +12,7 @@ function StockRequest() {
         <div className={styles.right}>
           <h1 className={styles.stockRequestHeading}>Stock Request</h1>
           <div className={styles.horLine}></div>
-          <div className={styles.bottomSection}>
+          <div className={styles.mainSection}>
             <div className={styles.spacer}></div>
             <div className={styles.formContainer}>
 
