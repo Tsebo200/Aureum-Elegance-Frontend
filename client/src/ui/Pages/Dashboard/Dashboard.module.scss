@@ -1,0 +1,79 @@
+@use '../../Sass/Styles.scss' as *;
+
+html, body {
+    margin: 0;
+    padding: 0;  
+    background: $background;
+}
+
+.mainContainer{
+  height: 100vh;
+  width: 100vw;
+  background: $background;
+  float: left;
+}
+
+.left{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.right{
+    width: 1080px;
+    height: 100%;
+    background: $background;
+    float: left;
+
+    .dashboardHeading{
+        margin-top: 117px;
+        margin-left: 430px;
+        float: left;
+    };
+
+    .horLine{
+        width: 1100px;
+        height: 1px;
+        margin-top: 10px;
+        background: black;
+        float: left;
+    }
+}
+
+.mainSection{
+    width: 100%;
+    height: 775px;
+    background: $background;
+    float: left;
+
+    .spacer{
+        width: 100%;
+        height: 40px;
+        // background: grey;
+        float: left;
+    }
+
+    .alertsHeading{
+        margin-left: 460px;
+        float: left;
+    }
+    .cardSection{
+        width: 100%;
+        height: 160px;
+        background: grey;
+        float: left;
+    }
+
+    .graphsHeading{
+        margin-top: 50px;
+        margin-left: 460px;
+        float: left;
+    }
+
+    .graphsSection{
+        width: 100%;
+        height: 290px;
+        background: grey;
+        float: left;
+    }
+}
