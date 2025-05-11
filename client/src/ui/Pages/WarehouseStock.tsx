@@ -6,7 +6,7 @@ import Sidebar from "../components/Sidebar";
 function WarehouseStock() {
   const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery("(max-width:768px)");
-  const handleTabChange = (e, val) => setTab(val);
+  const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
   // Dummy data for now
   const stockData = [{ ingredient: "Bergamot Oil", quantity: 100 }];
