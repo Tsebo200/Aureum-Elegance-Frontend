@@ -29,12 +29,144 @@ html, body {
     width: 1080px;
     height: 100%;
     background: $background;
-    display: flex;
-
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    float: left;
 
     .stockRequestHeading{
-        margin-top: 100px;
+        margin-top: 70px;
+        margin-left: 430px;
         float: left;
     };
+
+    .horLine{
+        width: 880px;
+        height: 1px;
+        margin-top: 10px;
+        margin-left: 90px;
+        background: black;
+        float: left;
+    }
+}
+
+.bottomSection{
+    width: 100%;
+    height: 775px;
+    background: $background;
+    float: left;
+
+    .spacer{
+        width: 100%;
+        height: 150px;
+        // background: grey;
+        float: left;
+    }
+    .formContainer{
+        width: 80%;
+        height: 490px;
+        margin-left: 90px;
+        // background: blue;
+        float: left;
+
+        .topContainer{
+            width: 100%;
+            height: 110px;
+            float: left;
+
+            .firstFormContainer{
+                width: 288px;
+                height: 110px;
+                float: left;
+
+                .itemHeading{
+                    // margin-top: 30px;
+                }
+
+                .itemRequestForm{
+                    width: 180px;
+                    height: 45px;
+                    margin-left: 55px;
+                    border-radius: 35px;
+                    background: $tertiary;
+                    float: left;
+                }
+            }
+            .secondFormContainer{
+                width: 288px;
+                height: 110px;
+                float: left;
+
+                .WarehouseToForm{
+                    width: 180px;
+                    height: 45px;
+                    margin-left: 55px;
+                    border-radius: 35px;
+                    background: $tertiary;
+                    float: left;
+                }
+            }
+            .thirdFormContainer{
+                width: 288px;
+                height: 110px;
+                float: left;
+
+                .WarehouseFromForm{
+                    width: 180px;
+                    height: 45px;
+                    margin-left: 55px;
+                    border-radius: 35px;
+                    background: $tertiary;
+                    float: left;
+                }
+            }
+           
+        }
+
+        .middleContainer{
+            width: 100%;
+            height: 110px;
+            margin-top: 90px;
+            // background: green;
+            float: left;
+
+            .fourthFormContainer{
+                width: 288px;
+                height: 110px;
+                // background: $primary;
+                float: left;
+
+                .amountForm{
+                    width: 180px;
+                    height: 45px;
+                    margin-left: 55px;
+                    border-radius: 35px;
+                    background: $tertiary;
+                    float: left;
+                }
+            }
+        }
+
+        .bottomContainer{
+            width: 100%;
+            height: 50px;
+            margin-top: 120px;
+            // background: green;
+            float: left;
+
+            .fifthFormContainer{
+                width: 288px;
+                height: 100%;
+                margin-left: 290px;
+                border-radius: 35px;
+                background: $primary;
+                float: left
+            }
+
+            .submitHeading{
+                font-size: 18px;
+                margin-top: 15px;
+            }
+            
+        }
+    }
 }
