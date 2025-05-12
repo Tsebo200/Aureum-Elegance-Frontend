@@ -1,6 +1,5 @@
 import styles from './StockRequest.module.scss'
-import Sidebar from '../../Components/Sidebar/Sidebar'
-
+import Sidebar from '../../components/Sidebar'
 function StockRequest() {
   return (
     <div>

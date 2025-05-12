@@ -9,6 +9,8 @@ import { Route, Routes } from 'react-router-dom'
 import Suppliers from './Pages/Suppliers/Suppliers.js';
 import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
 import WarehouseStock from './Pages/WarehouseStock.js';
+import Dashboard from './Pages/Dashboard/Dashboard.js';
+import StockRequest from './Pages/StockRequest/StockRequest.js';
 
 function App() {
 
@@ -20,15 +22,17 @@ function App() {
   return (
     <>
       <Routes>
-           {/* <Route path="/" element={<Placeholder name="Dashboard" />} /> */}
-          <Route path="/" element={<FinishedProducts />} />
-          <Route path="/stock-request" element={<Placeholder name="Stock Request" />} />
-          <Route path="/add-stock" element={<AddStock />} />
-          <Route path="/warehouse-stock" element={<WarehouseStock />} />
-          <Route path="/user-management" element={<Placeholder name="User Management" />} />
-          <Route path="/stock-management" element={<Suppliers />} />
-          
-          
+        <Route path="/Login" element={<Login />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/finishedproduct" element={<FinishedProducts />} />
+        <Route path="/stock-request" element={<StockRequest />} />
+        <Route path="/add-stock" element={<AddStock />} />
+        <Route path="/warehouse-stock" element={<WarehouseStock />} />
+        <Route
+          path="/user-management"
+          element={<Placeholder name="User Management" />}
+        />
+        <Route path="/stock-management" element={<Suppliers />} />
       </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">

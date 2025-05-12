@@ -2,31 +2,7 @@ import React from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
 import logo from '../../assets/Wordmark Logo.png';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
-const Sidebar = () => {
-  const navItems = [
-    "Dashboard",
-    "Production",
-    "Stock Request",
-    "Add Stock",
-    "Warehouse Stock",
-    "User Management",
-    "Stock Management",
-  ];
-  return (
-    <aside className={styles.sidebar}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Company logo" />
-      </div>
-      <nav className={styles.navigation}>
-        {navItems.map((item, i) => (
-          <a key={i} href="#" className={styles['nav-item']}>
-            {item}
-          </a>
-        ))}
-      </nav>
-    </aside>
-  );
-};
+import Sidebar from '../../components/Sidebar';
 
 export default function Suppliers() {
   const [tab, setTab] = React.useState(0);

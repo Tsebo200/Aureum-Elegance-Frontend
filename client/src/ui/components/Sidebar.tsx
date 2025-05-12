@@ -6,8 +6,8 @@ import logo from "../assets/Wordmark Logo.png";
 
 function Sidebar() {
   const navItems = [
-    // { label: "Dashboard", path: "/" },
-    { name: "Production", path: "/" },
+    { name: "Dashboard", path: "/" },
+    { name: "Production", path: "/finishedproduct" },
     { name: "Stock Request", path: "/stock-request" },
     { name: "Add Stock", path: "/add-stock" },
     { name: "Warehouse Stock", path: "/warehouse-stock" },
