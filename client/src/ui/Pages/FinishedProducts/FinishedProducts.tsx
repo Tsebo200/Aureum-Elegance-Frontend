@@ -1,32 +1,8 @@
 import React from 'react';
 import styles from '../FinishedProducts/FinishedProducts.module.scss';
-import logo from '../../assets/Wordmark Logo.png';
 import { TextField, Button, Tabs, Tab, useMediaQuery } from "@mui/material";
+import Sidebar from '../../components/Sidebar';
 
-
-const Sidebar = () => {
-  const navItems = [
-    "Dashboard",
-    "Production",
-    "Stock Request",
-    "Add Stock",
-    "Warehouse Stock",
-    "User Management",
-    "Stock Management",
-  ];
-  return (
-    <aside className={styles.sidebar}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Company logo" />
-      </div>
-      <nav className={styles.nav}>
-        {navItems.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </nav>
-    </aside>
-  );
-};
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);

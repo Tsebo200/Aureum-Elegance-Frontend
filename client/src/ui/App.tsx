@@ -4,18 +4,29 @@ import { useState } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Suppliers from './Pages/Suppliers/Suppliers.js';
-import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.jsx';
+import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
 import WarehouseStock from './Pages/WarehouseStock.js';
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const Placeholder = ({ name}) => (
+    <div>
+      <h2>{name} Page</h2>
+    </div>
+  );
   return (
     <>
       <Routes>
-        <Route path="/Suppliers" element={<Suppliers />} />
-        <Route path="/" element={<WarehouseStock />} />
-        <Route path="/FinsihedProducts" element={<FinishedProducts />} />
+           {/* <Route path="/" element={<Placeholder name="Dashboard" />} /> */}
+          <Route path="/" element={<FinishedProducts />} />
+          <Route path="/stock-request" element={<Placeholder name="Stock Request" />} />
+          <Route path="/add-stock" element={<Placeholder name="Add Stock" />} />
+          <Route path="/warehouse-stock" element={<WarehouseStock />} />
+          <Route path="/user-management" element={<Placeholder name="User Management" />} />
+          <Route path="/stock-management" element={<Suppliers />} />
+          
+          
       </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">
