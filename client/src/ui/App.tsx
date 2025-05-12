@@ -11,7 +11,6 @@ import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
 import WarehouseStock from './Pages/WarehouseStock.js';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const Placeholder = ({ name}) => (
     <div>
