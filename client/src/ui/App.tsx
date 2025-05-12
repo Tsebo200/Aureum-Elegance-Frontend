@@ -12,16 +12,8 @@ function App() {
   return (
     <>
       <Routes>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         <Route path="/" element={<AddStock/>}/>
         <Route path="/login" element={<Login/>}/>
-=======
-        <Route path="/" element={<Login/>}/>
->>>>>>> Stashed changes
-=======
-        <Route path="/" element={<Login/>}/>
->>>>>>> Stashed changes
         </Routes>
     </>
   )
