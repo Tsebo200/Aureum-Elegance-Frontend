@@ -1,7 +1,10 @@
+
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import StockRequest from './Pages/StockRequest/StockRequest';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Login from './Pages/login';
+import AddStock from './Pages/AddStock';
 
 function App() {
 
@@ -10,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard/>}/>
         <Route path="/stock-request" element={<StockRequest/>}/>
-        {/* Add more routes as needed */}
+        <Route path="/addStock" element={<AddStock/>}/>
         </Routes>
     </>
   )
