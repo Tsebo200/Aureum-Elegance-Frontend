@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #FEF3E6;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  margin-top: -2%;
+}
+
+.Btn {
+  background: #E03E47 !important;
+  color: white !important;
+  
+
+}
+
+.tabs {
+  background: #FDAF67;
+  border-radius: 20px 20px 0 0;
+  margin-left: 2.8%;
+  width: 830px;
+
+  :global {
+    .MuiTabs-flexContainer {
+      justify-content: flex-start;
+    }
+
+    .MuiTab-root {
+      text-transform: none;
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+      font-weight: 500;
+      border-radius: 20px 20px 0 0;
+
+      &.Mui-selected {
+        background-image: url('../assets/Large\ Element.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px 20px 0 0;
+        color: black;
+      }
+    }
+
+    .MuiTabs-indicator {
+      display: none;
+    }
+  }
+}
+
+.content {
+  background: #fff;
+  border-radius: 35px;
+  padding: 3rem 5rem;
+  background-image: url('../assets/Large Element.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    text-align: left;
+    padding: 1rem;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+}
+
+
+hr {
+  border: black;
+  width: 100%;
+}
+
+
+
+.addBtn {
+  margin-bottom: 2rem !important;
+  width: 196px !important;
+  height: 53px !important;
+  border-radius: 35px !important;
+  background-color: #E03E47 !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-family: Roboto, sans-serif !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: block !important;
+  align-self: flex-start !important;
+}
+
+
+
+.select {
+  width: 200px;
+  height: 45px;
+  border-radius: 50px;
+  background: #fff5eb;
+  padding: 0 1rem;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ingredientBtn {
+  width: 200px;
+  height: 45px;
+  border-radius: 50px;
+  background: white;
+  text-align: center;
+  line-height: 45px;
+  font-weight: 500;
+  border: none;
+  margin-bottom: 2rem;
+}
