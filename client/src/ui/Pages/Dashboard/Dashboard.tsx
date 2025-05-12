@@ -1,5 +1,6 @@
 import styles from '../Dashboard/Dashboard.module.scss';
 import Sidebar from '../../Components/Sidebar/Sidebar';
+import AlertCard from '../../Components/AlertCards/AlertCard';
 
 function Dashboard() {
   return (
@@ -14,11 +15,14 @@ function Dashboard() {
               <div className={styles.mainSection}>
                 <div className={styles.spacer}></div>
                 <h1 className={styles.alertsHeading}>Alerts</h1>
-                <div className={styles.cardSection}></div>
+                <div className={styles.cardSection}>
+                  <AlertCard />
+                </div>
                 <h1 className={styles.graphsHeading}>Graphs</h1>
-                <div className={styles.graphsSection}></div>
-              </div>
+                <div className={styles.graphsSection}>
 
+                </div>
+              </div>
         </div>
       </div>
     </div>
