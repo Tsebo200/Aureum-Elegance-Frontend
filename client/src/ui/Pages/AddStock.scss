@@ -101,7 +101,7 @@
   height: 75px;
   border-radius: 35px;
   background-color: #ffdbb1;
-  padding: 0 32px;
+  padding: 0 0px 0 32px;
   display: flex;
   align-items: center;
 }
@@ -147,17 +147,18 @@
   font-size: 24px;
   font-family: Roboto, sans-serif;
   margin-bottom: 16px;
-  align-self: flex-start;
+  justify-content: flex-start;
 }
 
 .form-input {
   font-size: 20px;
-  width: 343px;
+  width: 400px;
   height: 75px;
   border-radius: 35px;
   background-color: #fbf1e6;
   padding: 0 32px;
   border: none;
+  justify-content: flex-start;
 }
 
 .button-container {
