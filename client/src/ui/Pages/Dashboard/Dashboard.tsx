@@ -1,5 +1,5 @@
 import styles from '../Dashboard/Dashboard.module.scss';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../Components/Sidebar';
 import AlertCard from '../../Components/AlertCards/AlertCard';
 
 function Dashboard() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { TextField, Button, Tabs, Tab, useMediaQuery } from "@mui/material";
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../Components/Sidebar';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
