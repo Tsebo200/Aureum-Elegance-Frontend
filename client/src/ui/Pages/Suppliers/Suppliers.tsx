@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
-import logo from '../../assets/Wordmark Logo.png';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../Components/Sidebar';
 
 export default function Suppliers() {
   const [tab, setTab] = React.useState(0);
@@ -46,39 +45,44 @@ export default function Suppliers() {
             </div>
 
             <h2>Add Supplier</h2>
-            <form className={styles.form}>
+           <form className={styles.form}>
+            <div className={styles.fieldsWrapper}>
               <div className={styles.field}>
-                <label>Supplier Name</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Contact Person</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />{" "}
-              </div>
-              <div className={styles.field}>
-                <label>Contact Number</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <br />
+               <label>Supplier Name</label>
+                  <TextField
+                     placeholder="..."
+                     fullWidth
+                     variant="filled"
+                     InputProps={{ disableUnderline: true }}
+                  />
+            </div>
+            <div className={styles.field}>
+              <label>Contact Person</label>
+                 <TextField
+                     placeholder="..."
+                     fullWidth
+                     variant="filled"
+                     InputProps={{ disableUnderline: true }}
+                  />
+            </div>
+            <div className={styles.field}>
+              <label>Contact Number</label>
+                 <TextField
+                    placeholder="..."
+                    fullWidth
+                    variant="filled"
+                    InputProps={{ disableUnderline: true }}
+                 />
+           </div>
+           </div>
+
+           <div className={styles.buttonWrapper}>
               <Button variant="contained" className={styles.addBtn}>
                 Add Supplier
               </Button>
-            </form>
+           </div>
+           </form>
+
           </section>
         )}
 

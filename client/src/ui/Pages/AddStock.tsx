@@ -1,7 +1,6 @@
 import React from "react";
 import "./AddStock.scss";
-import logo from '../assets/Wordmark Logo.png';
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../Components/Sidebar";
 export default function AddStock() {
 
 
