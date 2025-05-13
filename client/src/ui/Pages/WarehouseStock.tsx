@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./WarehouseStock.module.scss";
 import { Tabs, Tab, useMediaQuery, Button } from "@mui/material";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../Components/Sidebar";
 
 function WarehouseStock() {
   const [tab, setTab] = React.useState(0);
