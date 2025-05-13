@@ -81,6 +81,7 @@ export default function Suppliers() {
             </form>
           </section>
         )}
+
         {tab === 2 && (
           <section className={styles.content}>
             <h1>Waste Loss</h1>

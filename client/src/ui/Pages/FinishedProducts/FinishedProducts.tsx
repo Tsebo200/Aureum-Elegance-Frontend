@@ -3,7 +3,6 @@ import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { TextField, Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../components/Sidebar';
 
-
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
   const isMobile = useMediaQuery('(max-width:768px)');
@@ -59,10 +58,10 @@ export default function FinishedProducts() {
             </table>
           </section>
         )}
+
         {tab === 3 && (
           <section className={styles.content}>
             <h1>Produce Perfume</h1>
-            
             <form className={styles.form}>
               <div className={styles.field}>
                 <label>Name</label>
@@ -143,7 +142,7 @@ export default function FinishedProducts() {
                 Produce Perfume
               </Button>
             </form>
-          </section> 
+          </section>
         )}
 
         {tab === 4 && (
@@ -176,3 +175,4 @@ export default function FinishedProducts() {
     </div>
   );
 }
+
