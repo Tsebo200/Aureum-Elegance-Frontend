@@ -1,5 +1,8 @@
 import styles from './StockRequest.module.scss'
 import Sidebar from '../../components/Sidebar'
+import { Button } from '@mui/material'
+import WarehouseForm from '../../Components/Forms/StockRequest/Warehouse'
+
 function StockRequest() {
   return (
     <div>
@@ -21,24 +24,27 @@ function StockRequest() {
                   <div className={styles.itemRequestForm}></div>
                 </div>
                 <div className={styles.secondFormContainer}>
-                    <h3 className={styles.itemHeading}>Warehouse To</h3>
-                    <div className={styles.WarehouseToForm}></div>
+                    <h3 className={styles.warehouseToHeading}>Warehouse To</h3>
+                    <div className={styles.WarehouseToForm}><WarehouseForm /></div>
                 </div>
                 <div className={styles.thirdFormContainer}>
-                    <h3 className={styles.itemHeading}>Warehouse From</h3>
-                    <div className={styles.WarehouseFromForm}></div>
+                    <h3 className={styles.warehouseFromHeading}>Warehouse From</h3>
+                    <div className={styles.WarehouseFromForm}><WarehouseForm /></div>
                 </div>
               </div>
 
               <div className={styles.middleContainer}>
                 <div className={styles.fourthFormContainer}>
-                <h3 className={styles.itemHeading}>Amount in kilograms or litres</h3>
+                <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
                   <div className={styles.amountForm}></div>
                 </div>
               </div>
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
-                  <h4 className={styles.submitHeading}>Submit Stock Transfer</h4>
+                  {/* <h4 className={styles.submitHeading}>Submit Stock Transfer</h4> */}
+                  <Button variant="contained" className={styles.submitBtn}>
+                    Submit Stock Transfer
+                  </Button>
                   <div className={styles.amountForm}></div>
                 </div>
               </div>

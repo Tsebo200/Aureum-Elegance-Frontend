@@ -1,5 +1,27 @@
 @use '../../Sass/Styles.scss' as *;
 
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
+
+
 html, body {
     margin: 0;
     padding: 0;  
@@ -8,10 +30,14 @@ html, body {
 
 
 .mainContainer{
-  height: 100vh;
-  width: 100vw;
+//   height: 100vh;
+//   width: 100vw;
   background: $background;
-  float: left;
+//   float: left;
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .left{
@@ -27,6 +53,7 @@ html, body {
     float: left;
 
     .stockRequestHeading{
+        font-family: RobotoRegular;
         margin-top: 117px;
         margin-left: 430px;
         float: left;
@@ -72,7 +99,8 @@ html, body {
                 float: left;
 
                 .itemHeading{
-                    // margin-top: 30px;
+                    margin-left: 120px;
+                    font-family: RobotoRegular;
                 }
                 
                 .itemRequestForm{
@@ -95,8 +123,12 @@ html, body {
                     height: 50px;
                     margin-left: 55px;
                     border-radius: 35px;
-                    background: $tertiary;
                     float: left;
+                }
+
+                .warehouseToHeading{
+                    margin-left: 115px;
+                    font-family: RobotoRegular;
                 }
             }
             .thirdFormContainer{
@@ -112,6 +144,11 @@ html, body {
                     border-radius: 35px;
                     background: $tertiary;
                     float: left;
+                }
+                
+                .warehouseFromHeading{
+                    margin-left: 105px;
+                    font-family: RobotoRegular;
                 }
             }
         }
@@ -137,6 +174,11 @@ html, body {
                     background: $tertiary;
                     float: left;
                 }
+                .amountHeading{
+                    font-size: 18px;
+                    margin-left: 65px;
+                    font-family: RobotoRegular;
+                }
             }
         }
 
@@ -152,14 +194,18 @@ html, body {
                 height: 100%;
                 margin-left: 400px;
                 border-radius: 35px;
-                background: $accent;
                 float: left
             }
 
-            .submitHeading{
-                font-size: 18px;
-                margin-top: 15px;
-                color: white;
+            .submitBtn{
+                width: 100%;
+                height: 53px;
+                border-radius: 35px;
+                background-color: $accent;
+                color: #fff;
+                font-size: 15px;
+                font-family: RobotoRegular;
+                cursor: pointer;
             }
         }
     }
