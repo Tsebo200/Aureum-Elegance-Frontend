@@ -1,0 +1,33 @@
+@use '../../../Sass/Styles.scss' as *;
+
+.cardContainer{
+    width: 330px;
+    height: 80px;
+    border-radius: 25px;
+    margin-left: 45px;
+    background: $tertiary;
+    float: left;
+
+    .lowStockHeading{
+        margin-top: 10px;
+        margin-left: 20px;
+        float: left;
+    }
+
+    .oilHeading{
+        font-size: 15px;
+        margin-top: 37px;
+        margin-left: 10px;
+        float: left;
+    }
+
+    .iconStatus{
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+        margin-left: 60px;
+        border-radius: 360px;
+        background: $accent;
+        float: left;
+    }
+}

@@ -1,0 +1,179 @@
+/* Layout & Main */
+.layout {
+  display: flex;
+  min-height: 1080px;
+  min-width: 1920px;
+  background-color: #fbf1e6;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 64px;
+}
+
+.page-title {
+  font-size: 40px;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.divider {
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 64px;
+}
+
+/* Warehouse Section */
+.warehouse-section {
+  margin-bottom: 64px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 286px;
+  flex-shrink: 0;
+  border-radius: 0px 35px 35px 0px;
+  border: 6px solid transparent;
+  border-image-source: url('../assets/Login Background Gradient.png');
+  border-image-slice: 1;
+  border-image-repeat: stretch;
+  border-image-width: 6px;
+  background-color: #ffc982;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 33px;
+  position: relative;
+}
+
+.logo-letter {
+  position: absolute;
+  color: #460603;
+  font-size: 64px;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.logo-letter.first {
+  left: 103px;
+}
+
+.logo-letter.second {
+  left: 128px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 157px;
+  padding: 0 58px;
+}
+
+.nav-item {
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* WarehouseSelector */
+.selector-container {
+  position: relative;
+  width: 343px;
+}
+
+.warehouse-select {
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  color: rgba(0, 0, 0, 0.77);
+  width: 100%;
+  height: 75px;
+  border-radius: 35px;
+  background-color: #ffdbb1;
+  padding: 0 0px 0 32px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Forms Container */
+.forms-container {
+  display: flex;
+  gap: 64px;
+}
+
+/* Ingredient & Packaging Forms */
+.form-section {
+  flex: 1;
+  border: 0px solid #000;
+  margin-bottom: 52px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+  margin-bottom: 32px;
+}
+
+.form-container {
+  background-color: #ffdbb1;
+  border-radius: 35px;
+  padding: 32px;
+}
+
+.form-group {
+  margin-bottom: 32px;
+}
+
+.form-label {
+  display: block;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+  margin-bottom: 16px;
+  justify-content: flex-start;
+}
+
+.form-input {
+  font-size: 20px;
+  width: 400px;
+  height: 75px;
+  border-radius: 35px;
+  background-color: #fbf1e6;
+  padding: 0 32px;
+  border: none;
+  justify-content: flex-start;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  width: 343px;
+  height: 75px;
+  border-radius: 35px;
+  background-color: #e03e47;
+  color: #fff;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+  border: none;
+  cursor: pointer;
+}

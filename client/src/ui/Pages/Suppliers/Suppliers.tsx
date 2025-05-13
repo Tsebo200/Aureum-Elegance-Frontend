@@ -2,38 +2,13 @@ import React from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
 import logo from '../../assets/Wordmark Logo.png';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
-
-const Sidebar = () => {
-  const navItems = [
-    "Dashboard",
-    "Production",
-    "Stock Request",
-    "Add Stock",
-    "Warehouse Stock",
-    "User Management",
-    "Stock Management",
-  ];
-  return (
-    <aside className={styles.sidebar}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Company logo" />
-      </div>
-      <nav className={styles.navigation}>
-        {navItems.map((item, i) => (
-          <a key={i} href="#" className={styles['nav-item']}>
-            {item}
-          </a>
-        ))}
-      </nav>
-    </aside>
-  );
-};
+import Sidebar from '../../components/Sidebar';
 
 export default function Suppliers() {
   const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
 
-  const handleTabChange = (e, val) => setTab(val);
+  const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
   return (
     <div className={styles.container}>
@@ -44,7 +19,7 @@ export default function Suppliers() {
           value={tab}
           onChange={handleTabChange}
           className={styles.tabs}
-          variant={isMobile ? 'scrollable' : 'standard'}
+          variant={isMobile ? "scrollable" : "standard"}
           scrollButtons="auto"
         >
           <Tab label="Suppliers" />
@@ -74,37 +49,66 @@ export default function Suppliers() {
             <form className={styles.form}>
               <div className={styles.field}>
                 <label>Supplier Name</label>
-                <TextField 
-                   placeholder="..." 
-                   fullWidth 
-                   variant="filled" 
-                   InputProps={{ disableUnderline: true }} 
+                <TextField
+                  placeholder="..."
+                  fullWidth
+                  variant="filled"
+                  InputProps={{ disableUnderline: true }}
                 />
               </div>
               <div className={styles.field}>
                 <label>Contact Person</label>
-                <TextField 
-                   placeholder="..." 
-                   fullWidth 
-                   variant="filled" 
-                   InputProps={{ disableUnderline: true }} 
-                />              </div>
+                <TextField
+                  placeholder="..."
+                  fullWidth
+                  variant="filled"
+                  InputProps={{ disableUnderline: true }}
+                />{" "}
+              </div>
               <div className={styles.field}>
                 <label>Contact Number</label>
-                <TextField 
-                   placeholder="..." 
-                   fullWidth 
-                   variant="filled" 
-                   InputProps={{ disableUnderline: true }} 
-                />              
-                </div>
-                <br/>
+                <TextField
+                  placeholder="..."
+                  fullWidth
+                  variant="filled"
+                  InputProps={{ disableUnderline: true }}
+                />
+              </div>
+              <br />
               <Button variant="contained" className={styles.addBtn}>
                 Add Supplier
               </Button>
             </form>
           </section>
-          
+        )}
+
+        {tab === 2 && (
+          <section className={styles.content}>
+            <h1>Waste Loss</h1>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Type</th>
+                  <th>Quantity Lost</th>
+                  <th>Date of Loss</th>
+                  <th>Reason</th>
+                  <th>Recorded User</th>
+                </tr>
+                <hr />
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Moonlit Jasmine</td>
+                  <td>Fragrance</td>
+                  <td>5</td>
+                  <td>15/05/2025</td>
+                  <td>Expiry Reached</td>
+                  <td>Sarah</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         )}
       </main>
     </div>
