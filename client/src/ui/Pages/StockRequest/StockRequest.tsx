@@ -1,5 +1,5 @@
 import styles from './StockRequest.module.scss'
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '../../Components/Sidebar'
 import { Button } from '@mui/material'
 import WarehouseForm from '../../Components/Forms/StockRequest/Warehouse'
 
@@ -7,10 +7,7 @@ function StockRequest() {
   return (
     <div>
       <div className={styles.mainContainer}>
-        <div className={styles.left}>
-          {/* <div className={styles.navbar}></div> */}
-            <Sidebar />
-        </div>
+                    <Sidebar />
         <div className={styles.right}>
           <h1 className={styles.stockRequestHeading}>Stock Request</h1>
           <div className={styles.horLine}></div>

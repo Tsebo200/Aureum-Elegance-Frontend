@@ -1,14 +1,12 @@
 import styles from '../Dashboard/Dashboard.module.scss';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../Components/Sidebar';
 import AlertCard from '../../Components/AlertCards/AlertCard';
 
 function Dashboard() {
   return (
     <div>
       <div className={styles.mainContainer}>
-        <div className={styles.left}>
             <Sidebar />
-        </div>
         <div className={styles.right}>
            <h1 className={styles.dashboardHeading}>Dashboard</h1>
              <div className={styles.horLine}></div>
