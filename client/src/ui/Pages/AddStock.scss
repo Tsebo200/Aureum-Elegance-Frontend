@@ -36,57 +36,6 @@
   margin-bottom: 32px;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 286px;
-  flex-shrink: 0;
-  border-radius: 0px 35px 35px 0px;
-  border: 6px solid transparent;
-  border-image-source: url('../assets/Login Background Gradient.png');
-  border-image-slice: 1;
-  border-image-repeat: stretch;
-  border-image-width: 6px;
-  background-color: #ffc982;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  padding-top: 33px;
-  position: relative;
-}
-
-.logo-letter {
-  position: absolute;
-  color: #460603;
-  font-size: 64px;
-  font-family: "Cinzel Decorative", serif;
-}
-
-.logo-letter.first {
-  left: 103px;
-}
-
-.logo-letter.second {
-  left: 128px;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  margin-top: 157px;
-  padding: 0 58px;
-}
-
-.nav-item {
-  font-size: 18px;
-  font-family: Roboto, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-
 /* WarehouseSelector */
 .selector-container {
   position: relative;

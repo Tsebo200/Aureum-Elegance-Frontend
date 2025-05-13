@@ -24,14 +24,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/finishedproduct" element={<FinishedProducts />} />
+        <Route path="/finishedproducts" element={<FinishedProducts />} />
         <Route path="/stock-request" element={<StockRequest />} />
         <Route path="/add-stock" element={<AddStock />} />
         <Route path="/warehouse-stock" element={<WarehouseStock />} />
-        <Route
-          path="/user-management"
-          element={<Placeholder name="User Management" />}
-        />
+        <Route path="/user-management" element={<Placeholder name="Admin Management" />} />
         <Route path="/stock-management" element={<Suppliers />} />
       </Routes>
       {/* <div>
