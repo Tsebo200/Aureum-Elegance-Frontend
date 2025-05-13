@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.scss';
-import backgroundImage from '../assets/Log In Background.jpg';
-import logo from '../assets/Wordmark Logo.png';
+import backgroundImage from '../../assets/Log In Background.jpg';
+import logo from '../../assets/Wordmark Logo.png';
 
 export function Login() {
   const handleSubmit = (_event: React.SyntheticEvent) => {

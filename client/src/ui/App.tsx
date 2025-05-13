@@ -3,8 +3,9 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Pages/login';
-import AddStock from './Pages/AddStock';
+import Login from './Pages/Login/login';
+import AddStock from './Pages/AddStock/AddStock';
+import SMDelivery from './Pages/StockManagement/SMDeliveries';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,8 +13,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<AddStock/>}/>
+        <Route path="/" element={<SMDelivery/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/add-stock" element={<AddStock/>}/>
         </Routes>
     </>
   )
