@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../../assets/Wordmark Logo.png";
 import "./SMDeliveries.scss";
 
 // Reuse your “correct” Sidebar
@@ -15,8 +16,7 @@ const Sidebar: React.FC = () => {
   return (
     <aside className="sidebar">
       <div className="logo">
-        <span className="logo-letter first">A</span>
-        <span className="logo-letter second">E</span>
+        <img src={logo} alt="Company logo" />
       </div>
       <nav className="navigation">
         {navItems.map((item, i) => (
