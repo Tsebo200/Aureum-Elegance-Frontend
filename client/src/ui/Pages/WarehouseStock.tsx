@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./WarehouseStock.module.scss";
 import { Tabs, Tab, useMediaQuery, Button } from "@mui/material";
 import Sidebar from "../Components/Sidebar";
+import { Link } from "react-router-dom";
 
 function WarehouseStock() {
   const [tab, setTab] = React.useState(0);
@@ -26,58 +27,113 @@ function WarehouseStock() {
           <Tab label="Warehouse 2" />
         </Tabs>
 
-        {tab === 0 && <div className={styles.content}>
-          
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginBottom: "2rem",
-            }}
-          >
-            <div>
-              <select className={styles.select}>
-                <option>Stock Selection</option>
-              </select>
-              <div className={styles.ingredientBtn}>Ingredients</div>
+        {tab === 0 && (
+          <div className={styles.content}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "2rem",
+              }}
+            >
+              <div>
+                <select className={styles.select}>
+                  <option>Stock Selection</option>
+                </select>
+                <div className={styles.ingredientBtn}>Ingredients</div>
+              </div>
+
+              <Link to="/add-stock" className={styles.link}>
+                <Button className={styles.addBtn}>Add Stock</Button>
+              </Link>
             </div>
-            <Button className={styles.addBtn}>Add Stock</Button>
-          </div>
 
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th> Ingredients</th>
-                <th>Units in litres In Stock</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stockData.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.ingredient}</td>
-                  <td>{item.quantity}</td>
-                  <td>
-                    <Button className={styles.Btn}>Request Stock</Button>
-                  </td>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th> Ingredients</th>
+                  <th>Units in litres In Stock</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {stockData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.ingredient}</td>
+                    <td>{item.quantity}</td>
+                    <td>
+                      <Button className={styles.Btn}>Request Stock</Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          <hr />
+            <hr />
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "2rem",
-            }}
-          >
-            
-            <div>Total Stock</div>
-            <div>100</div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
+              <div>Total Stock</div>
+              <div>100</div>
+            </div>
           </div>
-        </div>}
+        )}
+        {tab === 1 && (
+          <div className={styles.content}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "2rem",
+              }}
+            >
+              <div>
+                <select className={styles.select}>
+                  <option>Stock Selection</option>
+                </select>
+                <div className={styles.ingredientBtn}>Ingredients</div>
+              </div>
+              <Button className={styles.addBtn}>Add Stock</Button>
+            </div>
+
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th> Ingredients</th>
+                  <th>Units in litres In Stock</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stockData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.ingredient}</td>
+                    <td>{item.quantity}</td>
+                    <td>
+                      <Button className={styles.Btn}>Request Stock</Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <hr />
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
+              <div>Total Stock</div>
+              <div>100</div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
