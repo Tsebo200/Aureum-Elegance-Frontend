@@ -1,6 +1,6 @@
 // Sidebar.tsx
 import { Link } from "react-router-dom";
-import "../Components/Sidebar.scss";
+import "./Sidebar.scss";
 import logo from "../assets/Wordmark Logo.png";
 
 function Sidebar() {
