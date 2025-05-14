@@ -25,56 +25,6 @@
   min-height: 809px;
 }
 
-
-/* Sidebar */
-.sidebar {
-  width: 199px;
-  height: 1080px;
-  flex-shrink: 0;
-  border-radius: 0px 35px 35px 0px;
-  border: 6px solid transparent;
-  border-image-source: url('../../assets/Login Background Gradient.png');
-  border-image-slice: 1;
-  border-image-repeat: stretch;
-  border-image-width: 6px;
-  background-color: #ffc982;
-}
-
-.logo {
-  position: relative;
-  height: 100px;
-}
-
-.logo-letter {
-  position: absolute;
-  color: rgba(70, 6, 3, 1);
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 900;
-  font-size: 64px;
-}
-
-.logo-letter.first {
-  left: 103px;
-}
-
-.logo-letter.second {
-  left: 128px;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  margin-top: 157px;
-  padding: 0 58px;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: inherit;
-}
-
-
 /* Tabs & Content */
 .tabs-section {
   width: 1624px;

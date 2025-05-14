@@ -1,33 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/Wordmark Logo.png";
+import Sidebar from "../../Components/Sidebar";
 import "./SMDeliveries.scss";
-
-// Reuse your “correct” Sidebar
-const Sidebar: React.FC = () => {
-  const navItems = [
-    "Dashboard",
-    "Production",
-    "Stock Request",
-    "Add Stock",
-    "Warehouse Stock",
-    "User Management",
-    "Stock Management",
-  ];
-  return (
-    <aside className="sidebar">
-      <div className="logo">
-        <img src={logo} alt="Company logo" />
-      </div>
-      <nav className="navigation">
-        {navItems.map((item, i) => (
-          <a key={i} href={`#${item.replace(/\s+/g, "-").toLowerCase()}`} className="nav-item">
-            {item}
-          </a>
-        ))}
-      </nav>
-    </aside>
-  );
-};
 
 const TabsAndContent: React.FC = () => {
   const tabs = ["Suppliers", "Deliveries", "Waste Loss", "Record Loss"];
