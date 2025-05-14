@@ -19,7 +19,10 @@ function Dashboard() {
                 </div>
                 <h1 className={styles.graphsHeading}>Graphs</h1>
                 <div className={styles.graphsSection}>
-                  <DoughnutChart />
+                  <div className={styles.graphBoxOne}>
+                 <DoughnutChart />
+                  </div>
+ 
 
                 </div>
               </div>
