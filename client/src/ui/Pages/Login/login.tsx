@@ -2,6 +2,7 @@ import React from 'react';
 import './login.scss';
 import backgroundImage from '../../assets/Log In Background.jpg';
 import logo from '../../assets/Wordmark Logo.png';
+import { Link } from 'react-router-dom';
 
 export function Login() {
   const handleSubmit = (_event: React.SyntheticEvent) => {
@@ -11,7 +12,11 @@ export function Login() {
 
   return (
     <main className="page-container">
-      <img src={backgroundImage} alt="Login page background" className="background-image" />
+      <img 
+        src={backgroundImage} 
+        alt="Login page background" 
+        className="background-image" 
+      />
       <div className="content-wrapper">
         <form className="form-container-login" onSubmit={handleSubmit}>
           <div className="logo-text">
@@ -39,10 +44,11 @@ export function Login() {
               aria-label="Password"
             />
           </div>
-
-          <button type="submit" className="login-button">
-            Log In
-          </button>
+          <Link to="/dashboard">
+            <button type="submit" className="login-button">
+              Log In
+            </button>
+          </Link>
         </form>
       </div>
     </main>
