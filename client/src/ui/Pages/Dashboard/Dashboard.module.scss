@@ -1,5 +1,25 @@
 @use '../../Sass/Styles.scss' as *;
 
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
 html, body {
     margin: 0;
     padding: 0;  
@@ -7,9 +27,8 @@ html, body {
 }
 
 .mainContainer{
-
   background: $background;
-    display: flex;
+  display: flex;
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -29,6 +48,7 @@ html, body {
     float: left;
 
     .dashboardHeading{
+        font-family: RobotoRegular;
         margin-top: 117px;
         margin-left: 430px;
         float: left;
@@ -52,22 +72,22 @@ html, body {
     .spacer{
         width: 100%;
         height: 40px;
-        // background: grey;
         float: left;
     }
 
     .alertsHeading{
-        margin-left: 460px;
+        font-family: RobotoRegular;
+        margin-left: 470px;
         float: left;
     }
     .cardSection{
         width: 100%;
         height: 120px;
-        // background: grey;
         float: left;
     }
 
     .graphsHeading{
+        font-family: RobotoRegular;
         margin-top: 50px;
         margin-left: 460px;
         float: left;
@@ -75,8 +95,13 @@ html, body {
 
     .graphsSection{
         width: 100%;
-        height: 290px;
-        background: grey;
+        height: 350px;
         float: left;
+
+        .graphBoxOne{
+            width: 300px;
+            height: 300px;
+            float: left;
+        }
     }
 }
