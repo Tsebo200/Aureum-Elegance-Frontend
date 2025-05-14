@@ -2,72 +2,162 @@
   display: flex;
   min-height: 100vh;
   background: #FEF3E6;
+  width: 100vw; 
+  overflow-x: hidden; 
 }
 
 .main {
+  margin-top: 9%;
   flex: 1;
   padding: 2rem;
+  
 }
 
 .tabs {
-  background: #FECC7D;
+  background: #FDAF67;
   border-radius: 20px 20px 0 0;
-  margin-bottom: 1rem;
-  .MuiTabs-flexContainer {
-    justify-content: start;
-  }
-  .MuiTab-root {
-    text-transform: none;
-    font-size: 1rem;
-    padding: 0.5rem 2rem;
-    &.Mui-selected {
-      background: #FFB464;
+  margin-left: 2.8%;
+  width: 580px;
+
+  :global {
+    .MuiTabs-flexContainer {
+      justify-content: flex-start;
+    }
+
+    .MuiTab-root {
+      text-transform: none;
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+      font-weight: 500;
       border-radius: 20px 20px 0 0;
+
+      &.Mui-selected {
+        background-image: url('../../assets/Large\ Element.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px 20px 0 0;
+        color: black;
+
+      }
+    }
+
+    .MuiTabs-indicator {
+      display: none;
     }
   }
 }
 
 .content {
-  background: #F6D2A5;
-  border-radius: 0 20px 20px 20px;
-  padding: 2rem;
+  background: #fff;
+  border-radius: 35px;
+  padding-top: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-image: url('../../assets/Large Element.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .list {
   margin-bottom: 2rem;
+  width: 57%;
+
   .item {
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+
     .name {
       flex: 2;
       font-size: 1.1rem;
+      font-weight: 500;
     }
-    .contact, .phone {
+
+    .contact,
+    .phone {
       flex: 1;
       text-align: center;
     }
   }
 }
 
-form {
+.form {
+  display: flex;
   margin-top: 1rem;
-}
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
 
-.field {
-  margin-bottom: 1.5rem;
-  label {
-    display: block;
+
+  .field {
     margin-bottom: 0.5rem;
-  }
-  .MuiFilledInput-root {
-    border-radius: 50px;
-    background: #FFF5EB;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    :global(.MuiFilledInput-root) {
+      border-radius: 50px;
+      background: #FFF5EB;
+    }
   }
 }
 
 .addBtn {
-  text-transform: none;
-  margin-top: 1rem;
-  background: #E74C4E;
+  margin-bottom: 2rem !important;
+  width: 196px !important;
+  height: 53px !important;
+  border-radius: 35px !important;
+  background-color: #E03E47 !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-family: Roboto, sans-serif !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: block !important;
+  align-self: flex-start !important;
+}
+
+.fieldsWrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.buttonWrapper {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    text-align: left;
+    padding: 1rem;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid #000;
+  }
+}
+
+
+hr {
+  border: none;
+  width: 100%;
 }

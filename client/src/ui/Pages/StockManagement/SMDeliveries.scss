@@ -1,0 +1,138 @@
+.stock-management-wrapper {
+  background-color: rgba(251, 241, 230, 1);
+  display: flex;
+  //flex-direction: row;
+  padding: 0;
+  //gap: 47px;
+  font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+  min-height: 1080px;
+  min-width: 1920px;
+
+  @media (max-width: 991px) {
+    flex-direction: column; // ✅ Allow stacking on small screens only
+  }
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 1624px;
+  min-height: 809px;
+}
+
+
+/* Tabs & Content */
+.tabs-section {
+  width: 1624px;
+}
+
+.tabs-container {
+  display: flex;
+  width: 1920px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 273px;
+  font-size: 40px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: none;
+  border-radius: 35px 35px 0 0;
+  background-color: rgba(253, 175, 103, 1);
+  padding: 22px 70px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+
+  @media (max-width: 991px) {
+    padding: 22px 20px;
+    white-space: initial;
+  }
+}
+
+.tab.active {
+  background-color: rgba(255, 219, 177, 1);
+}
+
+/* Tab Content Placeholder */
+.placeholder {
+  padding: 40px;
+  font-size: 24px;
+  color: #555;
+}
+
+/* Table */
+.table-container {
+  border-radius: 0 35px 35px 35px;
+  background-color: rgba(255, 219, 177, 1);
+  font-size: 24px;
+
+  @media (max-width: 1624px) {
+    max-width: 100%;
+  }
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 35px 35px 35px;
+  position: relative;
+  min-height: 660px;
+  width: 100%;
+  padding: 75px 0px 0px;
+  align-items: center;
+
+  @media (max-width: 991px) {
+    padding: 75px 20px 100px;
+  }
+}
+
+.table-header {
+  display: flex;
+  width: 100%;
+  max-width: 1374px;
+  gap: 171px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.header-cell {
+  flex-grow: 1;
+}
+
+.divider {
+  width: 90%;
+  margin-top: 13px;
+  object-fit: contain;
+  object-position: center;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.table-row {
+  display: flex;
+  width: 100%;
+  max-width: 1380px;
+  gap: 173px;
+  margin: 58px 0 -104px -5px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin: 40px 0 10px;
+  }
+}
+
+.cell {
+  flex-grow: 1;
+}

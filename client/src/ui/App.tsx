@@ -1,21 +1,36 @@
 import { useState } from 'react'
 // @ts-ignore
 // import reactLogo from './assets/react.svg'
+import './App.css';
+import Login from './Pages/Login/login.js';
+import AddStock from './Pages/AddStock/AddStock.js';
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Suppliers from './Pages/Suppliers/Suppliers.jsx';
-import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.jsx';
+import Suppliers from './Pages/Suppliers/Suppliers.js';
+import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
+import WarehouseStock from './Pages/WarehouseStock.js';
+import Dashboard from './Pages/Dashboard/Dashboard.js';
+import StockRequest from './Pages/StockRequest/StockRequest.js';
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const Placeholder = ({ name}) => (
+    <div>
+      <h2>{name} Page</h2>
+    </div>
+  );
   return (
     <>
       <Routes>
-        <Route path="/" element={<StockRequest/>}/>
-        <Route path="/Suppliers" element={<Suppliers />} />
-        <Route path="/FinishedProducts" element={<FinishedProducts />} />
-        </Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/finishedproducts" element={<FinishedProducts />} />
+        <Route path="/stock-request" element={<StockRequest />} />
+        <Route path="/add-stock" element={<AddStock />} />
+        <Route path="/warehouse-stock" element={<WarehouseStock />} />
+        <Route path="/user-management" element={<Placeholder name="Admin Management" />} />
+        <Route path="/stock-management" element={<Suppliers />} />
+      </Routes>
       {/* <div>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -34,7 +49,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */}
     </>
-  )
+  );
 }
 
 export default App

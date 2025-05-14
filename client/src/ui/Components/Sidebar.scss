@@ -1,0 +1,41 @@
+.sidebar {
+  width: 12%;
+  flex-shrink: 0;
+  border-radius: 35px;
+  background: url('../assets/Login Background Gradient.png') no-repeat;
+  background-size: cover;
+  padding: 10px;
+  box-sizing: border-box;
+
+  // This creates the border using padding and inner background
+  .inner {
+    border-radius: 29px;
+    background-color: #ffc982;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      padding-top: 33px;
+    }
+
+    .navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-top: 50%;
+      text-align: center;
+      padding: 0 58px;
+
+      .nav-item {
+        font-size: 18px;
+        font-family: Roboto, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
