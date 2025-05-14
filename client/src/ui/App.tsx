@@ -2,8 +2,8 @@ import { useState } from 'react'
 // @ts-ignore
 // import reactLogo from './assets/react.svg'
 import './App.css';
-import Login from './Pages/login';
-import AddStock from './Pages/AddStock';
+import Login from './Pages/Login/login.js';
+import AddStock from './Pages/AddStock/AddStock.js';
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Suppliers from './Pages/Suppliers/Suppliers.js';
