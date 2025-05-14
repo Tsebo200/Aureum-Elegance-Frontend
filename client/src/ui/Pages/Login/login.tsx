@@ -1,12 +1,7 @@
 import React from 'react';
 import './login.scss';
-<<<<<<<< HEAD:client/src/ui/Pages/login.tsx
-import backgroundImage from '../assets/Log In Background.jpg';
-import logo from '../assets/Wordmark Logo.png';
-========
 import backgroundImage from '../../assets/Log In Background.jpg';
 import logo from '../../assets/Wordmark Logo.png';
->>>>>>>> Tshwetso:client/src/ui/Pages/Login/login.tsx
 import { Link } from 'react-router-dom';
 
 export function Login() {
@@ -17,17 +12,10 @@ export function Login() {
 
   return (
     <main className="page-container">
-<<<<<<<< HEAD:client/src/ui/Pages/login.tsx
       <img
         src={backgroundImage}
         alt="Login page background"
         className="background-image"
-========
-      <img 
-        src={backgroundImage} 
-        alt="Login page background" 
-        className="background-image" 
->>>>>>>> Tshwetso:client/src/ui/Pages/Login/login.tsx
       />
       <div className="content-wrapper">
         <form className="form-container-login" onSubmit={handleSubmit}>
@@ -56,12 +44,8 @@ export function Login() {
               aria-label="Password"
             />
           </div>
-<<<<<<<< HEAD:client/src/ui/Pages/login.tsx
 
-          <Link to= '/dashboard'>
-========
           <Link to="/dashboard">
->>>>>>>> Tshwetso:client/src/ui/Pages/Login/login.tsx
             <button type="submit" className="login-button">
               Log In
             </button>

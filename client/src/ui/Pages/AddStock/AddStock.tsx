@@ -1,14 +1,9 @@
 import React from "react";
 import "./AddStock.scss";
-<<<<<<<< HEAD:client/src/ui/Pages/AddStock.tsx
-import Sidebar from "../Components/Sidebar";
-export default function AddStock() {
-
-========
 import Sidebar from "../../Components/Sidebar";
 
 export default function AddStock() {
->>>>>>>> Tshwetso:client/src/ui/Pages/AddStock/AddStock.tsx
+
 
   
   // WarehouseSelector
