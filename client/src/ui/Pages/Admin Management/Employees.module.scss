@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #FEF3E6;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.main {
+  margin-top: 9%;
+  flex: 1;
+  padding: 2rem;
+}
+
+.tabs {
+  background: #FDAF67;
+  border-radius: 20px 20px 0 0;
+  margin-left: 2.8%;
+  width: 660px;
+
+  :global {
+    .MuiTabs-flexContainer {
+      justify-content: flex-start;
+    }
+
+    .MuiTab-root {
+      text-transform: none;
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+      font-weight: 500;
+      border-radius: 20px 20px 0 0;
+
+      &.Mui-selected {
+        background-image: url('../../assets/Large Element.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: black;
+      }
+    }
+
+    .MuiTabs-indicator {
+      display: none;
+    }
+  }
+}
+
+.content {
+  background: #fff;
+  border-radius: 35px;
+  padding-top: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 1.5rem;
+  background-image: url('../../assets/Large Element.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.list {
+  margin-bottom: 0rem;
+  width: 70%;
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+}
+
+.input {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+}
+
+.employeeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .name {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .warehouse {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+    color: #444;
+  }
+}
+
+.addBtn {
+  background-color: #E03E47 !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-family: Roboto, sans-serif !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 35px !important;
+  padding: 0.5rem 1.5rem !important;
+  height: 40px !important;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  align-items: flex-start;
+
+  button {
+    flex-shrink: 0;
+  }
+}
+
+.formRow {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.formRowAddWarehouse {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-end;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.inputField {
+  width: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #fefefe;
+  outline: none;
+}
+
+.selectField {
+  width: 57%;
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #fefefe;
+  background-color: #fefefe;
+  outline: none;
+}

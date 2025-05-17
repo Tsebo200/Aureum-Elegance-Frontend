@@ -11,6 +11,7 @@ import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
 import WarehouseStock from './Pages/WarehouseStock.js';
 import Dashboard from './Pages/Dashboard/Dashboard.js';
 import StockRequest from './Pages/StockRequest/StockRequest.js';
+import Employees from './Pages/Admin Management/Employees.js';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
         <Route path="/stock-request" element={<StockRequest />} />
         <Route path="/add-stock" element={<AddStock />} />
         <Route path="/warehouse-stock" element={<WarehouseStock />} />
-        <Route path="/user-management" element={<Placeholder name="Admin Management" />} />
+        <Route path="/admin-management" element={<Employees />} />
         <Route path="/stock-management" element={<Suppliers />} />
       </Routes>
       {/* <div>

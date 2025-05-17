@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../FinishedProducts/FinishedProducts.module.scss';
-import { TextField, Button, Tabs, Tab, useMediaQuery } from "@mui/material";
+import { Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
-import ProducePerfumeForm from '../../components/Forms/FinishedProductComponents/ProducePerfumeForm';
+import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
