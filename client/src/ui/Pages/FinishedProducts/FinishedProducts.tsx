@@ -59,6 +59,32 @@ export default function FinishedProducts() {
           </section>
         )}
 
+
+         {tab === 2 && (
+          <section className={styles.content}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Cost per unit</th>
+                  <th>Units in kilograms</th>
+                </tr>
+                <hr />
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Glass Bottles</td>
+                  <td>R600,00</td>
+                  <td>680</td>
+                  <td>
+                    <Button className={styles.Btn}>Request Stock</Button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        )}
+
         {tab === 3 && (
           <section className={styles.content}>
             <h1>Produce Perfume</h1>
