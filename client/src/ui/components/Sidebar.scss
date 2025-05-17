@@ -26,13 +26,12 @@
       flex-direction: column;
       gap: 36px;
       margin-top: 50%;
-      text-align: center;
+      text-align: left !important;
       padding: 0 58px;
 
       .nav-item {
         font-size: 18px;
         font-family: Roboto, sans-serif;
-        text-align: center;
         text-decoration: none;
         color: #000;
       }
