@@ -1,9 +1,11 @@
 import React from "react";
 import "./AddStock.scss";
-import Sidebar from "../Components/Sidebar";
+import Sidebar from "../../Components/Sidebar";
+
 export default function AddStock() {
 
 
+  
   // WarehouseSelector
   const WarehouseSelector = () => (
     <div className="selector-container">

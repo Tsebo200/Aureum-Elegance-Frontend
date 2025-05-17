@@ -1,33 +1,57 @@
 @use '../../../Sass/Styles.scss' as *;
 
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
 .cardContainer{
     width: 330px;
     height: 80px;
     border-radius: 25px;
     margin-left: 45px;
-    background: $tertiary;
+    background-image: url('../../../assets/Alert\ Background.png');
+    background-size: cover;
+    background-position: center;
     float: left;
 
     .lowStockHeading{
+        font-family: RobotoRegular;
         margin-top: 10px;
         margin-left: 20px;
         float: left;
     }
 
     .oilHeading{
+        font-family: RobotoRegular;
         font-size: 15px;
         margin-top: 37px;
         margin-left: 10px;
         float: left;
     }
 
-    .iconStatus{
-        width: 20px;
-        height: 20px;
-        margin-top: 15px;
-        margin-left: 60px;
-        border-radius: 360px;
-        background: $accent;
-        float: left;
-    }
+    // .iconStatus{
+    //     width: 20px;
+    //     height: 20px;
+    //     margin-top: 15px;
+    //     margin-left: 60px;
+    //     border-radius: 360px;
+    //     background: $accent;
+    //     float: left;
+    // }
 }

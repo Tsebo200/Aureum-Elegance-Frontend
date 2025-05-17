@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.scss';
-import backgroundImage from '../assets/Log In Background.jpg';
-import logo from '../assets/Wordmark Logo.png';
+import backgroundImage from '../../assets/Log In Background.jpg';
+import logo from '../../assets/Wordmark Logo.png';
 import { Link } from 'react-router-dom';
 
 export function Login() {
@@ -45,7 +45,7 @@ export function Login() {
             />
           </div>
 
-          <Link to= '/dashboard'>
+          <Link to="/dashboard">
             <button type="submit" className="login-button">
               Log In
             </button>

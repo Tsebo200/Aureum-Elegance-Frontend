@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { TextField, Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
+import ProducePerfumeForm from '../../components/Forms/FinishedProductComponents/ProducePerfumeForm';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
@@ -60,89 +61,90 @@ export default function FinishedProducts() {
         )}
 
         {tab === 3 && (
-          <section className={styles.content}>
-            <h1>Produce Perfume</h1>
-            <form className={styles.form}>
-              <div className={styles.field}>
-                <label>Name</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Description</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  multiline
-                  minRows={4}
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Cost Per Unit</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Volume Per Bottle (in millilitres)</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Ingredients</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Quantities Used</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Packaging</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <div className={styles.field}>
-                <label>Batches</label>
-                <TextField
-                  placeholder="..."
-                  fullWidth
-                  variant="filled"
-                  InputProps={{ disableUnderline: true }}
-                />
-              </div>
-              <br />
-              <Button variant="contained" className={styles.addBtn}>
-                Produce Perfume
-              </Button>
-            </form>
-          </section>
+          <ProducePerfumeForm />
+          // <section className={styles.content}>
+          //   <h1>Produce Perfume</h1>
+          //   <form className={styles.form}>
+          //     <div className={styles.field}>
+          //       <label>Name</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Description</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         multiline
+          //         minRows={4}
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Cost Per Unit</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Volume Per Bottle (in millilitres)</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Ingredients</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Quantities Used</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Packaging</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <div className={styles.field}>
+          //       <label>Batches</label>
+          //       <TextField
+          //         placeholder="..."
+          //         fullWidth
+          //         variant="filled"
+          //         InputProps={{ disableUnderline: true }}
+          //       />
+          //     </div>
+          //     <br />
+          //     <Button variant="contained" className={styles.addBtn}>
+          //       Produce Perfume
+          //     </Button>
+          //   </form>
+          // </section>
         )}
 
         {tab === 4 && (

@@ -1,14 +1,13 @@
 import styles from '../Dashboard/Dashboard.module.scss';
 import Sidebar from '../../Components/Sidebar';
 import AlertCard from '../../Components/AlertCards/AlertCard';
+import DoughnutChart from '../../Components/Graphs/DoughnutChart'
 
 function Dashboard() {
   return (
     <div>
       <div className={styles.mainContainer}>
-        <div className={styles.left}>
             <Sidebar />
-        </div>
         <div className={styles.right}>
            <h1 className={styles.dashboardHeading}>Dashboard</h1>
              <div className={styles.horLine}></div>
@@ -20,6 +19,10 @@ function Dashboard() {
                 </div>
                 <h1 className={styles.graphsHeading}>Graphs</h1>
                 <div className={styles.graphsSection}>
+                  <div className={styles.graphBoxOne}>
+                 <DoughnutChart />
+                  </div>
+ 
 
                 </div>
               </div>
