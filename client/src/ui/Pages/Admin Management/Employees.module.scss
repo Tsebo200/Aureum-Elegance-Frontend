@@ -159,3 +159,52 @@
   background-color: #fefefe;
   outline: none;
 }
+
+.tableWrapper {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+  margin-bottom: 0.5rem;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #000000;
+  margin-bottom: 1rem;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.actionBtns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.approveBtn {
+  background-color: #28A745 !important; 
+  color: white !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 2rem !important;
+  font-size: 0.9rem !important;
+  min-width: 100px;
+}
+
+.denyBtn {
+  background-color: #E03E47 !important; 
+  color: white !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 2rem !important;
+  font-size: 0.9rem !important;
+  min-width: 100px;
+}
