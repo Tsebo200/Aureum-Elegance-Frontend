@@ -143,6 +143,35 @@ export default function Employees() {
             </div>
           </section>
         )}
+
+        {tab === 3 && (
+      <section className={styles.content}>
+        <h2>Stock Requests</h2>
+
+        <div className={styles.tableWrapper}>
+          <div className={styles.tableHeader}>
+            <span>Name</span>
+            <span>Requested Amount</span>
+            <span>Warehouse To</span>
+            <span>Warehouse From</span>
+            <span>Action</span>
+          </div>
+          <hr className={styles.hr} />
+
+          <div className={styles.tableRow}>
+            <span>Bergamot Oil</span>
+            <span>100 kg</span>
+            <span>1</span>
+            <span>2</span>
+            <span className={styles.actionBtns}>
+              <Button className={styles.approveBtn}>Approve</Button>
+              <Button className={styles.denyBtn}>Deny</Button>
+            </span>
+          </div>
+        </div>
+      </section>
+       )}
+
       </main>
     </div>
   );
