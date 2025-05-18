@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 
 export default function Suppliers() {
-  const [tab, setTab] = React.useState(0);
+  const [tab, setTab] = useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
+  const [suppliers, setSuppliers] = useState([
+    { name: "Isaac's Fragrances", contact: "Alice", phone: "012 463 8393" },
+    { name: 'Marie Packagings', contact: 'Micheal', phone: '012 567 6014' },
+  ]);
 
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
+
+  const handleRemove = (index: number) => {
+    const updated = [...suppliers];
+    updated.splice(index, 1);
+    setSuppliers(updated);
+  };
 
   return (
     <div className={styles.container}>
@@ -18,7 +28,7 @@ export default function Suppliers() {
           value={tab}
           onChange={handleTabChange}
           className={styles.tabs}
-          variant={isMobile ? "scrollable" : "standard"}
+          variant={isMobile ? 'scrollable' : 'standard'}
           scrollButtons="auto"
         >
           <Tab label="Suppliers" />
@@ -32,57 +42,59 @@ export default function Suppliers() {
             <h1>Suppliers</h1>
 
             <div className={styles.list}>
-              <div className={styles.item}>
-                <span className={styles.name}>Isaac's Fragrances</span>
-                <span className={styles.contact}>Alice</span>
-                <span className={styles.phone}>012 463 8393</span>
-              </div>
-              <div className={styles.item}>
-                <span className={styles.name}>Marie Packagings</span>
-                <span className={styles.contact}>Micheal</span>
-                <span className={styles.phone}>012 567 6014</span>
-              </div>
+              {suppliers.map((supplier, index) => (
+                <div key={index} className={styles.item}>
+                  <span className={styles.name}>{supplier.name}</span>
+                  <span className={styles.contact}>{supplier.contact}</span>
+                  <span className={styles.phone}>{supplier.phone}</span>
+                  <button
+                    className={styles.removeBtn}
+                    onClick={() => handleRemove(index)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
             </div>
 
             <h2>Add Supplier</h2>
-           <form className={styles.form}>
-            <div className={styles.fieldsWrapper}>
-              <div className={styles.field}>
-               <label>Supplier Name</label>
+            <form className={styles.form}>
+              <div className={styles.fieldsWrapper}>
+                <div className={styles.field}>
+                  <label>Supplier Name</label>
                   <TextField
-                     placeholder="..."
-                     fullWidth
-                     variant="filled"
-                     InputProps={{ disableUnderline: true }}
-                  />
-            </div>
-            <div className={styles.field}>
-              <label>Contact Person</label>
-                 <TextField
-                     placeholder="..."
-                     fullWidth
-                     variant="filled"
-                     InputProps={{ disableUnderline: true }}
-                  />
-            </div>
-            <div className={styles.field}>
-              <label>Contact Number</label>
-                 <TextField
                     placeholder="..."
                     fullWidth
                     variant="filled"
                     InputProps={{ disableUnderline: true }}
-                 />
-           </div>
-           </div>
+                  />
+                </div>
+                <div className={styles.field}>
+                  <label>Contact Person</label>
+                  <TextField
+                    placeholder="..."
+                    fullWidth
+                    variant="filled"
+                    InputProps={{ disableUnderline: true }}
+                  />
+                </div>
+                <div className={styles.field}>
+                  <label>Contact Number</label>
+                  <TextField
+                    placeholder="..."
+                    fullWidth
+                    variant="filled"
+                    InputProps={{ disableUnderline: true }}
+                  />
+                </div>
+              </div>
 
-           <div className={styles.buttonWrapper}>
-              <Button variant="contained" className={styles.addBtn}>
-                Add Supplier
-              </Button>
-           </div>
-           </form>
-
+              <div className={styles.buttonWrapper}>
+                <Button variant="contained" className={styles.addBtn}>
+                  Add Supplier
+                </Button>
+              </div>
+            </form>
           </section>
         )}
 
