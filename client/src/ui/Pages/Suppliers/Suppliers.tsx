@@ -114,6 +114,42 @@ export default function Suppliers() {
             </table>
           </section>
         )}
+
+
+        {tab === 3 && (
+          <section className={styles.content}>
+            <h1>Record Loss</h1>
+                  <div className={styles.mainContainer}>
+                    <div className={styles.top}>
+                      <div className={styles.itemBox}>
+                        <h2 className={styles.itemHeading}>Item</h2>
+                        <div className={styles.itemForm}></div>
+                      </div>
+                      <div className={styles.quantityBox}>
+                        <h2 className={styles.quantityHeading}>Quantity Lost</h2>
+                        <div className={styles.quantityForm}></div>
+                      </div>
+                      <div className={styles.dateBox}>
+                        <h2 className={styles.dateHeading}>Date of Loss</h2>
+                        <div className={styles.dateForm}></div>
+                      </div>
+                    </div>
+                    <div className={styles.bottom}>
+                      <div className={styles.itemTypeBox}>
+                        <h2 className={styles.itemTypeHeading}>Item Type</h2>
+                        <div className={styles.itemTypeForm}></div>
+                      </div>
+                      <div className={styles.reasonBox}>
+                        <h2 className={styles.reasonHeading}>Reason</h2>
+                        <div className={styles.reasonForm}></div>
+                      </div>
+                      <div className={styles.recordBtn}>
+                        <h3 className={styles.recordBtnText}>Record Waste Loss</h3>
+                      </div>
+                    </div>
+                  </div>
+          </section>
+        )}
       </main>
     </div>
   );
