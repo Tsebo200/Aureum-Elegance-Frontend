@@ -189,6 +189,13 @@ hr {
   margin-left: 1rem;
   width: 100px !important;
   height: 30px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+
+  }
+}
 
 .mainContainer{
   width: 100%;
@@ -332,21 +339,13 @@ hr {
   font-family: Roboto, sans-serif !important;
   border: none !important;
   cursor: pointer !important;
-
-  &:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-
-  }
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
   margin-left: 90px !important;
   margin-top: 160px;
   float: left;
+}
 
   .recordBtnText{
     font-family: RobotoRegular;
     margin-top: 15px;
   }
-}
+
