@@ -1,5 +1,5 @@
 import { Button } from "@mui/material"
-import styles from "./RecordWasteBtn.module.scss"
+import styles from "../Button/RecordWasteBtn.module.scss"
 
 function RecordWasteBtn() {
   return (
