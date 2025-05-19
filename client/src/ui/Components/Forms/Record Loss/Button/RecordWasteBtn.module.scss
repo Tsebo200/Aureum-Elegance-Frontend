@@ -1,0 +1,14 @@
+@use '../../../../Sass/Styles.scss' as *;
+
+.recordBtn{
+  width: 205px;
+  height: 50px;
+  border-radius: 35px;
+  background: $accent;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  border: none;
+  cursor: pointer;
+  float: left;
+}
+
