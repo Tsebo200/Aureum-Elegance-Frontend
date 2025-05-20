@@ -12,10 +12,10 @@ export function Login() {
 
   return (
     <main className="page-container">
-      <img 
-        src={backgroundImage} 
-        alt="Login page background" 
-        className="background-image" 
+      <img
+        src={backgroundImage}
+        alt="Login page background"
+        className="background-image"
       />
       <div className="content-wrapper">
         <form className="form-container-login" onSubmit={handleSubmit}>
@@ -44,6 +44,7 @@ export function Login() {
               aria-label="Password"
             />
           </div>
+
           <Link to="/dashboard">
             <button type="submit" className="login-button">
               Log In

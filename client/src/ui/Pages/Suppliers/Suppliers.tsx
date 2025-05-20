@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
+import { DeliveriesPanel } from '../StockManagement/SMDeliveries';
 
 export default function Suppliers() {
   const [tab, setTab] = React.useState(0);
@@ -83,6 +84,13 @@ export default function Suppliers() {
            </div>
            </form>
 
+          </section>
+        )}
+
+        {tab === 1 && (
+          <section className={styles.content}>
+            {/* Render your Deliveries panel here */}
+            <DeliveriesPanel />
           </section>
         )}
 

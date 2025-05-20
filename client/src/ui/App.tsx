@@ -7,7 +7,6 @@ import AddStock from './Pages/AddStock/AddStock.js';
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Suppliers from './Pages/Suppliers/Suppliers.js';
-import SMDeliveries from './Pages/StockManagement/SMDeliveries.js';
 import FinishedProducts from './Pages/FinishedProducts/FinishedProducts.js';
 import WarehouseStock from './Pages/WarehouseStock.js';
 import Dashboard from './Pages/Dashboard/Dashboard.js';
