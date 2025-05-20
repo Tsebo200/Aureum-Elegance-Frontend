@@ -9,7 +9,7 @@ export default function AddStock() {
   // WarehouseSelector
   const WarehouseSelector = () => (
     <div className="selector-container">
-      <div className="warehouse-select">Warehouse Selection</div>
+      <div className="warehouse-select">Warehouse</div>
       <div
         className="dropdown-icon"
         dangerouslySetInnerHTML={{
@@ -92,7 +92,7 @@ export default function AddStock() {
         <h1 className="page-title">Add Stock</h1>
         <hr className="divider" />
         <section className="warehouse-section">
-          <h2 className="section-title">Warehouse To</h2>
+          <h2 className="section-title">Select Destination Warehouse</h2>
           <WarehouseSelector />
         </section>
         <section className="forms-container">
