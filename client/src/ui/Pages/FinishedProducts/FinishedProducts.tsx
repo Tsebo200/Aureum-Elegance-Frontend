@@ -4,6 +4,7 @@ import { Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
 import FragrancesComponent from '../../components/FragrancesComponent/FragrancesComponent';
+import { IngredientsPanel } from '../Ingredients/Ingredients';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
@@ -36,7 +37,12 @@ export default function FinishedProducts() {
         {tab === 0 && (
           <FragrancesComponent />
         )}
-
+        
+        {tab === 1 && (
+          <section className={styles.content}>
+            <IngredientsPanel />
+          </section>
+        )}
 
          {tab === 2 && (
           <section className={styles.content}>
