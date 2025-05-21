@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/finishedproducts" element={<FinishedProducts />} />
         <Route path="/stock-request" element={<StockRequest />} />
