@@ -1,8 +1,8 @@
 /* Layout & Main */
 .layout {
   display: flex;
-  min-height: 1080px;
-  min-width: 1920px;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: #fbf1e6;
 }
 
@@ -50,7 +50,7 @@
   height: 75px;
   border-radius: 35px;
   background-color: #ffdbb1;
-  padding: 0 0px 0 32px;
+  padding: 0 0px 0 50px;
   display: flex;
   align-items: center;
 }
@@ -62,16 +62,38 @@
   transform: translateY(-50%);
 }
 
+.secondFormContainer{
+  width: 360px;
+  height: 110px;
+  float: left;
+}
+
+.WarehouseToForm{
+  width: 250px;
+  height: 50px;
+  border-radius: 35px;
+  float: left;
+}
+
+.warehouseToHeading{
+  font-family: RobotoRegular;
+  margin-left: 60px;
+}
+
 /* Forms Container */
 .forms-container {
   display: flex;
-  gap: 64px;
+  gap: 150px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Ingredient & Packaging Forms */
 .form-section {
-  flex: 1;
   border: 0px solid #000;
+  flex: 0 1 500px; /* Prevent stretching; allow shrink/grow with a base */
+  max-width: 500px;
+  width: 100%;
   margin-bottom: 52px;
 }
 
@@ -105,7 +127,7 @@
   height: 75px;
   border-radius: 35px;
   background-color: #fbf1e6;
-  padding: 0 32px;
+  padding: 0 20px 0 20px;
   border: none;
   justify-content: flex-start;
 }

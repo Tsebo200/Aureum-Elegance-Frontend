@@ -20,9 +20,7 @@ function StockRequest() {
               <div className={styles.topContainer}>
                 <div className={styles.firstFormContainer}>
                   <h3 className={styles.itemHeading}>Item Request</h3>
-                  <div className={styles.itemRequestForm}>
-                                        <ItemRequestTextField />
-                  </div>
+                  <div className={styles.itemRequestForm}><ItemRequestTextField /></div>
                 </div>
                 <div className={styles.secondFormContainer}>
                     <h3 className={styles.warehouseToHeading}>Warehouse To</h3>
@@ -44,7 +42,6 @@ function StockRequest() {
               </div>
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
-                  {/* <h4 className={styles.submitHeading}>Submit Stock Transfer</h4> */}
                   <Button variant="contained" className={styles.submitBtn}>
                     Submit Stock Transfer
                   </Button>

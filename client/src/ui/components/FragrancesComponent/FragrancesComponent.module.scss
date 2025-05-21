@@ -1,0 +1,44 @@
+.Btn {
+    background: #E03E47 !important;
+    color: white !important;
+    margin: 2px !important;
+    
+  
+  }
+  .content {
+    background: #fff;
+    border-radius: 35px;
+    padding: 3rem 5rem;
+    background-image: url('../../assets/Large Element.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th, td {
+      text-align: left;
+      padding: 1rem;
+    }
+  
+    th {
+      font-weight: 500;
+    }
+  
+    td {
+      vertical-align: top;
+    }
+  
+    .tr {
+        border-bottom: 1px solid #000;
+      }
+  }
+  
+  
+  hr {
+    border: none;
+    width: 100%;
+  }

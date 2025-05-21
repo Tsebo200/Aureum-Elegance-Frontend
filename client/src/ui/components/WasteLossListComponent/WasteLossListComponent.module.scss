@@ -1,0 +1,86 @@
+.Btn {
+    background: #E03E47 !important;
+    color: white !important;
+    margin: 2px !important;
+    
+  
+  }
+  .content {
+    background: #fff;
+    border-radius: 35px;
+    padding: 3rem 5rem;
+    background-image: url('../../assets/Large Element.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th, td {
+      text-align: left;
+      padding: 1rem;
+    }
+  
+    th {
+      font-weight: 500;
+    }
+  
+    td {
+      vertical-align: top;
+    }
+  
+    .tr {
+      border-bottom: 1px solid #000;
+    }
+  }
+  
+  
+  hr {
+    border: none;
+    width: 100%;
+    border-color: black;
+  }
+
+  form {
+    display: flex !important;
+    margin-top: 1rem !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+    flex-wrap: wrap !important;
+  
+  
+    .field {
+      margin-bottom: 0.5rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 18rem !important;
+      background-color: white !important;
+    
+      .label {
+        display: block !important;
+        margin-bottom: 0.5rem !important;
+        font-weight: 500 !important;
+        margin-right: 200px;
+      }
+    
+      :global(.MuiFilledInput-root) {
+        border-radius: 50px;
+        background: #FFF5EB;
+      }
+    }
+    
+    .select {
+      width: 200px !important;
+      height: 45px !important;
+      border-radius: 50px !important;
+      background-color: #fff5eb !important;
+      padding: 0 1rem !important;
+      border: none !important;
+      font-size: 1rem !important;
+      margin-bottom: 1rem !important;
+    
+    }
+  }
