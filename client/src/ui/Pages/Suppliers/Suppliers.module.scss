@@ -1,3 +1,26 @@
+@use '../../Sass/Styles.scss' as *;
+
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -166,17 +189,11 @@ hr {
   margin-left: 1rem;
   width: 100px !important;
   height: 30px !important;
-  border-radius: 35px !important;
-  background-color: #E03E47 !important;
-  color: #fff !important;
-  font-size: 15px !important;
-  font-family: Roboto, sans-serif !important;
-  border: none !important;
-  cursor: pointer !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   &:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 
   }
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
