@@ -21,7 +21,7 @@ return (
     <h1>Fragrances</h1>
     <table className={styles.table}>
       <thead>
-        <tr>
+        <tr className={styles.tr}>
           <th>Name</th>
           <th>Ingredients</th>
           <th>Cost per unit</th>

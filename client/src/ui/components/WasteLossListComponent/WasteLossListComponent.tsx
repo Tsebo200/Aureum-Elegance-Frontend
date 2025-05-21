@@ -84,7 +84,7 @@ const WasteLossListComponent = () => {
 
       <table className={styles.table}>
         <thead>
-          <tr>
+          <tr className= {styles.tr}>
             <th>Item</th>
             <th>Type</th>
             <th>Quantity Lost</th>
