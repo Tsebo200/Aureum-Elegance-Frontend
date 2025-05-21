@@ -3,14 +3,14 @@ import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
-import WasteLossListComponent from '../../components/WasteLossListComponent/WasteLossListComponent';
+import WasteLossListComponent from '../../Components/WasteLossListComponent/WasteLossListComponent';
 import {DeliveriesPanel} from '../StockManagement/SMDeliveries';
 
 export default function Suppliers() {
   const [tab, setTab] = useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
   const [suppliers, setSuppliers] = useState([
-    { name: "Isaac's Fragrances", contact: "Alice", phone: "012 463 8393" },
+    { name: "Isaac's Fragrances", contact: "Alice", phone: "012 463 8396" },
     { name: 'Marie Packagings', contact: 'Micheal', phone: '012 567 6014' },
   ]);
 
