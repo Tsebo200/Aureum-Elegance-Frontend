@@ -3,6 +3,7 @@ import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
+import WasteLossListComponent from '../../components/WasteLossListComponent/WasteLossListComponent';
 
 export default function Suppliers() {
   const [tab, setTab] = useState(0);
@@ -100,32 +101,7 @@ export default function Suppliers() {
         )}
 
         {tab === 2 && (
-          <section className={styles.content}>
-            <h1>Waste Loss</h1>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Type</th>
-                  <th>Quantity Lost</th>
-                  <th>Date of Loss</th>
-                  <th>Reason</th>
-                  <th>Recorded User</th>
-                </tr>
-                <hr />
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Moonlit Jasmine</td>
-                  <td>Fragrance</td>
-                  <td>5</td>
-                  <td>15/05/2025</td>
-                  <td>Expiry Reached</td>
-                  <td>Sarah</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+          <WasteLossListComponent />
         )}
 
 
