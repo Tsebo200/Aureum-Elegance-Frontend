@@ -3,6 +3,7 @@ import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
+import { IngredientsPanel } from '../Ingredients/Ingredients';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(4);
@@ -59,7 +60,12 @@ export default function FinishedProducts() {
             </table>
           </section>
         )}
-
+        
+        {tab === 1 && (
+          <section className={styles.content}>
+            <IngredientsPanel />
+          </section>
+        )}
 
          {tab === 2 && (
           <section className={styles.content}>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./AddStock.scss";
 import Sidebar from "../../Components/Sidebar";
+import WarehouseForm from '../../Components/Forms/StockRequest/WarehouseSelect'
 
 export default function AddStock() {
 
@@ -9,15 +10,9 @@ export default function AddStock() {
   // WarehouseSelector
   const WarehouseSelector = () => (
     <div className="selector-container">
-      <div className="warehouse-select">Warehouse</div>
-      <div
-        className="dropdown-icon"
-        dangerouslySetInnerHTML={{
-          __html: `<svg width="35" height="21" viewBox="0 0 35 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 2L17.512 18.2068C17.9193 18.6324 18.6044 18.6154 18.9902 18.1701L33 2" stroke="black" stroke-width="3" stroke-linecap="round"/>
-          </svg>`,
-        }}
-      />
+        <div className="WarehouseToForm">
+          <WarehouseForm />
+        </div>
     </div>
   );
 

@@ -3,6 +3,7 @@ import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
+import {DeliveriesPanel} from '../StockManagement/SMDeliveries';
 
 export default function Suppliers() {
   const [tab, setTab] = useState(0);
@@ -96,6 +97,12 @@ export default function Suppliers() {
                 </Button>
               </div>
             </form>
+          </section>
+        )}
+
+        {tab === 1 && (
+          <section className={styles.content}>
+            <DeliveriesPanel />
           </section>
         )}
 
