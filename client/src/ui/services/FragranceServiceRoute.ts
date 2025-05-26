@@ -9,7 +9,7 @@ import type { Fragrance } from "./models/fragranceModel";
 //   return await response.json();
 // };
 
-export async function getFragrances(): Promise<Fragrance> {
+export async function getFragrances(): Promise<Fragrance[]> {
   
   const response = await fetch("http://localhost:5167/api/Fragrance");
   if (!response.ok) {
