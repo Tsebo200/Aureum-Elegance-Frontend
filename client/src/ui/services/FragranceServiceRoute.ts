@@ -64,3 +64,12 @@ export const updateFragranceIngredient = async (
   if (!response.ok) throw new Error("Failed to update fragrance ingredient.");
 };
 
+export async function deleteFragrance(id: number) {
+  const response = await fetch(`http://localhost:5167/api/Fragrance/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to delete fragrance");
+  }
+}

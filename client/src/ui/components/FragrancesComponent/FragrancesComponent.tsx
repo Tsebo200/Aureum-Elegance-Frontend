@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import styles from "./FragrancesComponent.module.scss";
-import { getFragrances } from "../../services/FragranceServiceRoute"
+import { deleteFragrance, getFragrances } from "../../services/FragranceServiceRoute"
 import type { Fragrance } from "../../services/models/fragranceModel";
 import { useEffect, useState } from "react";
 
@@ -21,6 +21,14 @@ const FragrancesComponent = () => {
 
     fetchData();
   }, []);
+
+  const handleDelete = async (id: number) => {
+    try {
+      await deleteFragrance(id);
+      setFragrances((prev) => prev.filter((f) => f.id !== id));
+    } catch (error) {
+      console.error("Error deleting fragrance:", error);
+    }}
   return (
     <section className={styles.content}>
       <h1>Fragrances</h1>
@@ -47,13 +55,12 @@ const FragrancesComponent = () => {
               <td>{fragrance.volume}</td>
               <td>
                 <Button className={styles.Btn}>Produce</Button>
+                <Button className={styles.Btn}>Edit</Button>
                 <Button
-                  className={styles.Btn}
-                  
+                  className={styles.Btn} color="error" onClick={() => handleDelete(fragrance.id)}
                 >
-                  Edit
+                  Delete
                 </Button>
-                <Button className={styles.Btn}>Delete</Button>
               </td>
             </tr>
           ))}
