@@ -3,7 +3,7 @@ import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
-import FragrancesComponent from '../../components/FragrancesComponent/FragrancesComponent';
+import FragrancesComponent from '../../Components/FragrancesComponent/FragrancesComponent';
 import { IngredientsPanel } from '../Ingredients/Ingredients';
 
 export default function FinishedProducts() {
