@@ -20,3 +20,17 @@ export interface Fragrance {
   volume: number;
   fragranceIngredients: FragranceIngredient[];
 }
+
+export interface PostFragranceIngredient {
+  fragranceID: number;
+  ingredientsID: number;
+  amount: number;
+  
+}
+export interface PostFragrance {
+  name: string;
+  description: string;
+  cost: number;
+  expiryDate: string;
+  volume: number;
+}
