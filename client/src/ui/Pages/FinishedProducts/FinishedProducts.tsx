@@ -5,12 +5,13 @@ import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
 import FragrancesComponent from '../../components/FragrancesComponent/FragrancesComponent';
 import { IngredientsPanel } from '../Ingredients/Ingredients';
+import type { Fragrance } from '../../services/models/fragranceModel';
 
 export default function FinishedProducts() {
-  const [tab, setTab] = React.useState(4);
+  const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
-
+ 
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -35,16 +36,16 @@ export default function FinishedProducts() {
         </Tabs>
 
         {tab === 0 && (
-          <FragrancesComponent />
+          <FragrancesComponent  />
         )}
-        
+
         {tab === 1 && (
           <section className={styles.content}>
             <IngredientsPanel />
           </section>
         )}
 
-         {tab === 2 && (
+        {tab === 2 && (
           <section className={styles.content}>
             <table className={styles.table}>
               <thead>
@@ -69,10 +70,7 @@ export default function FinishedProducts() {
           </section>
         )}
 
-        {tab === 3 && (
-          <ProducePerfumeForm />
-          
-        )}
+        {tab === 3 && <ProducePerfumeForm  />}
 
         {tab === 4 && (
           <section className={styles.content}>
