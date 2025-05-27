@@ -1,13 +1,39 @@
+import { useEffect, useState } from 'react';
 import styles from './StockTransfer.module.scss'
+import { getFragrances } from '../../../services/FragranceServiceRoute';
+import type { Fragrance } from '../../../services/models/fragranceModel';
 
 function StockTransfer() {
+
+   const [fourthFragrance, setFourthFragrance] = useState<Fragrance | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await getFragrances();
+
+        // Set only the 3rd item if it exists - currently only fetching third item in the array
+        if (data.length >= 3) {
+          setFourthFragrance(data[2]);
+        }
+      } catch (error) {
+        console.error("Error fetching fragrances:", error);
+      }
+    })();
+  }, []);
+
   return (
     <div>
+    {fourthFragrance ? (
         <div className={styles.cardContainer}>
           <h3 className={styles.lowStockHeading}>Stock Transfer <br/>Pending</h3>
           <h3 className={styles.oilHeading}>Stabilizer</h3>
           <div className={styles.iconStatus}></div>
         </div>
+    ):(
+        <div className={styles.cardContainer}></div> //Load this if no data is available
+      )
+    }
     </div>
   )
 }
