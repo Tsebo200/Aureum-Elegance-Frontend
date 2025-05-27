@@ -4,6 +4,9 @@ import { Button } from '@mui/material'
 import WarehouseForm from '../../Components/Forms/StockRequest/WarehouseSelect'
 import ItemRequestTextField from '../../Components/Forms/StockRequest/ItemRequestTextField'
 import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField'
+import StatusSelect from '../../Components/Forms/StockRequest/StatusSelect'
+import RequestDate from '../../Components/Forms/StockRequest/RequestDate'
+import IngredientsTextField from '../../Components/Forms/StockRequest/IngredientsTextField'
 
 function StockRequest() {
   return (
@@ -23,12 +26,12 @@ function StockRequest() {
                   <div className={styles.itemRequestForm}><ItemRequestTextField /></div>
                 </div>
                 <div className={styles.secondFormContainer}>
-                    <h3 className={styles.warehouseToHeading}>Warehouse To</h3>
-                    <div className={styles.WarehouseToForm}><WarehouseForm /></div>
+                    <h3 className={styles.warehouseToHeading}>Status Selection</h3>
+                    <div className={styles.WarehouseToForm}><StatusSelect /></div>
                 </div>
                 <div className={styles.thirdFormContainer}>
                     <h3 className={styles.warehouseFromHeading}>Warehouse From</h3>
-                    <div className={styles.WarehouseFromForm}><WarehouseForm /></div>
+                    <div className={styles.WarehouseFromForm}><IngredientsTextField /></div>
                 </div>
               </div>
 
