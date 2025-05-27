@@ -1,13 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Employees.module.scss';
 import { Tabs, Tab, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
+import { getEmployees,promoteToManager,removeManager,} from '../../services/EmployeeServiceRoute';
+import type { User } from '../../services/models/employeeModel';
 
 export default function Employees() {
-  const [tab, setTab] = React.useState(0);
+  const [tab, setTab] = useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
 
+  const [allUsers, setAllUsers] = useState<User[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
+
+  const loadEmployees = async () => {
+    try {
+      const users = await getEmployees();
+      setAllUsers(users);
+    } catch (err) {
+      console.error('Failed to load employees:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePromote = async (userId: number) => {
+    await promoteToManager(userId);
+    await loadEmployees();
+  };
+
+  const handleRemove = async (userId: number) => {
+    await removeManager(userId);
+    await loadEmployees(); 
+  };
+
+  useEffect(() => {
+    loadEmployees();
+  }, []);
+
+  const managers = allUsers.filter((u) => u.role === 'Manager');
+  const employees = allUsers.filter((u) => u.role === 'Employee');
 
   return (
     <div className={styles.container}>
@@ -26,123 +59,123 @@ export default function Employees() {
           <Tab label="Warehouses" />
           <Tab label="Stock Requests" />
         </Tabs>
+        
+          {tab === 0 && (
+        <section className={styles.content}>
+          <h2>Managers</h2>
 
-        {tab === 0 && (
-          <section className={styles.content}>
-            <h2>Managers</h2>
-
+          {loading ? (
+            <p>Loading...</p>
+          ) : managers.length > 0 ? (
             <div className={styles.list}>
-              <div className={styles.item}>
-                <div className={styles.employeeInfo}>
-                  <span className={styles.name}>Ivan</span>
-                  <span className={styles.warehouse}>Warehouse 1</span>
+              {managers.map((manager) => (
+                <div key={manager.userId} className={styles.item}>
+                  <div className={styles.employeeInfo}>
+                    <span className={styles.name}>{manager.name ?? 'No Name'}</span>
+                    <span className={styles.warehouse}>Warehouse TBD</span>
+                  </div>
+                  <Button
+                    variant="contained"
+                    className={styles.addBtn}
+                    onClick={() => handleRemove(manager.userId)}
+                  >
+                    Remove Manager
+                  </Button>
                 </div>
-                <Button variant="contained" className={styles.addBtn}>
-                  Remove Manager
-                </Button>
-              </div>
-              <div className={styles.item}>
-                <div className={styles.employeeInfo}>
-                  <span className={styles.name}>Annabelle</span>
-                  <span className={styles.warehouse}>Warehouse 2</span>
-                </div>
-                <Button variant="contained" className={styles.addBtn}>
-                  Remove Manager
-                </Button>
-              </div>
+              ))}
             </div>
+          ) : (
+            <p>No managers found.</p>
+          )}
 
-            <h2>Employees</h2>
+          <h2>Employees</h2>
 
-            <div className={styles.list}>
-              <div className={styles.item}>
-                <span className={styles.name}>Alice Byers</span>
-                <Button variant="contained" className={styles.addBtn}>
+          {!loading && employees.length === 0 && <p>No employees found.</p>}
+
+          <div className={styles.list}>
+            {employees.map((emp) => (
+              <div key={emp.userId} className={styles.item}>
+                <span className={styles.name}>{emp.name ?? 'No Name'}</span>
+                <Button
+                  variant="contained"
+                  className={styles.addBtn}
+                  onClick={() => handlePromote(emp.userId)}
+                >
                   Promote to Manager
                 </Button>
               </div>
-              <div className={styles.item}>
-                <span className={styles.name}>Sasha Devon</span>
-                <Button variant="contained" className={styles.addBtn}>
-                  Promote to Manager
-                </Button>
-              </div>
-              <div className={styles.item}>
-                <span className={styles.name}>Micheal Reese</span>
-                <Button variant="contained" className={styles.addBtn}>
-                  Promote to Manager
-                </Button>
-              </div>
-            </div>
-          </section>
-        )}
+            ))}
+          </div>
+        </section>
+      )}
 
+        
         {tab === 1 && (
-          <section className={styles.content}>
-            <div className={styles.formRow}>
-              <div className={styles.flex1}>
-                <label className={styles.label}>Name</label>
-                <input placeholder="..." className={styles.inputField} />
-              </div>
+      <section className={styles.content}>
+        <div className={styles.formRow}>
+          <div className={styles.flex1}>
+            <label className={styles.label}>Name</label>
+            <input placeholder="..." className={styles.inputField} />
+          </div>
 
-              <div className={styles.flex1}>
-                <label className={styles.label}>Temporary Password</label>
-                <input placeholder="..." className={styles.inputField} />
-              </div>
+          <div className={styles.flex1}>
+            <label className={styles.label}>Temporary Password</label>
+            <input placeholder="..." className={styles.inputField} />
+          </div>
+        </div>
+
+        <div className={styles.formRow}>
+          <div className={styles.flex1}>
+            <label className={styles.label}>Warehouse</label>
+            <select className={styles.selectField}>
+              <option>Warehouse Selection</option>
+            </select>
+          </div>
+
+          <div className={styles.flex1}>
+            <label className={styles.label}>Role</label>
+            <select className={styles.selectField}>
+              <option>Role Selection</option>
+            </select>
+          </div>
+        </div>
+
+        <Button variant="contained" className={styles.addBtn}>
+          Add Employee
+        </Button>
+      </section>
+    )}
+
+            {tab === 2 && (
+        <section className={styles.content}>
+          <h2>Warehouses</h2>
+
+          <div style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>
+            <div style={{ marginBottom: '0.8rem' }}>Warehouse 1</div>
+            <div>Warehouse 2</div>
+          </div>
+
+          <h2 style={{ marginTop: '3rem' }}>Add Warehouse</h2>
+
+          <div className={styles.formRowAddWarehouse}>
+            <div className={styles.flex1}>
+              <label className={styles.label}>Name</label>
+              <input placeholder="..." className={styles.inputField} />
             </div>
 
-            <div className={styles.formRow}>
-              <div className={styles.flex1}>
-                <label className={styles.label}>Warehouse</label>
-                <select className={styles.selectField}>
-                  <option>Warehouse Selection</option>
-                </select>
-              </div>
-
-              <div className={styles.flex1}>
-                <label className={styles.label}>Role</label>
-                <select className={styles.selectField}>
-                  <option>Role Selection</option>
-                </select>
-              </div>
+            <div className={styles.flex1}>
+              <label className={styles.label}>Manager</label>
+              <select className={styles.selectField}>
+                <option>Manager Selection</option>
+              </select>
             </div>
 
             <Button variant="contained" className={styles.addBtn}>
-              Add Employee
+              Add Warehouse
             </Button>
-          </section>
-        )}
-
-        {tab === 2 && (
-          <section className={styles.content}>
-            <h2>Warehouses</h2>
-
-            <div style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>
-              <div style={{ marginBottom: '0.8rem' }}>Warehouse 1</div>
-              <div>Warehouse 2</div>
-            </div>
-
-            <h2 style={{ marginTop: '3rem' }}>Add Warehouse</h2>
-
-            <div className={styles.formRowAddWarehouse}>
-              <div className={styles.flex1}>
-                <label className={styles.label}>Name</label>
-                <input placeholder="..." className={styles.inputField} />
-              </div>
-
-              <div className={styles.flex1}>
-                <label className={styles.label}>Manager</label>
-                <select className={styles.selectField}>
-                  <option>Manager Selection</option>
-                </select>
-              </div>
-
-              <Button variant="contained" className={styles.addBtn}>
-                Add Warehouse
-              </Button>
-            </div>
-          </section>
-        )}
+          </div>
+        </section>
+      )}
 
         {tab === 3 && (
       <section className={styles.content}>
