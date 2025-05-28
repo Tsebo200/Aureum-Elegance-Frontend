@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../FinishedProducts/FinishedProducts.module.scss';
 import { Button, Tabs, Tab, useMediaQuery } from "@mui/material";
 import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
+import FragrancesComponent from '../../Components/FragrancesComponent/FragrancesComponent';
+import { IngredientsPanel } from '../Ingredients/Ingredients';
+import type { Fragrance } from '../../services/models/fragranceModel';
+import { getFinishedProducts } from '../../services/BatchFinishedProductServiceRoute';
+import type { BatchFinishedProduct } from '../../services/models/batchFinishedProductModel';
 
 export default function FinishedProducts() {
-  const [tab, setTab] = React.useState(4);
+  const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
+  const [finishedProducts, setFinishedProducts] = useState<BatchFinishedProduct[]>([]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const data = await getFinishedProducts();
+      setFinishedProducts(data);
+    } catch (error) {
+      console.error("Error fetching finished products:", error);
+    }
+  };
+  fetchData();
+}, []);
+
+ 
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -33,35 +53,16 @@ export default function FinishedProducts() {
         </Tabs>
 
         {tab === 0 && (
+          <FragrancesComponent  />
+        )}
+
+        {tab === 1 && (
           <section className={styles.content}>
-            <h1>Fragrances</h1>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Ingredients</th>
-                  <th>Cost per unit</th>
-                  <th>Amount in Stock</th>
-                </tr>
-                <hr />
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Moonlit Jasmine</td>
-                  <td>Bergamot Oil, Vanillin Powder, Stabilizers</td>
-                  <td>R 45.00</td>
-                  <td>100</td>
-                  <td>
-                    <Button className={styles.Btn}>Produce</Button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <IngredientsPanel />
           </section>
         )}
 
-
-         {tab === 2 && (
+        {tab === 2 && (
           <section className={styles.content}>
             <table className={styles.table}>
               <thead>
@@ -86,119 +87,38 @@ export default function FinishedProducts() {
           </section>
         )}
 
-        {tab === 3 && (
-          <ProducePerfumeForm />
-          // <section className={styles.content}>
-          //   <h1>Produce Perfume</h1>
-          //   <form className={styles.form}>
-          //     <div className={styles.field}>
-          //       <label>Name</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Description</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         multiline
-          //         minRows={4}
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Cost Per Unit</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Volume Per Bottle (in millilitres)</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Ingredients</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Quantities Used</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Packaging</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <div className={styles.field}>
-          //       <label>Batches</label>
-          //       <TextField
-          //         placeholder="..."
-          //         fullWidth
-          //         variant="filled"
-          //         InputProps={{ disableUnderline: true }}
-          //       />
-          //     </div>
-          //     <br />
-          //     <Button variant="contained" className={styles.addBtn}>
-          //       Produce Perfume
-          //     </Button>
-          //   </form>
-          // </section>
-        )}
+        {tab === 3 && <ProducePerfumeForm  />}
 
         {tab === 4 && (
-          <section className={styles.content}>
-            <h1>Finished Products</h1>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Ingredients</th>
-                  <th>Cost per unit</th>
-                  <th>Status</th>
-                  <th>Batches Finished</th>
-                </tr>
-                <hr />
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Moonlit Jasmine</td>
-                  <td>Bergamot Oil, Vanillin Powder, Stabilizers</td>
-                  <td>R 45.00</td>
-                  <td>In Progress</td>
-                  <td>100</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        )}
+  <section className={styles.content}>
+    <h1>Finished Products</h1>
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Status</th>
+          <th>Batch ID</th>
+          <th>Warehouse ID</th>
+        </tr>
+        <hr />
+      </thead>
+      <tbody>
+        {finishedProducts.map((item) => (
+          <tr key={`${item.batchID}-${item.productID}`}>
+            <td>{item.productID}</td>
+            <td>{item.quantity}</td>
+            <td>{item.unit}</td>
+            <td>{item.status}</td>
+            <td>{item.batchID}</td>
+            <td>{item.warehouseID}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+)}
       </main>
     </div>
   );

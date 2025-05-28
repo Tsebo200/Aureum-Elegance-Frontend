@@ -1,0 +1,86 @@
+/* Outer panel wrapper matching Suppliers’ .content */
+.content {
+  background: #ffffff00;
+  border-radius: 35px;
+  padding: 0;
+  background-image: url('../../assets/Large Element.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional title for context */
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Table container (scrollable if needed) */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Inner table wrapper for background and padding */
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 219, 177, 0);
+  border-radius: 0 35px 35px 35px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Header row laid out horizontally */
+.tableHeader {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Header cells flex equally */
+.headerCell {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Divider between header and rows */
+.divider {
+  width: 100%;
+  margin: 1rem 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Data row laid out horizontally */
+.tableRow {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+/* Data cells flex equally */
+.cell {
+  flex: 1;
+}
+
+.Btn {
+  margin-bottom: 2rem !important;
+  width: 196px !important;
+  height: 53px !important;
+  border-radius: 35px !important;
+  background-color: #E03E47 !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-family: Roboto, sans-serif !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: block !important;
+  align-self: flex-start !important;
+}

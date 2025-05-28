@@ -1,14 +1,14 @@
 /* Layout & Main */
 .layout {
   display: flex;
-  min-height: 1080px;
-  min-width: 1920px;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: #fbf1e6;
 }
 
 .main-content {
   flex: 1;
-  padding: 32px 64px;
+  margin-left: 30px;
 }
 
 .page-title {
@@ -26,20 +26,24 @@
 
 /* Warehouse Section */
 .warehouse-section {
-  margin-bottom: 64px;
+  border: solid 1px #00000000;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .section-title {
   font-size: 24px;
   font-family: Roboto, sans-serif;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 60px;
 }
 
 /* WarehouseSelector */
 .selector-container {
   position: relative;
+  align-self: center;
   width: 343px;
+  margin-bottom: 2rem;
 }
 
 .warehouse-select {
@@ -50,9 +54,10 @@
   height: 75px;
   border-radius: 35px;
   background-color: #ffdbb1;
-  padding: 0 0px 0 32px;
+  padding: 0 0px 0 50px;
   display: flex;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .dropdown-icon {
@@ -62,29 +67,53 @@
   transform: translateY(-50%);
 }
 
+.secondFormContainer{
+  width: 360px;
+  height: 110px;
+  float: left;
+}
+
+.WarehouseToForm{
+  width: 250px;
+  height: 50px;
+  border-radius: 35px;
+  float: left;
+}
+
+.warehouseToHeading{
+  font-family: RobotoRegular;
+  margin-left: 60px;
+}
+
 /* Forms Container */
 .forms-container {
   display: flex;
-  gap: 64px;
+  border: solid 1px #00000000;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
 }
 
 /* Ingredient & Packaging Forms */
 .form-section {
-  flex: 1;
-  border: 0px solid #000;
+  flex: 0 1 500px; /* Prevent stretching; allow shrink/grow with a base */
+  max-width: 400px;
+  width: 100%;
   margin-bottom: 52px;
 }
 
 .form-title {
-  font-size: 24px;
+  font-size: 20px;
   font-family: Roboto, sans-serif;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .form-container {
   background-color: #ffdbb1;
-  border-radius: 35px;
-  padding: 32px;
+  border-radius: 25px;
+  padding: 30px;
 }
 
 .form-group {
@@ -93,19 +122,19 @@
 
 .form-label {
   display: block;
-  font-size: 24px;
+  font-size: 17px;
   font-family: Roboto, sans-serif;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   justify-content: flex-start;
 }
 
 .form-input {
-  font-size: 20px;
-  width: 400px;
-  height: 75px;
+  font-size: 17px;
+  width: 300px;
+  height: 40px;
   border-radius: 35px;
   background-color: #fbf1e6;
-  padding: 0 32px;
+  padding: 0 20px 0 20px;
   border: none;
   justify-content: flex-start;
 }
@@ -116,12 +145,12 @@
 }
 
 .submit-button {
-  width: 343px;
-  height: 75px;
+  width: 200px;
+  height: 45px;
   border-radius: 35px;
   background-color: #e03e47;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   font-family: Roboto, sans-serif;
   border: none;
   cursor: pointer;

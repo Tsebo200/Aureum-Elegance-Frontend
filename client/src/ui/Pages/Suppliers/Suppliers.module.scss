@@ -187,10 +187,16 @@ hr {
 
 .removeBtn {
   margin-left: 1rem;
+  border-radius: 35px !important;
+  background-color: #E03E47 !important;
   width: 100px !important;
   height: 30px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 15px !important;
+  border: none !important;
+  font-family: Roboto, sans-serif !important;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
   &:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 
