@@ -1,14 +1,13 @@
-//should not be visible behind contents
 .page-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
+  width: 100% !important;
+  overflow-y: auto; // ✅ allows scrolling when needed
   color: rgba(70, 6, 3, 1);
   font-weight: 400;
   text-align: center;
+  position: absolute; // ✅ better than absolute for full-page layouts
 }
 
 .background-image {
@@ -16,7 +15,7 @@
   position:absolute;
   inset: 0;
   height: 100%;
-  width: 100%;
+  width: 100% !important;
   object-fit: cover;
   object-position: center;
 }
@@ -25,8 +24,8 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.11);
   display: flex;
-  width: 100%;
-  padding: 166px 80px;
+  width: 100% !important;
+  padding-top: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -37,6 +36,10 @@
   }
 }
 
+.logo-text {
+  margin-bottom: -60px;
+}
+
 .form-container-login {
   border-radius: 25px;
   border: 12px solid transparent;
@@ -44,97 +47,73 @@
   border-image-slice: 1;
   border-image-repeat: stretch;
   border-image-width: 12px;
-
   background-color: rgba(240, 203, 154, 1);
-  display: flex;
-  margin-bottom: -33px;
-  height: 748px;
-  width: 443.25px;
-  max-width: 100%;
-  padding: 32px 47px;
-  flex-direction: column;
-  align-items: stretch;
 
-  @media (max-width: 991px) {
-    margin-bottom: 10px;
-    padding: 32px 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 
 .welcome-text {
-  font-size: 48px;
+  font-size: 32px;
   font-family: Arimo, -apple-system, Roboto, Helvetica, sans-serif;
   align-self: center;
-  margin-top: 21px;
+  margin-bottom: -30px;
 
   @media (max-width: 991px) {
-    font-size: 40px;
+    font-size: 28px;
   }
 }
 
 .login-text {
-  font-size: 32px;
+  font-size: 24px;
   font-family: Arimo, -apple-system, Roboto, Helvetica, sans-serif;
   align-self: center;
-  margin-top: 21px;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  margin-top: 37px;
-
-  @media (max-width: 991px) {
-    margin-top: 40px;
-  }
+  width: 300px;
 }
 
 .input-label {
-  font-size: 20px;
+  font-size: 16px;
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
-  margin-left: 28px;
-  margin-bottom: 8px;
-  align-self: flex-start;
-
-  @media (max-width: 991px) {
-    margin-left: 10px;
-  }
+  margin-left: 0.5rem;
+  margin-bottom: 0.25rem;
+  align-self: left;
 }
 
 .styled-input {
   border-radius: 25px;
   background-color: rgba(250, 244, 237, 1);
-  height: 62px;
-  border: none;
-  padding: 0 20px;
-  font-size: 16px;
+  height: 30px;
+  padding: 0 1rem;
+  font-size: 14px;
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(224, 62, 71, 0.5);
-  }
-
-  @media (max-width: 991px) {
-    max-width: 100%;
+    box-shadow: 0 0 0 2px rgba(224, 173, 62, 0.534);
   }
 }
 
 .login-button {
-  border-radius: 35px;
+  border-radius: 30px;
   background-color: rgba(224, 62, 71, 1);
   align-self: center;
-  margin-top: 88px;
-  width: 171px;
-  max-width: 100%;
-  padding: 15px 50px;
+  margin-top: 1rem;
+  width: fit-content;
+  padding: 0.75rem 2rem;
   font-family: "ADLaM Display", -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 1);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: rgba(204, 42, 51, 1);
@@ -145,8 +124,4 @@
     box-shadow: 0 0 0 2px rgba(224, 62, 71, 0.5);
   }
 
-  @media (max-width: 991px) {
-    padding: 15px 20px;
-    margin-top: 40px;
-  }
 }

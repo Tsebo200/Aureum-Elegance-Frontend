@@ -31,7 +31,7 @@ function StockCard() {
           <div className={styles.iconStatus}></div>
         </div>
       ) : (
-        <div className={styles.cardContainer}></div>
+        <div className={styles.cardContainer}></div> //Load this if no data is available
       )}
     </div>
   );

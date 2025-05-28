@@ -1,11 +1,63 @@
-import styles from './StockRequest.module.scss'
-import Sidebar from '../../Components/Sidebar'
-import { Button } from '@mui/material'
-import WarehouseForm from '../../Components/Forms/StockRequest/WarehouseSelect'
-import ItemRequestTextField from '../../Components/Forms/StockRequest/ItemRequestTextField'
-import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField'
+import React, { useState } from 'react';
+import styles from './StockRequest.module.scss';
+import Sidebar from '../../Components/Sidebar';
+import { Button } from '@mui/material';
+
+import StatusSelect from '../../Components/Forms/StockRequest/StatusSelect';
+import UserTextField from '../../Components/Forms/StockRequest/UserTextField';
+import IngredientsTextField from '../../Components/Forms/StockRequest/IngredientsTextField';
+import WarehouseTextField from '../../Components/Forms/StockRequest/WarehouseTextField';
+import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField';
+
+import { addStockRequestIngredient } from '../../services/StockRequestIngredientsServiceRoute';
 
 function StockRequest() {
+  const [formData, setFormData] = useState({
+    status: '',
+    userId: '',
+    ingredientsId: '',
+    warehouseId: '',
+    amountRequest: '',
+  });
+
+  // Handle generic field change
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    // Compose data with current ISO timestamp for requestDate
+    const dataToSend = {
+      ...formData,
+      id: 0, // or omit if backend generates it
+      requestDate: new Date().toISOString(),
+      // Make sure to convert numeric fields from strings if needed:
+      amountRequest: Number(formData.amountRequest),
+      userId: Number(formData.userId),
+      ingredientsId: Number(formData.ingredientsId),
+      warehouseId: Number(formData.warehouseId),
+    };
+
+    try {
+      await addStockRequestIngredient(dataToSend);
+      alert('Stock Request submitted successfully!');
+      // Clear form if needed:
+      setFormData({
+        status: '',
+        userId: '',
+        ingredientsId: '',
+        warehouseId: '',
+        amountRequest: '',
+      });
+    } catch (error) {
+      console.error('Error submitting stock request:', error);
+      alert('Failed to submit stock request.');
+    }
+  };
+
   return (
     <div>
       <div className={styles.mainContainer}>
@@ -19,41 +71,83 @@ function StockRequest() {
 
               <div className={styles.topContainer}>
                 <div className={styles.firstFormContainer}>
-                  <h3 className={styles.itemHeading}>Item Request</h3>
-                  <div className={styles.itemRequestForm}><ItemRequestTextField /></div>
+                  <h3 className={styles.warehouseToHeading}>Status Selection</h3>
+                  <div className={styles.WarehouseToForm}>
+                    <StatusSelect
+                      value={formData.status}
+                      onChange={(val) => handleChange('status', val)}
+                    />
+                  </div>
                 </div>
+
                 <div className={styles.secondFormContainer}>
-                    <h3 className={styles.warehouseToHeading}>Warehouse To</h3>
-                    <div className={styles.WarehouseToForm}><WarehouseForm /></div>
+                  <h3 className={styles.itemHeading}>User Id</h3>
+                  <div className={styles.itemRequestForm}>
+                    <UserTextField
+                      value={formData.userId}
+                      onChange={(val) => handleChange('userId', val)}
+                    />
+                  </div>
                 </div>
+
                 <div className={styles.thirdFormContainer}>
-                    <h3 className={styles.warehouseFromHeading}>Warehouse From</h3>
-                    <div className={styles.WarehouseFromForm}><WarehouseForm /></div>
+                  <h3 className={styles.warehouseFromHeading}>Ingredients Id</h3>
+                  <div className={styles.WarehouseFromForm}>
+                    <IngredientsTextField
+                      value={formData.ingredientsId}
+                      onChange={(val) => handleChange('ingredientsId', val)}
+                    />
+                  </div>
                 </div>
               </div>
 
               <div className={styles.middleContainer}>
                 <div className={styles.fourthFormContainer}>
-                <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
+                  <h3 className={styles.amountHeading}>Warehouse Id</h3>
                   <div className={styles.amountForm}>
-                    <AmountTextField />
+                    <WarehouseTextField
+                      value={formData.warehouseId}
+                      onChange={(val) => handleChange('warehouseId', val)}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.fourthFormContainer}>
+                  <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
+                  <div className={styles.amountForm}>
+                    <AmountTextField
+                      value={formData.amountRequest}
+                      onChange={(val) => handleChange('amountRequest', val)}
+                    />
                   </div>
                 </div>
               </div>
+
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
-                  <Button variant="contained" className={styles.submitBtn}>
+                  <Button
+                    variant="contained"
+                    className={styles.submitBtn}
+                    onClick={handleSubmit}
+                    disabled={
+                      !formData.status ||
+                      !formData.userId ||
+                      !formData.ingredientsId ||
+                      !formData.warehouseId ||
+                      !formData.amountRequest
+                    }
+                  >
                     Submit Stock Transfer
                   </Button>
-                  <div className={styles.amountForm}></div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default StockRequest
+export default StockRequest;

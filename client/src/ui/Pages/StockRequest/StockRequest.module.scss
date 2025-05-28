@@ -90,14 +90,15 @@ html, body {
                 height: 110px;
                 float: left;
 
-                .itemHeading{
+                .warehouseToHeading{
                     font-family: RobotoRegular;
-                    margin-left: 65px;
+                    margin-left: 60px;
                 }
                 
                 .itemRequestForm{
                     width: 250px;
                     height: 50px;
+                    margin-top: -17px;
                     border-radius: 35px;
                     float: left;
                 }
@@ -114,11 +115,12 @@ html, body {
                     float: left;
                 }
 
-                .warehouseToHeading{
-                    font-family: RobotoRegular;
-                    margin-left: 60px;
+                .itemHeading{
+                font-family: RobotoRegular;
+                margin-left: 65px;
                 }
             }
+            
             .thirdFormContainer{
                 width: 360px;
                 height: 110px;
@@ -127,6 +129,7 @@ html, body {
                 .WarehouseFromForm{
                     width: 250px;
                     height: 50px;
+                    margin-top: -17px;
                     border-radius: 35px;
                     float: left;
                 }
