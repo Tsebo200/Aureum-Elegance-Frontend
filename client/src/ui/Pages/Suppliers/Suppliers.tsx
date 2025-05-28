@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../Suppliers/Suppliers.module.scss';
 import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
-import {DeliveriesPanel} from '../StockManagement/SMDeliveries';
+import WasteLossListComponent from '../../Components/WasteLossListComponent/WasteLossListComponent';
+import { DeliveriesPanel } from '../StockManagement/SMDeliveries';
+import { getSuppliers, addSupplier } from '../../services/SupplierServiceRoute';
+import type { Supplier } from '../../services/models/supplierModel';
 
 export default function Suppliers() {
   const [tab, setTab] = useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
-  const [suppliers, setSuppliers] = useState([
-    { name: "Isaac's Fragrances", contact: "Alice", phone: "012 463 8393" },
-    { name: 'Marie Packagings', contact: 'Micheal', phone: '012 567 6014' },
-  ]);
+  const [suppliers, setSuppliers] = useState<Supplier[]>([]);
+
+  // Form state
+  const [supplierName, setSupplierName] = useState('');
+  const [contactPerson, setContactPerson] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getSuppliers();
+        setSuppliers(data);
+      } catch (error) {
+        console.error('Error fetching suppliers:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
@@ -19,6 +36,31 @@ export default function Suppliers() {
     const updated = [...suppliers];
     updated.splice(index, 1);
     setSuppliers(updated);
+  };
+
+  const handleAddSupplier = async () => {
+    if (!supplierName.trim() || !contactPerson.trim() || !phoneNumber.trim()) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const newSupplier: Supplier = {
+      supplierName,
+      contactPerson,
+      phoneNumber,
+      supplierID: 0
+    };
+
+    try {
+      const added = await addSupplier(newSupplier);
+      setSuppliers([...suppliers, added]); // Update UI with the new supplier
+      setSupplierName('');
+      setContactPerson('');
+      setPhoneNumber('');
+    } catch (error) {
+      console.error('Failed to add supplier:', error);
+      alert("There was an error adding the supplier.");
+    }
   };
 
   return (
@@ -45,10 +87,10 @@ export default function Suppliers() {
 
             <div className={styles.list}>
               {suppliers.map((supplier, index) => (
-                <div key={index} className={styles.item}>
-                  <span className={styles.name}>{supplier.name}</span>
-                  <span className={styles.contact}>{supplier.contact}</span>
-                  <span className={styles.phone}>{supplier.phone}</span>
+                <div key={supplier.supplierID ?? index} className={styles.item}>
+                  <span className={styles.name}>{supplier.supplierName}</span>
+                  <span className={styles.contact}>{supplier.contactPerson}</span>
+                  <span className={styles.phone}>{supplier.phoneNumber}</span>
                   <button
                     className={styles.removeBtn}
                     onClick={() => handleRemove(index)}
@@ -60,7 +102,13 @@ export default function Suppliers() {
             </div>
 
             <h2>Add Supplier</h2>
-            <form className={styles.form}>
+            <form
+              className={styles.form}
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAddSupplier();
+              }}
+            >
               <div className={styles.fieldsWrapper}>
                 <div className={styles.field}>
                   <label>Supplier Name</label>
@@ -69,6 +117,8 @@ export default function Suppliers() {
                     fullWidth
                     variant="filled"
                     InputProps={{ disableUnderline: true }}
+                    value={supplierName}
+                    onChange={(e) => setSupplierName(e.target.value)}
                   />
                 </div>
                 <div className={styles.field}>
@@ -78,6 +128,8 @@ export default function Suppliers() {
                     fullWidth
                     variant="filled"
                     InputProps={{ disableUnderline: true }}
+                    value={contactPerson}
+                    onChange={(e) => setContactPerson(e.target.value)}
                   />
                 </div>
                 <div className={styles.field}>
@@ -87,12 +139,14 @@ export default function Suppliers() {
                     fullWidth
                     variant="filled"
                     InputProps={{ disableUnderline: true }}
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
               </div>
 
               <div className={styles.buttonWrapper}>
-                <Button variant="contained" className={styles.addBtn}>
+                <Button type="submit" variant="contained" className={styles.addBtn}>
                   Add Supplier
                 </Button>
               </div>
@@ -106,36 +160,7 @@ export default function Suppliers() {
           </section>
         )}
 
-        {tab === 2 && (
-          <section className={styles.content}>
-            <h1>Waste Loss</h1>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Type</th>
-                  <th>Quantity Lost</th>
-                  <th>Date of Loss</th>
-                  <th>Reason</th>
-                  <th>Recorded User</th>
-                </tr>
-                <hr />
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Moonlit Jasmine</td>
-                  <td>Fragrance</td>
-                  <td>5</td>
-                  <td>15/05/2025</td>
-                  <td>Expiry Reached</td>
-                  <td>Sarah</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        )}
-
-
+        {tab === 2 && <WasteLossListComponent />}
         {tab === 3 && (
           <section className={styles.content}>
             <RecordLoss />
