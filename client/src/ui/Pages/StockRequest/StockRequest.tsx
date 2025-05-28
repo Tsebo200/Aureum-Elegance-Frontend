@@ -9,7 +9,7 @@ import IngredientsTextField from '../../Components/Forms/StockRequest/Ingredient
 import WarehouseTextField from '../../Components/Forms/StockRequest/WarehouseTextField';
 import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField';
 
-// import { addStockRequestIngredients } from '../../services/StockRequestIngredientsServiceRoute';
+import { addStockRequestIngredient } from '../../services/StockRequestIngredientsServiceRoute';
 
 function StockRequest() {
   const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ function StockRequest() {
     };
 
     try {
-      await addStockRequestIngredients(dataToSend);
+      await addStockRequestIngredient(dataToSend);
       alert('Stock Request submitted successfully!');
       // Clear form if needed:
       setFormData({
