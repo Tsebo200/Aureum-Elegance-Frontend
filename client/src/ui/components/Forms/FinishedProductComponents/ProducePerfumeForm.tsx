@@ -22,7 +22,6 @@ import { getAllIngredients } from "../../../services/IngredientsServiceRoutes";
 import type { Ingredient } from "../../../services/models/ingredientModel";
 import type { PostFragrance } from "../../../services/models/fragranceModel";
 import { addFragrance, addFragranceIngredient } from "../../../services/FragranceServiceRoute";
-import { useLocation } from "react-router-dom";
 interface SelectedIngredient {
   id: number;
   name: string;
@@ -57,8 +56,8 @@ const ProducePerfumeForm = () => {
  
 
   
-const handleIngredientSelectChange = (event: SelectChangeEvent) => {
-  const selected = event.target.value as unknown as string[];
+const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
+  const selected = event.target.value as string[];
 
   const updatedIngredients = selected.map((name) => {
     const existing = selectedIngredients.find((i) => i.name === name);
@@ -104,7 +103,12 @@ const handleIngredientSelectChange = (event: SelectChangeEvent) => {
           })
         )
       );
-
+      setName("");
+      setDescription("");
+      setCost(0);
+      setVolume(0);
+      setExpiryDate("");
+      setSelectedIngredients([]);
       alert("Fragrance and ingredients created successfully.");
     } catch (error) {
       console.error("Error producing perfume:", error);
