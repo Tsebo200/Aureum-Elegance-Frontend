@@ -6,7 +6,7 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-export default function BasicTextFields({ value , onChange }: Props) {
+export default function BasicTextFields({ value, onChange }: Props) {
   return (
     <Box
       component="form"
@@ -16,7 +16,7 @@ export default function BasicTextFields({ value , onChange }: Props) {
     >
       <TextField
         id="outlined-basic"
-        label="Enter Amount"
+        label="Enter Warehouse Id"
         variant="outlined"
         type="text"
         value={value}

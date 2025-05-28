@@ -2,11 +2,12 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 type Props = {
-  value: string;
-  onChange: (value: string) => void;
+  value: string ;
+  onChange: (val: string) => void;
+  
 };
 
-export default function BasicTextFields({ value , onChange }: Props) {
+export default function BasicTextFields({ value, onChange }: Props) {
   return (
     <Box
       component="form"
@@ -16,7 +17,7 @@ export default function BasicTextFields({ value , onChange }: Props) {
     >
       <TextField
         id="outlined-basic"
-        label="Enter Amount"
+        label="Enter Ingredient Id"
         variant="outlined"
         type="text"
         value={value}

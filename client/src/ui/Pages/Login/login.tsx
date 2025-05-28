@@ -47,7 +47,7 @@ export function Login() {
 
           <Link to="/dashboard">
             <button type="submit" className="login-button">
-              Log In
+              Login
             </button>
           </Link>
         </form>
