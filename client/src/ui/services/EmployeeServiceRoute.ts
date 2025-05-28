@@ -2,10 +2,22 @@ import type { User, Warehouse, StockRequest } from './models/employeeModel';
 
 const API_URL = "http://localhost:5167/api";
 
+// Mapping backend role number to string
+const roleMap = ['Admin', 'Manager', 'Employee'] as const;
+
+// Helper to map user role enum
+function parseUser(user: any): User {
+  return {
+    ...user,
+    role: roleMap[user.role as number], // Converts 0 → 'Admin', etc.
+  };
+}
+
 export async function getEmployees(): Promise<User[]> {
   const res = await fetch(`${API_URL}/User`);
   if (!res.ok) throw new Error('Failed to fetch users');
-  return res.json();
+  const users = await res.json();
+  return users.map(parseUser);
 }
 
 export async function promoteToManager(userId: number): Promise<void> {
@@ -29,7 +41,8 @@ export async function addEmployee(user: Partial<User>): Promise<User> {
     body: JSON.stringify(user),
   });
   if (!res.ok) throw new Error('Failed to add user');
-  return res.json();
+  const createdUser = await res.json();
+  return parseUser(createdUser);
 }
 
 export async function getWarehouses(): Promise<Warehouse[]> {
