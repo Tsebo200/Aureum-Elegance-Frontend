@@ -11,6 +11,7 @@ const StockTable: React.FC = () => (
         <div className={styles.headerCell}>Date Arrived</div>
         <div className={styles.headerCell}>Ordered</div>
         <div className={styles.headerCell}>Cost</div>
+        <div className={styles.headerCell}></div>
       </div>
       <img
         className={styles.divider}
@@ -24,6 +25,10 @@ const StockTable: React.FC = () => (
         <div className={styles.cell}>15/05/2025</div>
         <div className={styles.cell}>100</div>
         <div className={styles.cell}>R500,50</div>
+        <div className={styles.cell}>
+          <button className="acceptBtn">Accept</button>
+          <button className="cancelBtn">Cancel</button>
+        </div>
       </div>
     </div>
   </div>
