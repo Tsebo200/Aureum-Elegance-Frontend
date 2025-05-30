@@ -6,17 +6,20 @@ import { Button } from '@mui/material';
 import StatusSelect from '../../Components/Forms/StockRequest/StatusSelect';
 import UserTextField from '../../Components/Forms/StockRequest/UserTextField';
 import IngredientsTextField from '../../Components/Forms/StockRequest/IngredientsTextField';
-import WarehouseTextField from '../../Components/Forms/StockRequest/WarehouseTextField';
 import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField';
 
 import { addStockRequestIngredient } from '../../services/StockRequestIngredientsServiceRoute';
 import WarehouseSelect from '../../Components/Forms/StockRequest/WarehouseSelect';
+import PackagingSelect from '../../Components/Forms/StockRequest/PackagingSelect';
+import RequestType from '../../Components/Forms/StockRequest/RequestType';
 
 function StockRequest() {
   const [formData, setFormData] = useState({
+    requestType: 'ingredient', // default selected
     status: '',
     userId: '',
     ingredientsId: '',
+    packagingId: '',
     warehouseId: '',
     amountRequest: '',
   });
@@ -47,9 +50,11 @@ function StockRequest() {
       alert('Stock Request submitted successfully!');
       // Clear form if needed:
       setFormData({
+        requestType: 'ingredient', // default selected
         status: '',
         userId: '',
         ingredientsId: '',
+        packagingId: '',
         warehouseId: '',
         amountRequest: '',
       });
@@ -68,12 +73,58 @@ function StockRequest() {
           <div className={styles.horLine}></div>
           <div className={styles.mainSection}>
             <div className={styles.spacer}></div>
-            <div className={styles.formContainer}>
 
+
+            <div className={styles.formContainer}>
               <div className={styles.topContainer}>
                 <div className={styles.firstFormContainer}>
-                  <h3 className={styles.warehouseToHeading}>Status Selection</h3>
+                  <h3 className={styles.warehouseToHeading}>Request Type</h3>
                   <div className={styles.WarehouseToForm}>
+                    <RequestType
+                      value={formData.requestType}
+                      onChange={(val) => handleChange('requestType', val)}
+                    />               
+                  </div>
+                </div>
+
+                <div className={styles.secondFormContainer}>
+                  <div className={styles.itemRequestForm}>
+                {/* Ingredients and Packaging Request Input - Toggle between the two when Stock Type is selected */}
+                  {formData.requestType === 'ingredient' ? (
+                    <>
+                      <h3 className={styles.warehouseFromHeading}>Ingredient</h3>
+                      <IngredientsTextField
+                        value={formData.ingredientsId}
+                        onChange={(val) => handleChange('ingredientsId', val)}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <h3 className={styles.amountHeading}>Packaging</h3>
+                      <PackagingSelect
+                        value={formData.packagingId}
+                        onChange={(val) => handleChange('packagingId', val)}
+                      />
+                    </>
+                  )}
+                  </div>
+                </div>
+
+                <div className={styles.thirdFormContainer}>
+                  <h3 className={styles.warehouseFromHeading}>User</h3>
+                  <div className={styles.WarehouseFromForm}>
+                       <UserTextField
+                      value={formData.userId}
+                      onChange={(val) => handleChange('userId', val)}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.middleContainer}>
+                <div className={styles.fourthFormContainer}>
+                  <h3 className={styles.amountHeading}>Status</h3>
+                  <div className={styles.amountForm}>
                     <StatusSelect
                       value={formData.status}
                       onChange={(val) => handleChange('status', val)}
@@ -81,28 +132,6 @@ function StockRequest() {
                   </div>
                 </div>
 
-                <div className={styles.secondFormContainer}>
-                  <h3 className={styles.itemHeading}>User</h3>
-                  <div className={styles.itemRequestForm}>
-                    <UserTextField
-                      value={formData.userId}
-                      onChange={(val) => handleChange('userId', val)}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.thirdFormContainer}>
-                  <h3 className={styles.warehouseFromHeading}>Ingredients</h3>
-                  <div className={styles.WarehouseFromForm}>
-                    <IngredientsTextField
-                      value={formData.ingredientsId}
-                      onChange={(val) => handleChange('ingredientsId', val)}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.middleContainer}>
                 <div className={styles.fourthFormContainer}>
                   <h3 className={styles.amountHeading}>Warehouse</h3>
                   <div className={styles.amountForm}>
@@ -113,7 +142,7 @@ function StockRequest() {
                   </div>
                 </div>
 
-                <div className={styles.fourthFormContainer}>
+                  <div className={styles.fourthFormContainer}>
                   <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
                   <div className={styles.amountForm}>
                     <AmountTextField
@@ -122,7 +151,9 @@ function StockRequest() {
                     />
                   </div>
                 </div>
+                
               </div>
+              
 
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
