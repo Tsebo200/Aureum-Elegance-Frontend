@@ -35,7 +35,7 @@ export async function deleteUser(id: number): Promise<void> {
 }
 
 // Add a new login
-export async function addloginUser(user: Omit<User, "userId">): Promise<User> {
+export async function addLoginUser(user: Omit<User, "userId">): Promise<User> {
   const response = await fetch("http://localhost:5167/api/user/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

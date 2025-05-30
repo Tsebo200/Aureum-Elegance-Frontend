@@ -10,6 +10,7 @@ import WarehouseTextField from '../../Components/Forms/StockRequest/WarehouseTex
 import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField';
 
 import { addStockRequestIngredient } from '../../services/StockRequestIngredientsServiceRoute';
+import WarehouseSelect from '../../Components/Forms/StockRequest/WarehouseSelect';
 
 function StockRequest() {
   const [formData, setFormData] = useState({
@@ -81,7 +82,7 @@ function StockRequest() {
                 </div>
 
                 <div className={styles.secondFormContainer}>
-                  <h3 className={styles.itemHeading}>User Id</h3>
+                  <h3 className={styles.itemHeading}>User</h3>
                   <div className={styles.itemRequestForm}>
                     <UserTextField
                       value={formData.userId}
@@ -91,7 +92,7 @@ function StockRequest() {
                 </div>
 
                 <div className={styles.thirdFormContainer}>
-                  <h3 className={styles.warehouseFromHeading}>Ingredients Id</h3>
+                  <h3 className={styles.warehouseFromHeading}>Ingredients</h3>
                   <div className={styles.WarehouseFromForm}>
                     <IngredientsTextField
                       value={formData.ingredientsId}
@@ -103,9 +104,9 @@ function StockRequest() {
 
               <div className={styles.middleContainer}>
                 <div className={styles.fourthFormContainer}>
-                  <h3 className={styles.amountHeading}>Warehouse Id</h3>
+                  <h3 className={styles.amountHeading}>Warehouse</h3>
                   <div className={styles.amountForm}>
-                    <WarehouseTextField
+                    <WarehouseSelect
                       value={formData.warehouseId}
                       onChange={(val) => handleChange('warehouseId', val)}
                     />
@@ -126,18 +127,16 @@ function StockRequest() {
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
                   <Button
-                    variant="contained"
-                    className={styles.submitBtn}
+                    variant="contained" className={styles.submitBtn}
                     onClick={handleSubmit}
                     disabled={
                       !formData.status ||
                       !formData.userId ||
                       !formData.ingredientsId ||
                       !formData.warehouseId ||
-                      !formData.amountRequest
-                    }
-                  >
-                    Submit Stock Transfer
+                      !formData.amountRequest}
+                      >
+                    Submit Stock Request
                   </Button>
                 </div>
               </div>
