@@ -26,6 +26,9 @@ html, body {
     background: $background;
 }
 
+h3{
+    font-family: RobotoRegular;
+}
 
 .mainContainer{
   background: $background;
@@ -78,6 +81,8 @@ html, body {
     .formContainer{
         width: 100%;
         height: 490px;
+        margin-left: 20px;
+        // background: blue;
         float: left;
 
         .topContainer{
@@ -92,7 +97,7 @@ html, body {
 
                 .warehouseToHeading{
                     font-family: RobotoRegular;
-                    margin-left: 60px;
+                    margin-left: 10px;
                 }
                 
                 .itemRequestForm{
@@ -101,6 +106,7 @@ html, body {
                     margin-top: -17px;
                     border-radius: 35px;
                     float: left;
+
                 }
             }
             .secondFormContainer{
@@ -112,7 +118,7 @@ html, body {
                     width: 250px;
                     height: 50px;
                     border-radius: 35px;
-                    float: left;
+
                 }
 
                 .itemHeading{
@@ -129,14 +135,13 @@ html, body {
                 .WarehouseFromForm{
                     width: 250px;
                     height: 50px;
-                    margin-top: -17px;
                     border-radius: 35px;
-                    float: left;
+                    // float: left;
                 }
                 
                 .warehouseFromHeading{
                     font-family: RobotoRegular;
-                    margin-left: 50px;
+                    margin-left: 10px;
                 }
             }
         }
@@ -156,7 +161,6 @@ html, body {
                     width: 250px;
                     height: 50px;
                     border-radius: 35px;
-                    float: left;
                 }
                 .amountHeading{
                     font-family: RobotoRegular;
@@ -174,7 +178,7 @@ html, body {
             .fifthFormContainer{
                 width: 288px;
                 height: 100%;
-                margin-left: 400px;
+                margin-left: 350px;
                 border-radius: 35px;
                 float: left
             }
