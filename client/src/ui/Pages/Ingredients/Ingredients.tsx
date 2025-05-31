@@ -11,6 +11,7 @@ const IngredientsTable: React.FC<{ data: Ingredient[] }> = ({ data }) => (
         <div className={styles.headerCell}>Type</div>
         <div className={styles.headerCell}>Cost per Unit</div>
         <div className={styles.headerCell}>Expiry Date</div>
+        <div className={styles.headerCell}>Expired?</div>
         <div className={styles.headerCell}>Units (Litres/Stock)</div>
         <div className={styles.headerCell}></div>
       </div>
@@ -28,7 +29,9 @@ const IngredientsTable: React.FC<{ data: Ingredient[] }> = ({ data }) => (
           <div className={styles.cell}>
             {new Date(ing.expiryDate).toLocaleDateString()}
           </div>
-          <div className={styles.cell}>{ing.stockRequests?.length ?? "-"}</div>
+          <div className={styles.cell}>
+            {ing.isExpired ? "Yes" : "No"}
+          </div>
           <div className={styles.cell}>
             <button className={styles.Btn}>Stock Request</button>
           </div>
