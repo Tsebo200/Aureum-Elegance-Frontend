@@ -11,7 +11,7 @@ export default function AddStock() {
   const WarehouseSelector = () => (
     <div className="selector-container">
         <div className="WarehouseToForm">
-          <WarehouseForm />
+          {/* <WarehouseForm /> */}
         </div>
     </div>
   );
