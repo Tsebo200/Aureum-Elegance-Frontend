@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./PackagingPanel.module.scss";
 import type { Packaging } from "../../services/models/packagingModel";
-import { getAllPackaging } from "../../services/PackagingServiceRoute";
+import { getAllPackaging } from "../../services/packagingServiceRoute";
 
 const PackagingTable: React.FC<{ data: Packaging[] }> = ({ data }) => (
   <div className={styles.tableContainer}>

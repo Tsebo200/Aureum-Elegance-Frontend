@@ -10,7 +10,7 @@ import type { PostIngredient } from "../../services/models/ingredientModel";
 
 import {
   addPackaging,
-} from "../../services/PackagingServiceRoute";
+} from "../../services/packagingServiceRoute";
 import type { PostPackaging } from "../../services/models/packagingModel";
 
 export default function AddStock() {
@@ -81,7 +81,7 @@ export default function AddStock() {
         <section className="warehouse-section">
           <h2 className="section-title">Select Destination Warehouse</h2>
           <div className="selector-container">
-            <WarehouseForm />
+            {/* <WarehouseForm /> */}
           </div>
         </section>
 
