@@ -19,17 +19,54 @@ function RecordLoss() {
   const [reason, setReason] = useState('');
 
 const handleSubmit = async () => {
-  const payload = {
-    ingredientsId: Number(selectedItemId),
-    quantityLoss: parseInt(quantity),
+  const basePayload = {
+    quantityLoss: parseFloat(quantity),
     warehouseId: Number(warehouseId),
     userId: Number(userId),
     reason,
     dateOfLoss: new Date().toISOString()
   };
 
+  let endpoint = '';
+  let payload: any = {};
+
+  switch (itemType) {
+    case 'ingredient':
+      payload = {
+        ...basePayload,
+        ingredientsId: Number(selectedItemId)
+      };
+      endpoint = 'http://localhost:5167/api/WasteLossRecordIngredients';
+      break;
+    case 'packaging':
+      payload = {
+        ...basePayload,
+        packagingId: Number(selectedItemId)
+      };
+      endpoint = 'http://localhost:5167/api/WasteLossRecordPackaging';
+      break;
+    case 'fragrance':
+      payload = {
+        ...basePayload,
+        fragranceId: Number(selectedItemId)
+      };
+      endpoint = 'http://localhost:5167/api/WasteLossRecordFragrance';
+      break;
+    case 'batchFinishedProduct':
+      payload = {
+        ...basePayload,
+        batchFinishedProductId: Number(selectedItemId)
+      };
+      endpoint = 'http://localhost:5167/api/WasteLossRecordBatchFinishedProducts';
+      break;
+
+    default:
+      alert('Invalid item type selected.');
+      return;
+  }
+
   try {
-    const response = await fetch('http://localhost:5167/api/WasteLossRecordIngredients', {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,7 +75,7 @@ const handleSubmit = async () => {
     });
 
     if (!response.ok) throw new Error('Something went wrong!');
-    
+
     alert('Waste recorded successfully!');
   } catch (error) {
     console.error('Failed to record waste:', error);
@@ -46,6 +83,7 @@ const handleSubmit = async () => {
     alert('Failed to record waste.');
   }
 };
+
 
 
 
