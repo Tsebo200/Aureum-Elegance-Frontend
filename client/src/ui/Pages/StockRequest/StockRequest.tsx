@@ -22,7 +22,7 @@ function StockRequest() {
     ingredientsId: '',
     packagingId: '',
     warehouseId: '',
-    amountRequest: '',
+    amountRequested: '',
   });
 
   // Handle generic field change
@@ -36,7 +36,7 @@ function StockRequest() {
   const handleSubmit = async () => {
   const commonData = {
     id: 0,
-    amountRequest: Number(formData.amountRequest),
+    amountRequested: Number(formData.amountRequested),
     status: formData.status,
     requestDate: new Date().toISOString(),
     userId: Number(formData.userId),
@@ -50,6 +50,7 @@ function StockRequest() {
         ingredientsId: Number(formData.ingredientsId),
       };
       await addStockRequestIngredient(dataToSend);
+      console.log(commonData)
     } else {
       const dataToSend = {
         ...commonData,
@@ -67,7 +68,7 @@ function StockRequest() {
       ingredientsId: '',
       packagingId: '',
       warehouseId: '',
-      amountRequest: '',
+      amountRequested: '',
     });
   } catch (error) {
     console.error('Error submitting stock request:', error);
@@ -157,8 +158,8 @@ function StockRequest() {
                   <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
                   <div className={styles.amountForm}>
                     <AmountTextField
-                      value={formData.amountRequest}
-                      onChange={(val) => handleChange('amountRequest', val)}
+                      value={formData.amountRequested}
+                      onChange={(val) => handleChange('amountRequested', val)}
                     />
                   </div>
                 </div>
@@ -176,7 +177,7 @@ function StockRequest() {
                     !formData.status ||
                     !formData.userId ||
                     !formData.warehouseId ||
-                    !formData.amountRequest ||
+                    !formData.amountRequested ||
                     (formData.requestType === 'ingredient' && !formData.ingredientsId) ||
                     (formData.requestType === 'packaging' && !formData.packagingId)
                   }

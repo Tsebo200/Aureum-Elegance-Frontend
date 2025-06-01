@@ -40,7 +40,7 @@ export default function PackagingsSelect({ value, onChange }: Props) {
         label="Select Packaging"
         sx={{
           borderRadius: 10,
-          background: "#FFDBB1",
+          background: "#FFF",
         }}
       >
         {packagings.map((packaging) => (

@@ -1,7 +1,12 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function BasicTextFields() {
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+export default function ReasonForm({ value, onChange }: Props) {
   return (
     <Box 
       component="form"
@@ -10,6 +15,8 @@ export default function BasicTextFields() {
       autoComplete="off"
     >
       <TextField 
+       value={value}
+        onChange={(e) => onChange(e.target.value)}
         id="outlined-basic" 
         label="Enter Reason" 
         variant="outlined" 
