@@ -52,3 +52,30 @@ export interface GetWastelossIngredient {
     location: string;
   };
 }
+export interface GetWastelossPackaging {
+  id: number;
+  quantityLoss: number;
+  reason: string;
+  dateOfLoss: string;
+
+  Packaging?: {
+    packagingId: number;
+    name: string;
+    type: string;
+    cost: number;
+    expiryDate: string;
+    isExpired: boolean;
+  };
+
+  user?: {
+    userId: number;
+    name: string;
+    role: string;
+  };
+
+  warehouse?: {
+    warehouseID: number;
+    name: string;
+    location: string;
+  };
+}

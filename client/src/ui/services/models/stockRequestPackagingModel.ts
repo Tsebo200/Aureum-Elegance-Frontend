@@ -1,6 +1,6 @@
 export interface StockRequestPackaging{
     id: number;
-    amountRequest: number;
+    amountRequested: number;
     status: string;
     requestDate: string;
     packagingId: number;

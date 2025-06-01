@@ -1,10 +1,14 @@
 import { Button } from "@mui/material"
 import styles from "../Button/RecordWasteBtn.module.scss"
 
-function RecordWasteBtn() {
+type Props = {
+  onClick: () => void;
+};
+
+function RecordWasteBtn({ onClick }: Props){
   return (
     <div>
-        <Button variant="contained" className={styles.recordBtn}>
+        <Button variant="contained" onClick={onClick} className={styles.recordBtn}>
         Record Waste Loss
         </Button>
     </div>

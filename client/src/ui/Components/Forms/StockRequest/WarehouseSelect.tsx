@@ -9,7 +9,7 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-export default function WarehouseTextField({ value, onChange }: Props) {
+export default function WarehouseSelect({ value, onChange }: Props) {
   const [warehouses, setWarehouses] = useState<Warehouse[]>([]);
 
   useEffect(() => {
