@@ -29,7 +29,10 @@ export default function RecordItem({ itemType, value, onChange }: Props) {
           case "fragrance":
             response = await fetch("http://localhost:5167/api/Fragrance");
             break;
-          default:
+            case "batchFinishedProduct":
+            response = await fetch("http://localhost:5167/api/BatchFinishedProduct");
+            break;
+            default:
             setItems([]);
             return;
         }

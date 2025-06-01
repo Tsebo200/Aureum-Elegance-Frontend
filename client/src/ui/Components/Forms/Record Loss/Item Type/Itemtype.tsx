@@ -18,6 +18,7 @@ export default function ItemType({ value, onChange }: Props) {
         <MenuItem value="ingredient">Ingredient</MenuItem>
         <MenuItem value="packaging">Packaging</MenuItem>
         <MenuItem value="fragrance">Fragrance</MenuItem>
+        <MenuItem value="batchFinishedProduct">Batch Finished Product</MenuItem>
       </Select>
     </FormControl>
   );
