@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./PackagingPanel.module.scss";
+import styles from "./Packaging.module.scss";
 import type { Packaging } from "../../services/models/packagingModel";
 import { getAllPackaging } from "../../services/packagingServiceRoute";
 
