@@ -1,33 +1,25 @@
-import * as React from 'react';
-import { FormControl, InputLabel, MenuItem, Select} from '@mui/material';
-import type { SelectChangeEvent } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-function WarehouseTo() {
-  const [location, setLocation] = React.useState<string>(''); // ensure string type
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+};
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setLocation(event.target.value);
-  };
-
+export default function ItemType({ value, onChange }: Props) {
   return (
-    <FormControl sx={{ m: 0.1, minWidth: 300 }}>
-      <InputLabel id="demo-simple-select-helper-label">Item Type</InputLabel>
+    <FormControl sx={{ m: 0.1, minWidth: 250 }}>
+      <InputLabel id="item-type-label">Select Item Type</InputLabel>
       <Select
-       sx={{borderRadius: 10, background: '#FFF'}}
-        labelId="demo-simple-select-helper-label"
-        id="demo-simple-select-helper"
-        value={location}
-        label="Warehouse Selection"
-        onChange={handleChange}
-      >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value="Centurion">Centurion</MenuItem>
-        <MenuItem value="CapeTown">Cape Town</MenuItem>
+        labelId="item-type-label"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        label="Select Item Type"
+        sx={{ borderRadius: 10, background: "#FFF" }}>
+        <MenuItem value="ingredient">Ingredient</MenuItem>
+        <MenuItem value="packaging">Packaging</MenuItem>
+        <MenuItem value="fragrance">Fragrance</MenuItem>
+        <MenuItem value="batchFinishedProduct">Batch Finished Product</MenuItem>
       </Select>
     </FormControl>
   );
 }
-
-export default WarehouseTo;

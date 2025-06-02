@@ -1,60 +1,55 @@
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import styles from './WasteLossListComponent.module.scss'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import type { GetWastelossFragrance, GetWastelossIngredient } from '../../services/models/wasteLossModels';
+import { GetWastelossFragrances, GetWastelossIngredients } from '../../services/WasteLossApiRoutes';
 
-const allWasteLosses = [
-  {
-    item: "Moonlit Jasmine",
-    type: "Fragrance",
-    quantity: 5,
-    date: "2025-05-15",
-    reason: "Expiry Reached",
-    user: "Sarah",
-  },
-  {
-    item: "Amber Bottle",
-    type: "Packaging",
-    quantity: 20,
-    date: "2025-05-10",
-    reason: "Damaged in Transit",
-    user: "James",
-  },
-  {
-    item: "Ocean Mist",
-    type: "Finished Products",
-    quantity: 10,
-    date: "2025-05-12",
-    reason: "Incorrect Label",
-    user: "Emily",
-  },
-  {
-    item: "Batch 102",
-    type: "Batches",
-    quantity: 1,
-    date: "2025-05-18",
-    reason: "Contamination",
-    user: "Michael",
-  },
-  {
-    item: "Lemon Extract",
-    type: "Ingredients",
-    quantity: 2,
-    date: "2025-05-11",
-    reason: "Spillage",
-    user: "Anna",
-  },
-];
+
 
 const WasteLossListComponent = () => {
   const [filter, setFilter] = useState("All");
+  const [wasteLossFragrances, setWasteLossFragrances] = useState<GetWastelossFragrance[]>([]);
+  const[wasteLossIngredients, setWasteLossIngredients] = useState<GetWastelossIngredient[]>([]);
 
-  const filteredList =
-    filter === "All"
-      ? allWasteLosses
-      : allWasteLosses.filter(
-          (loss) => loss.type.toLowerCase() === filter.toLowerCase()
-        );
+  useEffect(() => {
+    const fetchFragrances = async () => {
+      try {
+        const data = await GetWastelossFragrances();
+        setWasteLossFragrances(data);
+      } catch (error) {
+        console.error("Failed to fetch waste loss fragrances:", error);
+      }
+    };
 
+    const fetchIngredients = async () => {
+      try {
+        const data = await GetWastelossIngredients();
+        setWasteLossIngredients(data);
+      } catch (error) {
+        console.error("Failed to fetch waste loss ingredients:", error);
+      }
+    };
+
+    fetchFragrances();
+    fetchIngredients();
+  }, []);
+
+  // Combine lists based on filter
+  let filteredList: (GetWastelossFragrance | GetWastelossIngredient)[] = [];
+
+  switch (filter) {
+    case "Fragrance":
+      filteredList = wasteLossFragrances;
+      break;
+    case "Ingredients":
+      filteredList = wasteLossIngredients;
+      break;
+    case "All":
+    default:
+      // Here you can decide if you want to merge or show just fragrances first
+      filteredList = [...wasteLossFragrances, ...wasteLossIngredients];
+      break;
+  }
   return (
     <section className={styles.content}>
       <h1>Waste Loss</h1>
@@ -64,7 +59,6 @@ const WasteLossListComponent = () => {
         style={{ marginBottom: "20px" }}
         className={styles.form}
       >
-        
         <div className={styles.field}>
           <label className={styles.label}>Filter by Type</label>
           <Select
@@ -84,7 +78,7 @@ const WasteLossListComponent = () => {
 
       <table className={styles.table}>
         <thead>
-          <tr className= {styles.tr}>
+          <tr className={styles.tr}>
             <th>Item</th>
             <th>Type</th>
             <th>Quantity Lost</th>
@@ -96,20 +90,43 @@ const WasteLossListComponent = () => {
           <hr />
         </thead>
         <tbody>
-          {filteredList.map((loss, index) => (
-            <tr key={index}>
-              <td>{loss.item}</td>
-              <td>{loss.type}</td>
-              <td>{loss.quantity}</td>
-              <td>{loss.date}</td>
-              <td>{loss.reason}</td>
-              <td>{loss.user}</td>
-              <td>
-                <Button className={styles.Btn}>Edit</Button>
-                <Button className={styles.Btn}>Delete</Button>
-              </td>
-            </tr>
-          ))}
+          {filteredList.map((loss, index) => {
+            // Discriminate type based on properties
+            const isFragrance = "fragrance" in loss;
+            const isIngredient = "Ingredients" in loss || "ingredients" in loss;
+
+            const itemName = isFragrance
+              ? (loss as GetWastelossFragrance).fragrance?.name || "Unknown"
+              : isIngredient
+              ? (loss as GetWastelossIngredient).Ingredients?.name || "Unknown"
+              : "Unknown";
+
+            const itemType = isFragrance
+              ? "Fragrance"
+              : isIngredient
+              ? "Ingredient"
+              : "Unknown";
+
+            const quantityLoss = loss.quantityLoss;
+            const dateOfLoss = new Date(loss.dateOfLoss).toLocaleDateString();
+            const reason = loss.reason;
+            const userName = loss.user?.name || "Unknown";
+
+            return (
+              <tr key={index}>
+                <td>{itemName}</td>
+                <td>{itemType}</td>
+                <td>{quantityLoss}</td>
+                <td>{dateOfLoss}</td>
+                <td>{reason}</td>
+                <td>{userName}</td>
+                <td>
+                  <Button className={styles.Btn}>Edit</Button>
+                  <Button className={styles.Btn}>Delete</Button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </section>
