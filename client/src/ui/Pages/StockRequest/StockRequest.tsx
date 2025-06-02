@@ -9,6 +9,7 @@ import IngredientsTextField from '../../Components/Forms/StockRequest/Ingredient
 import AmountTextField from '../../Components/Forms/StockRequest/AmountTextField';
 
 import { addStockRequestIngredient } from '../../services/StockRequestIngredientsServiceRoute';
+import { addStockRequestPackaging } from '../../services/StockRequestPackagingServiceRoute';
 import WarehouseSelect from '../../Components/Forms/StockRequest/WarehouseSelect';
 import PackagingSelect from '../../Components/Forms/StockRequest/PackagingSelect';
 import RequestType from '../../Components/Forms/StockRequest/RequestType';
@@ -33,36 +34,46 @@ function StockRequest() {
   };
 
   const handleSubmit = async () => {
-    // Compose data with current ISO timestamp for requestDate
-    const dataToSend = {
-      ...formData,
-      id: 0, // or omit if backend generates it
-      requestDate: new Date().toISOString(),
-      // Make sure to convert numeric fields from strings if needed:
-      amountRequest: Number(formData.amountRequest),
-      userId: Number(formData.userId),
-      ingredientsId: Number(formData.ingredientsId),
-      warehouseId: Number(formData.warehouseId),
-    };
-
-    try {
-      await addStockRequestIngredient(dataToSend);
-      alert('Stock Request submitted successfully!');
-      // Clear form if needed:
-      setFormData({
-        requestType: 'ingredient', // default selected
-        status: '',
-        userId: '',
-        ingredientsId: '',
-        packagingId: '',
-        warehouseId: '',
-        amountRequest: '',
-      });
-    } catch (error) {
-      console.error('Error submitting stock request:', error);
-      alert('Failed to submit stock request.');
-    }
+  const commonData = {
+    id: 0,
+    amountRequest: Number(formData.amountRequest),
+    status: formData.status,
+    requestDate: new Date().toISOString(),
+    userId: Number(formData.userId),
+    warehouseId: Number(formData.warehouseId),
   };
+
+  try {
+    if (formData.requestType === 'ingredient') {
+      const dataToSend = {
+        ...commonData,
+        ingredientsId: Number(formData.ingredientsId),
+      };
+      await addStockRequestIngredient(dataToSend);
+    } else {
+      const dataToSend = {
+        ...commonData,
+        packagingId: Number(formData.packagingId),
+      };
+      await addStockRequestPackaging(dataToSend);
+    }
+
+    alert('Stock Request submitted successfully!');
+    // Reset form if needed
+    setFormData({
+      requestType: 'ingredient',
+      status: '',
+      userId: '',
+      ingredientsId: '',
+      packagingId: '',
+      warehouseId: '',
+      amountRequest: '',
+    });
+  } catch (error) {
+    console.error('Error submitting stock request:', error);
+    alert('Failed to submit stock request.');
+  }
+};
 
   return (
     <div>
@@ -158,14 +169,17 @@ function StockRequest() {
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
                   <Button
-                    variant="contained" className={styles.submitBtn}
-                    onClick={handleSubmit}
-                    disabled={
-                      !formData.status ||
-                      !formData.userId ||
-                      !formData.ingredientsId ||
-                      !formData.warehouseId ||
-                      !formData.amountRequest}
+                    variant="contained"
+                  className={styles.submitBtn}
+                  onClick={handleSubmit}
+                  disabled={
+                    !formData.status ||
+                    !formData.userId ||
+                    !formData.warehouseId ||
+                    !formData.amountRequest ||
+                    (formData.requestType === 'ingredient' && !formData.ingredientsId) ||
+                    (formData.requestType === 'packaging' && !formData.packagingId)
+                  }
                       >
                     Submit Stock Request
                   </Button>
