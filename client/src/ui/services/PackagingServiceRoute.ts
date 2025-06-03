@@ -15,6 +15,14 @@ export async function getAllPackaging(): Promise<Packaging[]> {
   return res.json();
 }
 
+export async function getAllPackagings(): Promise<Packaging[]> {
+  const response = await fetch("http://localhost:5167/api/Packaging");
+  if (!response.ok) {
+    throw new Error("Failed to fetch packaging items");
+  }
+  return response.json();
+}
+
 /**
  * GET one packaging item by ID
  * GET: api/Packaging/{id}
