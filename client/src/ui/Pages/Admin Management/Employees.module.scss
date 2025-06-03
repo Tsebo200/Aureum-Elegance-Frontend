@@ -63,8 +63,24 @@
   .item {
     display: flex;
     align-items: center;
+    /* keep text on the left, buttons on the right */
     justify-content: space-between;
     padding: 1rem 0;
+
+    /* push the first button all the way to the right */
+    button:first-of-type {
+      margin-left: auto;
+    }
+
+    /* tiny gap between consecutive buttons */
+    button + button {
+      margin-left: 0.5rem;
+    }
+
+    /* prevent buttons from shrinking */
+    button {
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -106,12 +122,21 @@
   height: 40px !important;
 }
 
+/* Top-level .item (in case you have other .item blocks elsewhere) */
 .item {
   display: flex;
   align-items: center;
+  /* same approach: text on left, buttons on right */
   justify-content: space-between;
   padding: 0.5rem 0;
-  align-items: flex-start;
+
+  button:first-of-type {
+    margin-left: auto;
+  }
+
+  button + button {
+    margin-left: 0.5rem;
+  }
 
   button {
     flex-shrink: 0;

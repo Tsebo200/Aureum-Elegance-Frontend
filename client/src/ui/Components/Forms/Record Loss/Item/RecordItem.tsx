@@ -15,6 +15,22 @@ interface Item {
 export default function RecordItem({ itemType, value, onChange }: Props) {
   const [items, setItems] = useState<Item[]>([]);
 
+  // Dynamic label text
+  const getItemLabel = () => {
+    switch (itemType) {
+      case "ingredient":
+        return "Select Ingredient";
+      case "packaging":
+        return "Select Packaging";
+      case "fragrance":
+        return "Select Fragrance";
+      case "batchFinishedProduct":
+        return "Select Batch Finished Product";
+      default:
+        return "Select Item";
+    }
+  };
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -29,10 +45,10 @@ export default function RecordItem({ itemType, value, onChange }: Props) {
           case "fragrance":
             response = await fetch("http://localhost:5167/api/Fragrance");
             break;
-            case "batchFinishedProduct":
+          case "batchFinishedProduct":
             response = await fetch("http://localhost:5167/api/BatchFinishedProduct");
             break;
-            default:
+          default:
             setItems([]);
             return;
         }
@@ -48,12 +64,12 @@ export default function RecordItem({ itemType, value, onChange }: Props) {
 
   return (
     <FormControl sx={{ m: 0.1, minWidth: 250 }}>
-      <InputLabel id="item-select-label">Select Item</InputLabel>
+      <InputLabel id="item-select-label">{getItemLabel()}</InputLabel>
       <Select
         labelId="item-select-label"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        label="Select Item"
+        label={getItemLabel()}
         sx={{ borderRadius: 10, background: "#FFF" }}
       >
         {items.map((item) => (

@@ -10,6 +10,7 @@ import { getFinishedProducts } from '../../services/BatchFinishedProductServiceR
 import type { BatchFinishedProduct } from '../../services/models/batchFinishedProductModel';
 import FinishedProductsTab from '../../components/FinishedProductsTab/FinishedProductsTab';
 import AddProductForm from '../../components/Forms/FinishedProductComponents/AddProductForm';
+import { PackagingPanel } from '../Packaging/Packaging';
 
 export default function FinishedProducts() {
   const [tab, setTab] = React.useState(0);
@@ -66,26 +67,7 @@ useEffect(() => {
 
         {tab === 2 && (
           <section className={styles.content}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Cost per unit</th>
-                  <th>Units in kilograms</th>
-                </tr>
-                <hr />
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Glass Bottles</td>
-                  <td>R600,00</td>
-                  <td>680</td>
-                  <td>
-                    <Button className={styles.Btn}>Request Stock</Button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <PackagingPanel />
           </section>
         )}
 

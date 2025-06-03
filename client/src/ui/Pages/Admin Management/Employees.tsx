@@ -7,6 +7,7 @@ import {
   getEmployees,
   promoteToManager,
   removeManager,
+  deleteUser,
   getWarehouses,
   addWarehouse,
   addEmployee,
@@ -14,6 +15,12 @@ import {
 import type { User, Warehouse } from '../../services/models/employeeModel';
 
 export default function Employees() {
+  // Role Guard: only Admins can see this page
+  const storedRole = localStorage.getItem('role'); 
+  if (storedRole !== 'Admin') {
+    return null;
+  }
+
   const [tab, setTab] = useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
 
@@ -101,6 +108,16 @@ export default function Employees() {
       await loadEmployees();
     } catch {
       alert('Could not remove manager. Please try again.');
+    }
+  };
+
+  // Delete user
+  const handleDeleteUser = async (userId: number) => {
+    try {
+      await deleteUser(userId);
+      await loadEmployees();
+    } catch {
+      alert('Could not delete user. Please try again.');
     }
   };
 
@@ -209,6 +226,14 @@ export default function Employees() {
                     >
                       Remove Manager
                     </Button>
+                    <Button
+                      variant="contained"
+                      className={styles.addBtn}
+                      onClick={() => handleDeleteUser(m.userId)}
+                      style={{ marginLeft: '1rem' }}
+                    >
+                      Delete Account
+                    </Button>
                   </div>
                 ))}
               </div>
@@ -228,6 +253,14 @@ export default function Employees() {
                     onClick={() => handlePromote(e.userId)}
                   >
                     Promote to Manager
+                  </Button>
+                  <Button
+                    variant="contained"
+                    className={styles.addBtn}
+                    onClick={() => handleDeleteUser(e.userId)}
+                    style={{ marginLeft: '1rem' }}
+                  >
+                    Delete Account
                   </Button>
                 </div>
               ))}
@@ -302,7 +335,7 @@ export default function Employees() {
         )}
 
         {/* Warehouses Tab */}
-      {tab === 2 && (
+        {tab === 2 && (
           <section className={styles.content}>
             <h2>Warehouses</h2>
             {loadingWarehouses ? (
@@ -331,12 +364,12 @@ export default function Employees() {
               <div className={styles.flex1}>
                 <label className={styles.label}>Name</label>
                 <input
-                type="text"
-                className={styles.inputField}
-                value={newWarehouseName}
-                onChange={(e) => setNewWarehouseName(e.target.value)}
-                placeholder="Warehouse name…"
-              />
+                  type="text"
+                  className={styles.inputField}
+                  value={newWarehouseName}
+                  onChange={(e) => setNewWarehouseName(e.target.value)}
+                  placeholder="Warehouse name…"
+                />
               </div>
               <div className={styles.flex1}>
                 <label className={styles.label}>Manager</label>
@@ -369,9 +402,7 @@ export default function Employees() {
         )}
 
         {/* Stock Request Tab */}
-        {tab === 3 && (
-                   <StockRequestAdmin />
-        )}
+        {tab === 3 && <StockRequestAdmin />}
       </main>
     </div>
   );

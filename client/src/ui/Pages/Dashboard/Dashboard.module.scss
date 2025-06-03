@@ -99,8 +99,21 @@ html, body {
         float: left;
 
         .graphBoxOne{
-            width: 300px;
-            height: 300px;
+            width: 270px;
+            height: 270px;
+            float: left;
+        }
+           .graphBoxTwo{
+            width: 470px;
+            height: 1000px;
+            margin-left: 20px;
+            margin-top: 70px;
+            float: left;
+        }
+           .graphBoxThree{
+            width: 290px;
+            height: 290px;
+            margin-left: 20px;
             float: left;
         }
     }
