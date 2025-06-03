@@ -10,7 +10,7 @@ export default function ReasonForm({ value, onChange }: Props) {
   return (
     <Box 
       component="form"
-      sx={{ '& > :not(style)': { m: 0, minWidth: 300, maxWidth: 300 }}} // Keeps it within desired width
+      sx={{ '& > :not(style)': { m: -2, minWidth: 300, maxWidth: 300 }}} // Keeps it within desired width
       noValidate
       autoComplete="off"
     >
