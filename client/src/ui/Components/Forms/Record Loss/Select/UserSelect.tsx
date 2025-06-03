@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import type { SelectChangeEvent } from '@mui/material';
-import type { User } from "../../../services/models/userModel";
-import { getUsers } from "../../../services/UserServiceRoute";
+import type { User } from "../../../../services/models/userModel";
+import { getUsers } from "../../../../services/UserServiceRoute";
 
 type Props = {
   value: string;
@@ -39,7 +39,7 @@ export default function UserSelect({ value, onChange }: Props) {
         label="Select User"
         sx={{
           borderRadius: 10,
-          background: "#FFDBB1",
+          background: "#FFF",
         }}
       >
         {users.map((user) => (

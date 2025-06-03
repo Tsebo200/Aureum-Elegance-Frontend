@@ -1,9 +1,9 @@
-export interface StockRequestIngredients{
+export interface StockRequestPackaging{
     id: number;
     amountRequested: number;
     status: string;
     requestDate: string;
-    ingredientsId: number;
+    packagingId: number;
     userId: number;
     warehouseId: number;
 }

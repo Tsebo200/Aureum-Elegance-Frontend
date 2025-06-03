@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import type { SelectChangeEvent } from "@mui/material";
-import { getWarehouseById } from "../../../services/WarehouseServiceRoute";
-import type { Warehouse } from "../../../services/models/warehouseModel";
+import { getWarehouseById } from "../../../../services/WarehouseServiceRoute";
+import type { Warehouse } from "../../../../services/models/warehouseModel";
 
 type Props = {
   value: string;
@@ -47,10 +47,10 @@ export default function WarehouseSelect({ value, onChange }: Props) {
         sx={{
           "& .MuiOutlinedInput-root": {
             borderRadius: 10,
-            background: "#FFDBB1",
+            background: "#FFF",
           },
           borderRadius: 10,
-          background: "#FFDBB1",
+          background: "#FFF",
         }}
       >
         {warehouses.map((wh) => (
