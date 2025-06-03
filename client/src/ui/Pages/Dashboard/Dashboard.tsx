@@ -2,6 +2,9 @@ import styles from '../Dashboard/Dashboard.module.scss';
 import Sidebar from '../../Components/Sidebar';
 import AlertCard from '../../Components/AlertCards/AlertCard';
 import DoughnutChart from '../../Components/Graphs/DoughnutChart'
+import { LineChart } from '../../Components/Graphs/LineChart';
+import { PieChart } from '../../Components/Graphs/PieChart';
+
 
 function Dashboard() {
   return (
@@ -21,6 +24,12 @@ function Dashboard() {
                 <div className={styles.graphsSection}>
                   <div className={styles.graphBoxOne}>
                  <DoughnutChart />
+                  </div>
+                  <div className={styles.graphBoxTwo}>
+                 <LineChart />
+                  </div>
+                  <div className={styles.graphBoxThree}>
+                 <PieChart />
                   </div>
  
 
