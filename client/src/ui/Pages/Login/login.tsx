@@ -15,8 +15,14 @@ export function Login() {
     event.preventDefault();
 
     try {
-      await addLoginUser({ email, password, name: '', role: 'Employee' });
-      // ✅ On success, navigate to dashboard
+      // Expecting addLoginUser to return a User object with userId and role
+      const loggedInUser = await addLoginUser({ email, password, name: '', role: 'Employee' });
+
+      // Store userId and role in localStorage for role-based guarding
+      localStorage.setItem('userId', loggedInUser.userId.toString());
+      localStorage.setItem('role', loggedInUser.role);
+
+      // Navigate to dashboard
       navigate('/dashboard');
     } catch (err) {
       setError('Invalid email or password');

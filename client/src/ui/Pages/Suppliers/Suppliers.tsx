@@ -5,7 +5,7 @@ import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
 import WasteLossListComponent from '../../Components/WasteLossListComponent/WasteLossListComponent';
 import { DeliveriesPanel } from '../StockManagement/SMDeliveries';
-import { getSuppliers, addSupplier } from '../../services/SupplierServiceRoute';
+import { getSuppliers, addSupplier, deleteSupplier } from '../../services/SupplierServiceRoute';
 import type { Supplier } from '../../services/models/supplierModel';
 
 export default function Suppliers() {
@@ -32,10 +32,16 @@ export default function Suppliers() {
 
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
-  const handleRemove = (index: number) => {
-    const updated = [...suppliers];
-    updated.splice(index, 1);
-    setSuppliers(updated);
+  const handleRemove = async (id: number, index: number) => {
+    try {
+      await deleteSupplier(id);
+      const updated = [...suppliers];
+      updated.splice(index, 1);
+      setSuppliers(updated);
+    } catch (error) {
+      console.error(`Failed to delete supplier with ID ${id}:`, error);
+      alert('There was an error deleting the supplier.');
+    }
   };
 
   const handleAddSupplier = async () => {
@@ -93,7 +99,7 @@ export default function Suppliers() {
                   <span className={styles.phone}>{supplier.phoneNumber}</span>
                   <button
                     className={styles.removeBtn}
-                    onClick={() => handleRemove(index)}
+                    onClick={() => handleRemove(supplier.supplierID, index)}
                   >
                     Remove
                   </button>

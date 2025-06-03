@@ -27,3 +27,14 @@ export async function addSupplier(supplier: Supplier): Promise<Supplier> {
 
   return await response.json();
 }
+
+// Delete a supplier by ID
+export async function deleteSupplier(id: number): Promise<void> {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to delete supplier with ID ${id}`);
+  }
+}
