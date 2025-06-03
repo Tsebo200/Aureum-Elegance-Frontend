@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.scss';
 import backgroundImage from '../../assets/Log In Background.jpg';
 import logo from '../../assets/Wordmark Logo.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { addLoginUser } from '../../services/UserServiceRoute';
 
 export function Login() {
-  const handleSubmit = (_event: React.SyntheticEvent) => {
-    _event.preventDefault();
-    // Handle form submission
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    try {
+      await addLoginUser({ email, password, name: '', role: 'Employee' });
+      // ✅ On success, navigate to dashboard
+      navigate('/dashboard');
+    } catch (err) {
+      setError('Invalid email or password');
+    }
   };
 
   return (
@@ -32,6 +45,8 @@ export function Login() {
               className="styled-input"
               required
               aria-label="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -42,14 +57,16 @@ export function Login() {
               className="styled-input"
               required
               aria-label="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <Link to="/dashboard">
-            <button type="submit" className="login-button">
-              Login
-            </button>
-          </Link>
+          {error && <p className="error-message">{error}</p>}
+
+          <button type="submit" className="login-button">
+            Login
+          </button>
         </form>
       </div>
     </main>
