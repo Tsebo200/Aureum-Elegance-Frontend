@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import styles from './Employees.module.scss';
 import { Tabs, Tab, Button, useMediaQuery } from '@mui/material';
-import Sidebar from '../../Components/AdminSidebar';
+import Sidebar from '../../Components/Sidebar';
 import StockRequestAdmin from '../../Components/StockRequestAdmin/StockRequestAdmin';
 import {
   getEmployees,
