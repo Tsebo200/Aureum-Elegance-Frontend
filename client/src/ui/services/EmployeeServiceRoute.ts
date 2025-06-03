@@ -32,6 +32,13 @@ export async function getEmployees(): Promise<User[]> {
   return users.map(parseUser);
 }
 
+export async function deleteUser(userId: number): Promise<void> {
+  const res = await fetch(`${API_URL}/users/${userId}`, {
+    method: 'DELETE',
+  });
+  if (!res.ok) throw new Error(`Failed to delete user with ID ${userId}`);
+}
+
 export async function promoteToManager(userId: number): Promise<void> {
   const res = await fetch(`${API_URL}/promote/${userId}`, {
     method: 'PUT',

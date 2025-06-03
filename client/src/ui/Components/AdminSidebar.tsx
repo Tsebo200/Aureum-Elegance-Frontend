@@ -10,6 +10,7 @@ function Sidebar() {
     { name: "Stock Request", path: "/stock-request" },
     { name: "Add Stock", path: "/add-stock" },
     { name: "Warehouse Stock", path: "/warehouse-stock" },
+    { name: "Admin Management", path: "/admin-management" },
     { name: "Stock Management", path: "/stock-management" },
     { name: "Log Out", path: "/"}
   ];
