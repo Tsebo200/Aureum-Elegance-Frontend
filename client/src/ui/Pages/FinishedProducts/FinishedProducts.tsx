@@ -8,6 +8,8 @@ import { IngredientsPanel } from '../Ingredients/Ingredients';
 import type { Fragrance } from '../../services/models/fragranceModel';
 import { getFinishedProducts } from '../../services/BatchFinishedProductServiceRoute';
 import type { BatchFinishedProduct } from '../../services/models/batchFinishedProductModel';
+import FinishedProductsTab from '../../components/FinishedProductsTab/FinishedProductsTab';
+import AddProductForm from '../../components/Forms/FinishedProductComponents/AddProductForm';
 import { PackagingPanel } from '../Packaging/Packaging';
 
 export default function FinishedProducts() {
@@ -50,12 +52,12 @@ useEffect(() => {
           <Tab label="Ingredients" />
           <Tab label="Packaging" />
           <Tab label="Produce Perfume" />
-          <Tab label="Finished Products" />
+          <Tab label="Batch" />
+          <Tab label="Products" />
+          <Tab label="Add Product" />
         </Tabs>
 
-        {tab === 0 && (
-          <FragrancesComponent  />
-        )}
+        {tab === 0 && <FragrancesComponent />}
 
         {tab === 1 && (
           <section className={styles.content}>
@@ -69,38 +71,41 @@ useEffect(() => {
           </section>
         )}
 
-        {tab === 3 && <ProducePerfumeForm  />}
+        {tab === 3 && <ProducePerfumeForm />}
 
         {tab === 4 && (
-  <section className={styles.content}>
-    <h1>Finished Products</h1>
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          <th>Product ID</th>
-          <th>Quantity</th>
-          <th>Unit</th>
-          <th>Status</th>
-          <th>Batch ID</th>
-          <th>Warehouse ID</th>
-        </tr>
-        <hr />
-      </thead>
-      <tbody>
-        {finishedProducts.map((item) => (
-          <tr key={`${item.batchID}-${item.productID}`}>
-            <td>{item.productID}</td>
-            <td>{item.quantity}</td>
-            <td>{item.unit}</td>
-            <td>{item.status}</td>
-            <td>{item.batchID}</td>
-            <td>{item.warehouseID}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </section>
-)}
+          <FinishedProductsTab />
+          // <section className={styles.content}>
+          //   <h1>Finished Products</h1>
+          //   <table className={styles.table}>
+          //     <thead>
+          //       <tr>
+          //         <th>Product ID</th>
+          //         <th>Quantity</th>
+          //         <th>Unit</th>
+          //         <th>Status</th>
+          //         <th>Batch ID</th>
+          //         <th>Warehouse ID</th>
+          //       </tr>
+          //       <hr />
+          //     </thead>
+          //     <tbody>
+          //       {finishedProducts.map((item) => (
+          //         <tr key={`${item.batchID}-${item.productID}`}>
+          //           <td>{item.productID}</td>
+          //           <td>{item.quantity}</td>
+          //           <td>{item.unit}</td>
+          //           <td>{item.status}</td>
+          //           <td>{item.batchID}</td>
+          //           <td>{item.warehouseID}</td>
+          //         </tr>
+          //       ))}
+          //     </tbody>
+          //   </table>
+          // </section>
+        )}
+      
+        {tab == 5 && <AddProductForm/>}
       </main>
     </div>
   );

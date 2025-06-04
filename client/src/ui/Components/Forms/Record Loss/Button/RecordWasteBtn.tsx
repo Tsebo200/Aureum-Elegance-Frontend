@@ -1,18 +1,24 @@
-import { Button } from "@mui/material"
-import styles from "../Button/RecordWasteBtn.module.scss"
+import { Button } from "@mui/material";
+import styles from "../Button/RecordWasteBtn.module.scss";
 
 type Props = {
   onClick: () => void;
+  disabled?: boolean;
 };
 
-function RecordWasteBtn({ onClick }: Props){
+function RecordWasteBtn({ onClick, disabled = false }: Props) {
   return (
     <div>
-        <Button variant="contained" onClick={onClick} className={styles.recordBtn}>
+      <Button
+        variant="contained"
+        onClick={onClick}
+        disabled={disabled}
+        className={`${styles.recordBtn} ${!disabled ? styles.pointer : ''}`}
+      >
         Record Waste Loss
-        </Button>
+      </Button>
     </div>
-  )
+  );
 }
 
-export default RecordWasteBtn
+export default RecordWasteBtn;

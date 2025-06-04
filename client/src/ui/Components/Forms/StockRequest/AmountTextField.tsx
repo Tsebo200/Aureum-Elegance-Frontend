@@ -18,7 +18,7 @@ export default function BasicTextFields({ value , onChange }: Props) {
         id="outlined-basic"
         label="Enter Amount"
         variant="outlined"
-        type="text"
+        type="number"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         sx={{

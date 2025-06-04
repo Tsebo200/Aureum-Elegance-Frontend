@@ -1,64 +1,103 @@
 import { useEffect, useState } from 'react';
 import styles from './DoughnutChart.module.scss';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  Title,
+} from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { getFragrances } from '../../services/FragranceServiceRoute';
-import type { Fragrance } from '../../services/models/fragranceModel';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 function DoughnutChart() {
-  const [fragrances, setFragrances] = useState<Fragrance[]>([]);
+  const [totals, setTotals] = useState({
+    ingredients: 0,
+    packaging: 0,
+  });
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchTotals = async () => {
       try {
-        const data = await getFragrances();
-        setFragrances(data);
+        const [ingredientsRes, packagingRes] = await Promise.all([
+          fetch('http://localhost:5167/api/StockRequestIngredients'),
+          fetch('http://localhost:5167/api/StockRequestPackagings'),
+        ]);
+
+        const ingredientsData = await ingredientsRes.json();
+        const packagingData = await packagingRes.json();
+
+        const totalIngredients = ingredientsData.reduce(
+          (sum: number, item: any) => sum + (item.amountRequested || 0),
+          0
+        );
+
+        const totalPackaging = packagingData.reduce(
+          (sum: number, item: any) => sum + (item.amountRequested || 0),
+          0
+        );
+
+        setTotals({
+          ingredients: totalIngredients,
+          packaging: totalPackaging,
+        });
+
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching fragrances:", error);
+        console.error("Error fetching stock request totals:", error);
+        setLoading(false);
       }
     };
 
-    fetchData();
+    fetchTotals();
   }, []);
 
   const data = {
-    labels: fragrances.map(f => f.name),
+    labels: ['Ingredients', 'Packaging'],
     datasets: [
       {
-        label: 'Fragrance Cost',
-        data: fragrances.map(f => f.cost),
+        label: 'Total Stock Requested',
+        data: [totals.ingredients, totals.packaging],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',
-          'rgba(54, 162, 235, 0.5)',
-          'rgba(255, 206, 86, 0.5)',
-          'rgba(75, 192, 192, 0.5)',
-          'rgba(153, 102, 255, 0.5)',
-          'rgba(255, 159, 64, 0.5)',
-          'rgba(199, 199, 199, 0.5)',
-          'rgba(83, 102, 255, 0.5)',
-          'rgba(255, 0, 102, 0.5)',
-          'rgba(0, 255, 204, 0.5)'
+          '#B8222F',
+          '#3C0806'
         ],
-        borderColor: 'rgba(255, 255, 255, 1)',
-        borderWidth: 1,
+        borderWidth: 0 // removes outlines
       },
     ],
   };
 
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Total Stock Requested',
+        font: {
+          size: 15,
+        },
+      },
+    },
+  };
+
   return (
     <div>
-  {fragrances.length === 0 ? (
-  // <div className={styles.skeletonChart}>
-      <div className={styles.loaderContainer}>
-    <div className={styles.loader}></div>
-    <p>Loading chart...</p>
-  </div>
-) : (
-  <Doughnut data={data} />
-)}
-
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+          <p>Loading chart...</p>
+        </div>
+      ) : (totals.ingredients === 0 && totals.packaging === 0 ? (
+        <p>No stock requests found for ingredients or packaging.</p>
+      ) : (
+        <Doughnut data={data} options={options} />
+      ))}
     </div>
   );
 }

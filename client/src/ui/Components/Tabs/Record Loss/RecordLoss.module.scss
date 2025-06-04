@@ -33,11 +33,11 @@
 .itemBox{
   width: 330px;
   height: 150px;
+  margin-left: 50px;
   float: left;
 
   .itemHeading{
     font-family: RobotoRegular;
-    margin-top: 20px;
     margin-left: 20px;
     float: left;
   }
@@ -45,7 +45,6 @@
     width: 300px;
     height: 70px;
     margin-left: 10px;
-    margin-top: 10px;
     border-radius: 100px;
     float: left;
   }
@@ -54,21 +53,17 @@
 .quantityBox{
   width: 330px;
   height: 150px;
-  margin-left: 50px;
+  margin-left: 60px;
   float: left;
 
   .quantityHeading{
     font-family: RobotoRegular;
-    margin-top: 20px;
-    margin-left: 20px;
     float: left;
   }
 
   .quantityForm{
     width: 300px;
     height: 70px;
-    margin-left: 10px;
-    margin-top: 10px;
     border-radius: 100px;
     float: left;
   }
@@ -77,21 +72,18 @@
 .dateBox{
   width: 330px;
   height: 150px;
-  margin-left: 50px;
   float: left;
 
   .dateHeading{
     font-family: RobotoRegular;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
     float: left;
   }
 
   .dateForm{
     width: 300px;
     height: 70px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30px;
     border-radius: 100px;
     float: left;
   }
@@ -109,7 +101,6 @@
   
   .itemTypeHeading{
     font-family: RobotoRegular;
-    margin-top: 20px;
     margin-left: 20px;
     float: left;
   }
@@ -118,7 +109,6 @@
     width: 300px;
     height: 70px;
     margin-left: 10px;
-    margin-top: 10px;
     border-radius: 100px;
     float: left;
   }
@@ -127,7 +117,6 @@
 .reasonBox{
   width: 330px;
   height: 220px;
-  margin-left: 50px;
   float: left;
 
   .reasonHeading{
@@ -141,7 +130,6 @@
     width: 300px;
     height: 140px;
     margin-left: 10px;
-    margin-top: 10px;
     border-radius: 20px;
     float: left;
   }
@@ -151,8 +139,8 @@
   width: 205px;
   height: 50px;
   cursor: pointer;
-  margin-left: 90px;
-  margin-top: 160px;
+  margin-left: 450px;
+  margin-top: 60px;
   border-radius: 35px;
   background: $accent;
   color: #fff;
@@ -164,3 +152,7 @@
     margin-top: 15px;
     margin-left: 25px;
   }
+
+.lastSection{
+
+}
