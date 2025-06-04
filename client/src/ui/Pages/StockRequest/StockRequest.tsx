@@ -17,7 +17,7 @@ import RequestType from '../../Components/Forms/StockRequest/RequestType';
 function StockRequest() {
   const [formData, setFormData] = useState({
     requestType: 'ingredient', // default selected
-    status: '',
+    status: 'Pending',
     userId: '',
     ingredientsId: '',
     packagingId: '',
@@ -135,16 +135,6 @@ function StockRequest() {
 
               <div className={styles.middleContainer}>
                 <div className={styles.fourthFormContainer}>
-                  <h3 className={styles.amountHeading}>Status</h3>
-                  <div className={styles.amountForm}>
-                    <StatusSelect
-                      value={formData.status}
-                      onChange={(val) => handleChange('status', val)}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.fourthFormContainer}>
                   <h3 className={styles.amountHeading}>Warehouse</h3>
                   <div className={styles.amountForm}>
                     <WarehouseSelect
@@ -170,11 +160,11 @@ function StockRequest() {
               <div className={styles.bottomContainer}>
                 <div className={styles.fifthFormContainer}>
                   <Button
-                    variant="contained"
+                  variant="contained"
                   className={styles.submitBtn}
                   onClick={handleSubmit}
                   disabled={
-                    !formData.status ||
+                    // If any of these states are empty or false must apply disable styling
                     !formData.userId ||
                     !formData.warehouseId ||
                     !formData.amountRequested ||
