@@ -11,43 +11,48 @@ function endpointFor(type: StockRequestType) {
     : `${BASE}/StockRequestPackagings`;
 }
 
-//Fetch all stock requests of a given type.
-
+// Fetch all stock requests of a given type.
 export async function getStockRequests(
   type: StockRequestType
 ): Promise<StockRequestAdminDTO[]> {
   const res = await fetch(endpointFor(type));
   if (!res.ok) throw new Error(`Failed to fetch ${type} requests`);
-  const data = await res.json() as any[];
-  // Attach discriminant so TS knows which branch
+  const data = (await res.json()) as any[];
   return data.map(obj => ({
     ...obj,
     requestType: type,
   }));
 }
 
-
-//Approve or deny a request of either type.
-
+// Approve or deny a request of either type.
+// • If approve === true  → GET → set status="Approved" → PUT
+// • If approve === false → DELETE (remove the record entirely)
 export async function respondToRequest(
   type: StockRequestType,
   id: number,
   approve: boolean
 ): Promise<void> {
-  // 1) GET current payload
-  const getUrl = `${endpointFor(type)}/${id}`;
-  const getRes = await fetch(getUrl);
-  if (!getRes.ok) throw new Error(`Request ${id} not found`);
-  const body = (await getRes.json()) as StockRequestAdminDTO;
+  const url = `${endpointFor(type)}/${id}`;
 
-  // 2) Mutate its status
-  body.status = approve ? 'Approved' : 'Denied';
+  if (approve) {
+    // 1) GET the existing DTO
+    const getRes = await fetch(url);
+    if (!getRes.ok) throw new Error(`Request ${id} not found`);
+    const body = (await getRes.json()) as StockRequestAdminDTO;
 
-  // 3) PUT it back
-  const putRes = await fetch(getUrl, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  if (!putRes.ok) throw new Error(`Failed to update request ${id}`);
+    // 2) Mutate status to "Approved"
+    body.status = 'Approved';
+
+    // 3) PUT it back
+    const putRes = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!putRes.ok) throw new Error(`Failed to approve request ${id}`);
+  } else {
+    // If denied → DELETE immediately
+    const deleteRes = await fetch(url, { method: 'DELETE' });
+    if (!deleteRes.ok) throw new Error(`Failed to delete request ${id}`);
+  }
 }
