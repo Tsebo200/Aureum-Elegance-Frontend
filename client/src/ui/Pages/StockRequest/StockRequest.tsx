@@ -145,7 +145,7 @@ function StockRequest() {
                 </div>
 
                   <div className={styles.fourthFormContainer}>
-                  <h3 className={styles.amountHeading}>Amount in kilograms or litres</h3>
+                  <h3 className={styles.amountHeading}>Stock Quantity</h3>
                   <div className={styles.amountForm}>
                     <AmountTextField
                       value={formData.amountRequested}

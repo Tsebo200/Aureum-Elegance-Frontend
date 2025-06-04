@@ -74,7 +74,7 @@ export default function StockRequestAdmin() {
                 className={styles.denyBtn}
                 onClick={() => handleResponse(r.id, false)}
               >
-                Deny
+                Reject
               </Button>
             </span>
           </div>
