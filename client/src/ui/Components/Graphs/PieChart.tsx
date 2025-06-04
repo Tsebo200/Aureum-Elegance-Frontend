@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-
+import styles from './DoughnutChart.module.scss';
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 type Fragrance = {
@@ -68,7 +68,17 @@ export function PieChart() {
     },
   };
 
-  if (loading) return <p>Loading fragrance pie chart...</p>;
 
-  return <Pie data={pieData} options={options} />;
+  return(
+    <div>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+          <p>Loading Pie Chart...</p>
+        </div>
+      ) : (
+        <Pie data={pieData} options={options} />
+      )}
+    </div>
+  );
 }
