@@ -78,12 +78,12 @@ export default function AddStock() {
         <h1 className="page-title">Add Stock</h1>
         <hr className="divider" />
 
-        <section className="warehouse-section">
+        {/* <section className="warehouse-section">
           <h2 className="section-title">Select Destination Warehouse</h2>
           <div className="selector-container">
-            {/* <WarehouseForm /> */}
+             <WarehouseForm /> 
           </div>
-        </section>
+        </section> */}
 
         <section className="forms-container">
           {/* ------------------ Ingredient ------------------ */}
