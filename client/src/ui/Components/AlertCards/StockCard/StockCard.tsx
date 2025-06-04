@@ -5,13 +5,19 @@ import { getFragrances } from '../../../services/FragranceServiceRoute';
 
 function StockCard() {
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);
+  const [lowestFragrance, setLowestFragrance] = useState<Fragrance | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getFragrances();
-        console.log("Fetched fragrances:", data);
+
+        // Sort fragrances by volume (ascending) and pick the first
+        const sorted = [...data].sort((a, b) => a.volume - b.volume);
+        const lowest = sorted[0];
+
         setFragrances(data);
+        setLowestFragrance(lowest);
       } catch (error) {
         console.error("Error fetching fragrances:", error);
       }
@@ -20,18 +26,19 @@ function StockCard() {
     fetchData();
   }, []);
 
-  const secondFragrance = fragrances[1]; // get the second item
-
   return (
     <div>
-      {secondFragrance ? (
+      {lowestFragrance ? (
         <div className={styles.cardContainer}>
-          <h3 className={styles.lowStockHeading}>Low Stock</h3>
-          <h3 className={styles.oilHeading}>{secondFragrance.name}</h3>
+          <h3 className={styles.lowStockHeading}>Lowest Stock</h3>
+          <h3 className={styles.oilHeading}>{lowestFragrance.name}</h3>
+          {/* <p className={styles.volumeText}>Volume: {lowestFragrance.volume}</p> */}
           <div className={styles.iconStatus}></div>
         </div>
       ) : (
-        <div className={styles.cardContainer}></div> //Load this if no data is available
+        <div className={styles.cardContainer}>
+          <p className={styles.noDataText}>No fragrance data available.</p>
+        </div>
       )}
     </div>
   );

@@ -1,41 +1,46 @@
 import { useEffect, useState } from 'react';
-import styles from './StockTransfer.module.scss'
-import { getFragrances } from '../../../services/FragranceServiceRoute';
-import type { Fragrance } from '../../../services/models/fragranceModel';
+import styles from './StockTransfer.module.scss';
+import { getStockRequests } from '../../../services/StockRequestServiceRoute'; // update path if needed
+import type { StockRequestAdminDTO } from '../../../services/models/stockRequestAdminModel';
 
 function StockTransfer() {
-
-   const [fourthFragrance, setFourthFragrance] = useState<Fragrance | null>(null);
+  const [pendingAmount, setPendingAmount] = useState<number | null>(null);
 
   useEffect(() => {
-    (async () => {
+    const fetchPendingStock = async () => {
       try {
-        const data = await getFragrances();
+        const ingredients = await getStockRequests('Ingredients');
+        const packaging = await getStockRequests('Packagings');
 
-        // Set only the 3rd item if it exists - currently only fetching third item in the array
-        if (data.length >= 3) {
-          setFourthFragrance(data[2]);
-        }
+        const allRequests: StockRequestAdminDTO[] = [...ingredients, ...packaging];
+
+        const pendingTotal = allRequests
+          .filter(r => r.status === 'Pending')
+          .reduce((sum, r) => sum + r.amountRequested, 0);
+
+        setPendingAmount(pendingTotal);
       } catch (error) {
-        console.error("Error fetching fragrances:", error);
+        console.error('Error fetching pending stock requests:', error);
+        setPendingAmount(0);
       }
-    })();
+    };
+
+    fetchPendingStock();
   }, []);
 
   return (
     <div>
-    {fourthFragrance ? (
+      {pendingAmount !== null ? (
         <div className={styles.cardContainer}>
-          <h3 className={styles.lowStockHeading}>Stock Transfer <br/>Pending</h3>
-          <h3 className={styles.oilHeading}>Stabilizer</h3>
+          <h3 className={styles.lowStockHeading}>Stock Transfer<br />Pending</h3>
+          <h3 className={styles.oilHeading}>{pendingAmount} units</h3>
           <div className={styles.iconStatus}></div>
         </div>
-    ):(
-        <div className={styles.cardContainer}></div> //Load this if no data is available
-      )
-    }
+      ) : (
+        <div className={styles.cardContainer}></div> // Optional loading state
+      )}
     </div>
-  )
+  );
 }
 
-export default StockTransfer
+export default StockTransfer;

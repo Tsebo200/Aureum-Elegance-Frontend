@@ -35,9 +35,9 @@ export function PieChart() {
     '#3C0806',
     '#8F1D27',
     '#69171E',
-    '#3C0806',
-    '#8F1D27',
-    '#B8222F',
+    '#821e1b',
+    // '#8F1D27',
+    // '#B8222F',
   ];
 
   const pieData = {
