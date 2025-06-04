@@ -38,7 +38,7 @@ function ExpiryDate() {
         </div>
       ) : (
         <div className={styles.cardContainer}>
-          <p className={styles.noDataText}>No expiry data available.</p>
+          <p className={styles.noDataText}>No Expiry Data Available.</p>
         </div>
       )}
     </div>

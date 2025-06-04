@@ -37,7 +37,7 @@ function StockCard() {
         </div>
       ) : (
         <div className={styles.cardContainer}>
-          <p className={styles.noDataText}>No fragrance data available.</p>
+          <p className={styles.noDataText}>No Fragrance Data Available.</p>
         </div>
       )}
     </div>
