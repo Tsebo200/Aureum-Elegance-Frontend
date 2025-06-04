@@ -24,9 +24,6 @@ export async function getStockRequests(
   }));
 }
 
-// Approve or deny a request of either type.
-// • If approve === true  → GET → set status="Approved" → PUT
-// • If approve === false → DELETE (remove the record entirely)
 export async function respondToRequest(
   type: StockRequestType,
   id: number,
@@ -34,25 +31,33 @@ export async function respondToRequest(
 ): Promise<void> {
   const url = `${endpointFor(type)}/${id}`;
 
-  if (approve) {
-    // 1) GET the existing DTO
-    const getRes = await fetch(url);
-    if (!getRes.ok) throw new Error(`Request ${id} not found`);
-    const body = (await getRes.json()) as StockRequestAdminDTO;
+  // 1) GET the existing record
+  const getRes = await fetch(url);
+  if (!getRes.ok) throw new Error(`Request ${id} not found`);
+  const body = (await getRes.json()) as StockRequestAdminDTO;
 
-    // 2) Mutate status to "Approved"
-    body.status = 'Approved';
+  // 2) Prepare updated object
+  const updatedRequest = {
+    id: body.id,
+    amountRequested: body.amountRequested,
+    status: approve ? 'Approved' : 'Rejected',
+    requestDate: body.requestDate,
+    userId: body.user?.userId ?? 0,
+    warehouseId: body.warehouse?.warehouseID ?? 0,
+    ...(type === 'Ingredients'
+      ? { ingredientsId: body.ingredients?.id }
+      : { packagingId: body.packaging?.id }),
+  };
 
-    // 3) PUT it back
-    const putRes = await fetch(url, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    if (!putRes.ok) throw new Error(`Failed to approve request ${id}`);
-  } else {
-    // If denied → DELETE immediately
-    const deleteRes = await fetch(url, { method: 'DELETE' });
-    if (!deleteRes.ok) throw new Error(`Failed to delete request ${id}`);
-  }
+  // 3) PUT updated object
+  const putRes = await fetch(url, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updatedRequest),
+  });
+
+  if (!putRes.ok)
+    throw new Error(
+      `Failed to ${approve ? 'approve' : 'reject'} request ${id}`
+    );
 }
