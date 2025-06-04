@@ -1,6 +1,6 @@
 export interface StockRequestIngredients{
     id: number;
-    amountRequest: number;
+    amountRequested: number;
     status: string;
     requestDate: string;
     ingredientsId: number;

@@ -3,11 +3,11 @@ export type UserRole = 'Admin' | 'Manager' | 'Employee';
 
 // User Model
 export interface User {
-  userId: number;
+  userId: number;        // matches DTO.UserId
   name: string;
   email: string;
   role: UserRole;
-  password?: string; // optional: for creation only, not included in fetches
+  password?: string;     // optional: only for creation
 }
 
 // Warehouse Model
@@ -34,5 +34,4 @@ export interface StockRequest {
 
   warehouseToId: number;
   warehouseTo?: Warehouse;
-  
 }
