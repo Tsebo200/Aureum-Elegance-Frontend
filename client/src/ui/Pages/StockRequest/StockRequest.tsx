@@ -89,6 +89,16 @@ function StockRequest() {
 
             <div className={styles.formContainer}>
               <div className={styles.topContainer}>
+            <div className={styles.thirdFormContainer}>
+                  <h3 className={styles.warehouseFromHeading}>User</h3>
+                  <div className={styles.WarehouseFromForm}>
+                       <UserTextField
+                      value={formData.userId}
+                      onChange={(val) => handleChange('userId', val)}
+                    />
+                  </div>
+                </div>
+
                 <div className={styles.firstFormContainer}>
                   <h3 className={styles.warehouseToHeading}>Request Type</h3>
                   <div className={styles.WarehouseToForm}>
@@ -122,15 +132,6 @@ function StockRequest() {
                   </div>
                 </div>
 
-                <div className={styles.thirdFormContainer}>
-                  <h3 className={styles.warehouseFromHeading}>User</h3>
-                  <div className={styles.WarehouseFromForm}>
-                       <UserTextField
-                      value={formData.userId}
-                      onChange={(val) => handleChange('userId', val)}
-                    />
-                  </div>
-                </div>
               </div>
 
               <div className={styles.middleContainer}>
