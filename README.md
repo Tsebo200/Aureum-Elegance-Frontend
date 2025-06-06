@@ -110,42 +110,50 @@ Follow these instructions to get a local copy of the project up and running for 
 
 ### How to Install
 
-1. **Clone the Repository**
-
-```sh
-   git clone https://github.com/Tsebo200/Aureum-Elegance-Frontend.git
-   ```
-
-   Navigate into the cloned directory:
+1. **Clone and Run the Backend (Required Before Frontend Runs)**
+   Before running the frontend, you must clone and start the backend server from this repository:
+   🔗 [https://github.com/Tsebo200/Aureum-Elegance-Backend](https://github.com/Tsebo200/Aureum-Elegance-Backend)
 
    ```sh
+   git clone https://github.com/Tsebo200/Aureum-Elegance-Backend.git
+   cd Aureum-Elegance-Backend
+   dotnet restore
+   dotnet ef database update        # Apply EF Core migrations
+   dotnet run
+   ```
+
+   By default, the backend will run at: `http://localhost:5167/`
+
+2. **Clone the Frontend Repository**
+
+   ```sh
+   git clone https://github.com/Tsebo200/Aureum-Elegance-Frontend.git
    cd Aureum-Elegance-Frontend
    ```
 
-2. **Install Frontend Dependencies**
+3. **Install Frontend Dependencies**
 
-  ```sh
+   ```sh
    npm install
    ```
- 
 
-3. **Set Up Environment Variables**
-   Create a `.env` file in the `client/` directory with the following (example values):
+4. **Set Up Environment Variables**
 
-   ```env
-   VITE_API_BASE_URL=http://localhost:5000/api
-   VITE_GOOGLE_AUTH_CLIENT_ID=your_google_client_id
-   ```
+   * In the `client/` directory, create a `.env` file containing:
 
-   Create a `.env` file in the `server/` directory with the following (example values):
+     ```env
+     VITE_API_BASE_URL=http://localhost:5167/api
+     VITE_GOOGLE_AUTH_CLIENT_ID=your_google_client_id
+     ```
+   * In the `server/` directory (of the cloned backend), create a `.env` file containing:
 
-   ```env
-   ASPNETCORE_ENVIRONMENT=Development
-   ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=aureum_db;Username=postgres;Password=your_password
-   JWT__Secret=your_jwt_secret_key
-   ```
+     ```env
+     ASPNETCORE_ENVIRONMENT=Development
+     ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=aureum_db;Username=postgres;Password=your_password
+     JWT__Secret=your_jwt_secret_key
+     ```
 
-4. **Set Up the Database**
+5. **Set Up the Database**
 
    * If using local PostgreSQL:
 
@@ -154,37 +162,25 @@ Follow these instructions to get a local copy of the project up and running for 
      ```
    * If using Aiven, configure the connection string accordingly in `server/.env`.
 
-5. **Run Backend (Development Mode)**
-
-   ```sh
-   cd server
-   dotnet restore
-   dotnet ef database update        # Apply EF Core migrations
-   dotnet run
-   ```
-
-   The backend should now be running at `http://localhost:5000/`.
-
-6. **Run Frontend (Development Mode)**
+6. **Run Frontend (After Backend Is Running)**
 
    ```sh
    cd client
    npm run dev
    ```
 
-   The frontend should be available at `http://localhost:5173/` (or indicated by Vite).
+   The frontend will be available at `http://localhost:5173/` (or the port indicated by Vite).
 
 7. **(Optional) Run via Docker**
-   Ensure Docker is running, then from the root directory:
+   Ensure Docker is running, then from the root directory of your clone:
 
    ```sh
    docker-compose up --build
    ```
 
-   This will build and launch both the frontend and backend containers, along with a PostgreSQL instance.
+   This will build and launch both the frontend and backend containers.
 
 ---
-
 ## Features and Functionality
 
 Aureum Elegance is structured around a real-world warehouse workflow, specifically tailored for the perfume industry. Below is a breakdown of the major routes and their core features as experienced by both employees and administrators.
