@@ -1,4 +1,4 @@
-
+````markdown
 <!-- Repository Information & Links -->
 <br />
 
@@ -52,13 +52,13 @@
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
+---
 
+## About the Project
 
 ### Project Description
 
 Aureum Elegance is a full-stack warehouse management system tailored specifically for the perfume industry. It streamlines inventory tracking, order processing, and analytics by leveraging modern web technologies and a user-friendly interface.
-
----
 
 ### Built With
 
@@ -90,20 +90,19 @@ Follow these instructions to get a local copy of the project up and running for 
 ### Prerequisites
 
 - **Node.js** (v16+) and **npm** (v8+) installed on your machine:  
-```sh
+  ```sh
   node --version
   npm --version
-```
+````
 
 * **.NET SDK** (v6.0+) installed for backend services:
 
   ```sh
   dotnet --version
   ```
-
 * **Docker** installed (optional, for containerized setup):
 
-   ```sh
+  ```sh
   docker --version
   ```
 * **Git** or **GitHub Desktop** to clone the repository.
@@ -113,38 +112,32 @@ Follow these instructions to get a local copy of the project up and running for 
 
 1. **Clone the Repository**
 
-```sh
-   git clone https://github.com/Tsebo200/Aureum-Elegance-Frontend.git
-   ```
-
-   Navigate into the cloned directory:
-
    ```sh
+   git clone https://github.com/Tsebo200/Aureum-Elegance-Frontend.git
    cd Aureum-Elegance-Frontend
    ```
 
 2. **Install Frontend Dependencies**
 
-  ```sh
+   ```sh
    npm install
    ```
- 
 
 3. **Set Up Environment Variables**
-   Create a `.env` file in the `client/` directory with the following (example values):
 
-   ```env
-   VITE_API_BASE_URL=http://localhost:5000/api
-   VITE_GOOGLE_AUTH_CLIENT_ID=your_google_client_id
-   ```
+   * In the `client/` directory, create a `.env` file with:
 
-   Create a `.env` file in the `server/` directory with the following (example values):
+     ```env
+     VITE_API_BASE_URL=http://localhost:5000/api
+     VITE_GOOGLE_AUTH_CLIENT_ID=your_google_client_id
+     ```
+   * In the `server/` directory, create a `.env` file with:
 
-   ```env
-   ASPNETCORE_ENVIRONMENT=Development
-   ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=aureum_db;Username=postgres;Password=your_password
-   JWT__Secret=your_jwt_secret_key
-   ```
+     ```env
+     ASPNETCORE_ENVIRONMENT=Development
+     ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=aureum_db;Username=postgres;Password=your_password
+     JWT__Secret=your_jwt_secret_key
+     ```
 
 4. **Set Up the Database**
 
@@ -164,7 +157,7 @@ Follow these instructions to get a local copy of the project up and running for 
    dotnet run
    ```
 
-   The backend should now be running at `http://localhost:5000/`.
+   The backend will run at `http://localhost:5000/`.
 
 6. **Run Frontend (Development Mode)**
 
@@ -173,7 +166,7 @@ Follow these instructions to get a local copy of the project up and running for 
    npm run dev
    ```
 
-   The frontend should be available at `http://localhost:5173/` (or indicated by Vite).
+   The frontend will be available at `http://localhost:5173/` (or indicated by Vite).
 
 7. **(Optional) Run via Docker**
    Ensure Docker is running, then from the root directory:
@@ -182,7 +175,7 @@ Follow these instructions to get a local copy of the project up and running for 
    docker-compose up --build
    ```
 
-   This will build and launch both the frontend and backend containers, along with a PostgreSQL instance.
+   This will build and launch frontend, backend, and a PostgreSQL instance.
 
 ---
 
@@ -192,103 +185,116 @@ Aureum Elegance is structured around a real-world warehouse workflow, specifical
 
 ---
 
-### 👤 Log In
+### Log In
 
-- Users authenticate using their assigned credentials.
-- Temporary passwords are supported for new employees.
-- Secure JWT-based authentication.
-- Role-based routing (e.g., Employee vs Admin).
-
----
-
-### 📊 Dashboard
-
-- Displays real-time **alerts** (e.g., low stock, expiring ingredients).
-- Includes interactive **perfume production statistics** using Chart.js.
-- Enables staff to quickly assess inventory health and operational status.
+* Users authenticate using their assigned credentials.
+* Temporary passwords are supported for new employees.
+* Secure JWT-based authentication.
+* Role-based routing (e.g., Employee vs Admin).
 
 ---
 
-### 🧪 Production
+### Dashboard
+
+* Displays real-time **alerts** (e.g., low stock, expiring ingredients).
+* Includes interactive **perfume production statistics** using Chart.js.
+* Enables staff to quickly assess inventory health and operational status.
+
+---
+
+### Production
 
 **Tabs within Production:**
-- **Fragrances:** View, create, and manage perfumes.
-- **Ingredients:** Manage and view fragrance ingredients with expiry tracking.
-- **Packaging:** Track packaging components (e.g., bottles, nozzles, wraps).
-- **Produce Perfume:** Start and manage production batches using available stock.
-- **Finished Products:** Monitor and manage completed perfumes.
+
+* **Fragrances:** View, create, and manage perfumes.
+* **Ingredients:** Manage and view fragrance ingredients with expiry tracking.
+* **Packaging:** Track packaging components (e.g., bottles, nozzles, wraps).
+* **Produce Perfume:** Start and manage production batches using available stock.
+* **Finished Products:** Monitor and manage completed perfumes.
 
 **Key Functions:**
-- Define fragrance recipes (volumes per bottle, required ingredients/packaging).
-- Track production status (e.g., In Progress, Completed).
-- Create new perfumes with detailed metadata and pricing.
+
+* Define fragrance recipes (volumes per bottle, required ingredients/packaging).
+* Track production status (e.g., In Progress, Completed).
+* Create new perfumes with detailed metadata and pricing.
 
 ---
 
-### 📦 Stock Request
+### Stock Request
 
-- Request more stock of ingredients or packaging when running low.
-- Includes:
-  - Type selection (ingredient or packaging).
-  - Warehouse source and destination.
-  - Quantity and justification input.
-- Requests show up in Admin's approval interface.
+* Request more stock of ingredients or packaging when running low.
+* Includes:
 
----
-
-### ➕ Add Stock
-
-- Used to manually input new stock arrivals (e.g., deliveries from suppliers).
-- Supports:
-  - Ingredient and packaging entries.
-  - Cost per unit.
-  - Expiry dates for perishables.
-  - Warehouse assignment.
+  * Type selection (ingredient or packaging).
+  * Warehouse source and destination.
+  * Quantity and justification input.
+* Requests appear in Admin’s approval interface.
 
 ---
 
-### 🏪 Warehouse Stock
+### Add Stock
 
-- Overview of all ingredients and packaging across warehouses.
-- Displays units in stock, cost per unit, and type.
-- Supports filtering by item type and warehouse.
-- Useful for validating stock levels before and after production.
+* Manually input new stock arrivals (e.g., supplier deliveries).
+* Supports:
+
+  * Ingredient and packaging entries.
+  * Cost per unit.
+  * Expiry dates for perishables.
+  * Warehouse assignment.
 
 ---
 
-### 🛠️ Admin Management
+### Warehouse Stock
 
-- Restricted to users with admin roles.
+* Overview of all ingredients and packaging across warehouses.
+* Displays units in stock, cost per unit, and item type.
+* Supports filtering by item type and warehouse.
+* Useful for validating stock levels before and after production.
+
+---
+
+### Admin Management
+
+* Restricted to users with admin roles.
 
 **Sub-Features:**
-- **Employees Tab:**
-  - View all staff.
-  - Add new employees with role assignments.
-  - Promote users to managers or remove them.
-- **Warehouses Tab:**
-  - Add and manage multiple warehouses.
-  - Assign managers to warehouses.
-- **Stock Requests Tab:**
-  - Approve or deny pending stock transfer requests from employees.
+
+* **Employees Tab:**
+
+  * View all staff.
+  * Add new employees with role assignments.
+  * Promote users to managers or remove them.
+* **Warehouses Tab:**
+
+  * Add and manage multiple warehouses.
+  * Assign managers to warehouses.
+* **Stock Requests Tab:**
+
+  * Approve or deny pending stock transfer requests from employees.
 
 ---
 
-### 🧾 Stock Management
+### Stock Management
 
 **Sub-Tabs Include:**
-- **Suppliers:**
-  - Add or edit supplier records.
-  - Track who provides specific ingredients or packaging.
-- **Deliveries:**
-  - Log incoming deliveries with item breakdown, cost, and warehouse destination.
-- **Record Loss / Waste:**
-  - Record damaged, expired, or lost stock.
-  - Track reasons for loss and user accountability.
+
+* **Suppliers:**
+
+  * Add or edit supplier records.
+  * Track which suppliers provide specific ingredients or packaging.
+* **Deliveries:**
+
+  * Log incoming deliveries with item breakdown, cost, and warehouse destination.
+* **Record Loss / Waste:**
+
+  * Record damaged, expired, or lost stock.
+  * Track reasons for loss and user accountability.
 
 ---
 
 This flow mirrors the real-world experience of a perfume warehouse — from fragrance creation and stock handling, to administrative oversight and waste management.
 
+---
 
 ## Concept Process
 
@@ -300,7 +306,9 @@ We conducted several brainstorming sessions to identify pain points in warehouse
 * **Batch Tracking**: Lot numbers and expiration dates are critical for fragrances.
 * **Fragrance Demand**: The capabilities for staff to create and update perfumes and fragrances.
 
-These insights helped shape a system that emphasizes visual clarity, real-time responsiveness, and traceability. Our goal was to create a tool that is not only technically robust but also aligns with the aesthetics of the perfume industry; elegance, simplicity, and precision
+These insights helped shape a system that emphasizes visual clarity, real-time responsiveness, and traceability. Our goal was to create a tool that is not only technically robust but also aligns with the aesthetics of the perfume industry; elegance, simplicity, and precision.
+
+---
 
 ### Wireframes
 
@@ -317,6 +325,8 @@ Initial wireframes were created in Figma, focusing on:
 
 These wireframes served as a blueprint to balance functionality with minimalism. We prioritized intuitive user flows, ensuring users could perform key actions like updating inventory or processing orders in under three clicks.
 
+---
+
 ### Custom UI
 
 * **Color Palette**: Elegant gold (#CFAF62), deep charcoal (#2E2E2E), crisp white (#FFFFFF).
@@ -329,13 +339,13 @@ The design choices reinforce the premium feel associated with perfume branding. 
 
 ## Development Process
 
-The `Development Process` covers technical implementations on both frontend and backend.
+The **Development Process** covers technical implementations on both frontend and backend.
 
 ### Implementation Process
 
 * **Frontend** (React + TypeScript + SCSS + Material UI)
 
-  * Set up `Vite` with HMR for rapid development.
+  * Set up **Vite** with HMR for rapid development.
   * Implemented global state management using React Context and custom hooks.
   * Configured Axios interceptors for attaching JWT tokens and handling 401 responses.
   * Created reusable components (e.g., `<Card>`, `<Modal>`, `<DataTable>`, `<Chart>`) in `/client/src/components/`.
@@ -371,7 +381,6 @@ The `Development Process` covers technical implementations on both frontend and 
 * **Third-Party Integrations**: Integrate with courier APIs (e.g., DHL, FedEx) for shipping rate calculations.
 
 These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralized hub for operational intelligence, compliance tracking, and user collaboration.
-
 
 ---
 
@@ -436,6 +445,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * **Electron** for desktop packaging
 * **React** for app building
 
-
 We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.
+
 
