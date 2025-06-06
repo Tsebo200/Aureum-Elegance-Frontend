@@ -8,3 +8,14 @@ export async function getWarehouseById(id: number): Promise<Warehouse> {
   }
   return response.json();
 }
+
+const BASE_URL = "http://localhost:5167/api/Warehouse";
+
+// NEW: GET all warehouses
+export async function getAllWarehouses(): Promise<Warehouse[]> {
+  const response = await fetch(BASE_URL); 
+  if (!response.ok) {
+    throw new Error("Failed to fetch warehouses");
+  }
+  return response.json();
+}
