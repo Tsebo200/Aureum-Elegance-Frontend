@@ -188,37 +188,107 @@ Follow these instructions to get a local copy of the project up and running for 
 
 ## Features and Functionality
 
-### Key Features
-
-* **Inventory Management**
-
-  * Add / Edit / Delete perfume products
-  * Track stock levels in real-time
-  * Low-stock alerts and threshold settings
-
-* **Order Processing**
-
-  * Create, update, and fulfill orders
-  * Generate packing lists and shipping labels
-  * Order history with filter and search
-
-* **User Authentication & Authorization**
-
-  * Role-based access control (Admin, Warehouse Staff, Viewer)
-  * Secure login via JWT (with optional Google OAuth)
-  * Password reset and account recovery
-
-* **Dashboard & Analytics**
-
-  * Interactive charts (Chart.js) for sales, stock trends, and order volume
-  * Filter by date ranges, product categories, or warehouse locations
-
-* **Desktop App Support**
-
-  * Electron integration for offline usage and desktop notifications
-  * Automatic updates via built-in Electron auto-updater
+Aureum Elegance is structured around a real-world warehouse workflow, specifically tailored for the perfume industry. Below is a breakdown of the major routes and their core features as experienced by both employees and administrators.
 
 ---
+
+### 👤 Log In
+
+- Users authenticate using their assigned credentials.
+- Temporary passwords are supported for new employees.
+- Secure JWT-based authentication.
+- Role-based routing (e.g., Employee vs Admin).
+
+---
+
+### 📊 Dashboard
+
+- Displays real-time **alerts** (e.g., low stock, expiring ingredients).
+- Includes interactive **perfume production statistics** using Chart.js.
+- Enables staff to quickly assess inventory health and operational status.
+
+---
+
+### 🧪 Production
+
+**Tabs within Production:**
+- **Fragrances:** View, create, and manage perfumes.
+- **Ingredients:** Manage and view fragrance ingredients with expiry tracking.
+- **Packaging:** Track packaging components (e.g., bottles, nozzles, wraps).
+- **Produce Perfume:** Start and manage production batches using available stock.
+- **Finished Products:** Monitor and manage completed perfumes.
+
+**Key Functions:**
+- Define fragrance recipes (volumes per bottle, required ingredients/packaging).
+- Track production status (e.g., In Progress, Completed).
+- Create new perfumes with detailed metadata and pricing.
+
+---
+
+### 📦 Stock Request
+
+- Request more stock of ingredients or packaging when running low.
+- Includes:
+  - Type selection (ingredient or packaging).
+  - Warehouse source and destination.
+  - Quantity and justification input.
+- Requests show up in Admin's approval interface.
+
+---
+
+### ➕ Add Stock
+
+- Used to manually input new stock arrivals (e.g., deliveries from suppliers).
+- Supports:
+  - Ingredient and packaging entries.
+  - Cost per unit.
+  - Expiry dates for perishables.
+  - Warehouse assignment.
+
+---
+
+### 🏪 Warehouse Stock
+
+- Overview of all ingredients and packaging across warehouses.
+- Displays units in stock, cost per unit, and type.
+- Supports filtering by item type and warehouse.
+- Useful for validating stock levels before and after production.
+
+---
+
+### 🛠️ Admin Management
+
+- Restricted to users with admin roles.
+
+**Sub-Features:**
+- **Employees Tab:**
+  - View all staff.
+  - Add new employees with role assignments.
+  - Promote users to managers or remove them.
+- **Warehouses Tab:**
+  - Add and manage multiple warehouses.
+  - Assign managers to warehouses.
+- **Stock Requests Tab:**
+  - Approve or deny pending stock transfer requests from employees.
+
+---
+
+### 🧾 Stock Management
+
+**Sub-Tabs Include:**
+- **Suppliers:**
+  - Add or edit supplier records.
+  - Track who provides specific ingredients or packaging.
+- **Deliveries:**
+  - Log incoming deliveries with item breakdown, cost, and warehouse destination.
+- **Record Loss / Waste:**
+  - Record damaged, expired, or lost stock.
+  - Track reasons for loss and user accountability.
+
+---
+
+This flow mirrors the real-world experience of a perfume warehouse — from fragrance creation and stock handling, to administrative oversight and waste management.
+
 
 ## Concept Process
 
@@ -336,7 +406,19 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-* **Team Lead / Developer**:
+* **Team of Developers**:
+  *Name: Lorem Ipsum*
+  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
+  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+
+  *Name: Lorem Ipsum*
+  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
+  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+
+  *Name: Lorem Ipsum*
+  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
+  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+
   *Name: Lorem Ipsum*
   *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
   *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
@@ -352,9 +434,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * **Material UI** for component library
 * **Chart.js** for visualization tools
 * **Electron** for desktop packaging
-* **Stack Overflow** and community forums for troubleshooting resources
-* **Color Hunt** for palette inspiration
-* **Lorem ipsum** for placeholder text
+* **React** for app building
+
 
 We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.
 
