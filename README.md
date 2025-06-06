@@ -359,9 +359,9 @@ These enhancements aim to make Aureum Elegance not just a warehouse tool, but a 
 
 ### Mockups
 
-![Mockup - Dashboard](client/src/assets/mockup-dashboard.png)
-![Mockup - Inventory](client/src/assets/mockup-inventory.png)
-![Mockup - Orders](client/src/assets/mockup-orders.png)
+![Mockup - Login](client/src/ui/assets/Mockup%201.png)
+![Mockup - Dashboard](client/src/ui/assets/Mockup%202.png)
+![Mockup - Suppliers](client/src/ui/assets/Mockup%203.png)
 
 ### Video Demonstration
 
