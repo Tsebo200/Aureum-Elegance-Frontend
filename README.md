@@ -317,7 +317,7 @@ Initial wireframes were created in Figma, focusing on:
 7. **Admin Management**
 8. **Stock Management**
 
-    <img src="client/src/ui/assets/Logo White.png" align="center" alt="Aureum Elegance Logo" width="80%" height="140">
+    <img src="client/src/ui/assets/Wireframes.png" align="center" alt="Wireframes" width="80%" height="auto">
 
 These wireframes served as a blueprint to balance functionality with minimalism. We prioritized intuitive user flows, ensuring users could perform key actions like updating inventory or processing orders in under three clicks.
 
