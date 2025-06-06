@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Bar } from 'react-chartjs-2';
+import styles from './DoughnutChart.module.scss';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -56,6 +57,8 @@ export function LineChart() {
     BatchFinishedProducts: 0,
   });
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchTotals = async () => {
       const endpoints = {
@@ -80,6 +83,7 @@ export function LineChart() {
       }
 
       setTotals(newTotals);
+      setLoading(false); // done loading
     };
 
     fetchTotals();
@@ -104,7 +108,14 @@ export function LineChart() {
 
   return (
   <div style={{ height: '1000px', width: '100%' }}>
-  <Bar options={options} data={data}/>
-  </div>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+          <p>Loading chart...</p>
+        </div>
+      ) : (
+        <Bar options={options} data={data} />
+      )}
+    </div>
   )
 }
