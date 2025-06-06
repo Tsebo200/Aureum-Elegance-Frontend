@@ -15,7 +15,7 @@
 </br>
 <p align="center">
   <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend">
-    <img src="client/src/ui/assets/Logo White.png" align="center" alt="Aureum Elegance Logo" width="140" height="140">
+    <img src="client/src/ui/assets/Logo White.png" align="center" alt="Aureum Elegance Logo" width="auto" height="140">
   </a>
   <br />
   <br />
