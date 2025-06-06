@@ -263,8 +263,9 @@ Aureum Elegance is structured around a real-world warehouse workflow, specifical
 **Sub-Features:**
 - **Employees Tab:**
   - View all staff.
-  - Add new employees with role assignments.
   - Promote users to managers or remove them.
+  - **Add Employees Tab:**
+  - Add new employees with role assignments.
 - **Warehouses Tab:**
   - Add and manage multiple warehouses.
   - Assign managers to warehouses.
@@ -281,8 +282,9 @@ Aureum Elegance is structured around a real-world warehouse workflow, specifical
   - Track who provides specific ingredients or packaging.
 - **Deliveries:**
   - Log incoming deliveries with item breakdown, cost, and warehouse destination.
-- **Record Loss / Waste:**
+- **Record Waste:**
   - Record damaged, expired, or lost stock.
+  - **Waste Loss:**
   - Track reasons for loss and user accountability.
 
 ---
@@ -319,9 +321,8 @@ These wireframes served as a blueprint to balance functionality with minimalism.
 
 ### Custom UI
 
-* **Color Palette**: Elegant gold (#CFAF62), deep charcoal (#2E2E2E), crisp white (#FFFFFF).
+* **Color Palette**: Elegant gold (#FFC982), bright red (#E03E47), moody orange (#FDAF67).
 * **Typography**: ‘Poppins’ for headings, ‘Roboto’ for body text.
-* **Icons**: Custom SVGs for perfume bottles, crates, and shipping boxes.
 
 The design choices reinforce the premium feel associated with perfume branding. UI components are customized for clarity, with responsive layouts ensuring consistent performance on tablets and desktops used in warehouse environments.
 
@@ -406,21 +407,21 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 * **Team of Developers**:
-  *Name: Lorem Ipsum*
-  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
-  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+  Name: Anemi Breytenbach
+  Email: [231178@virtualwindow.co.za]
+  GitHub: [@Anemi](https://github.com/AnemiB)
 
-  *Name: Lorem Ipsum*
-  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
-  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+  Name: Tsebo Ramonyalioa
+  Email: [200200@virtualwindow.co.za]
+  GitHub: [@Tsebo](https://github.com/Tsebo200)
 
-  *Name: Lorem Ipsum*
-  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
-  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+  Name: Sean Dubbelman
+  Email: [231121@virtualwindow.co.za]
+  GitHub: [@Sean](https://github.com/Sean-D-231121)
 
-  *Name: Lorem Ipsum*
-  *Email: [lorem.ipsum@example.com](mailto:lorem.ipsum@example.com)*
-  *GitHub: [@LoremIpsum](https://github.com/LoremIpsum)*
+  Name: Tshwetso Mokgatlhe
+  Email: [221411@virtualwindow.co.za]
+  GitHub: [@Tshwetso](https://github.com/TshwetsoMo)
 
 * **Project Link**:
   [https://github.com/Tsebo200/Aureum-Elegance-Frontend](https://github.com/Tsebo200/Aureum-Elegance-Frontend)
@@ -437,4 +438,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.
-
