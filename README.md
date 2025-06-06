@@ -1,4 +1,4 @@
-````markdown
+
 <!-- Repository Information & Links -->
 <br />
 
