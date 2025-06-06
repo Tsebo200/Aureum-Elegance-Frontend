@@ -1,4 +1,4 @@
-````markdown
+
 <!-- Repository Information & Links -->
 <br />
 
@@ -93,7 +93,7 @@ Follow these instructions to get a local copy of the project up and running for 
   ```sh
   node --version
   npm --version
-````
+ ```
 
 * **.NET SDK** (v6.0+) installed for backend services:
 
