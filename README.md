@@ -410,25 +410,19 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Email: [231178@virtualwindow.co.za](mailto:231178@virtualwindow.co.za)  
 GitHub: [@Anemi](https://github.com/AnemiB)
 
-&nbsp;
-
 **Tsebo Ramonyalioa**  
 Email: [200200@virtualwindow.co.za](mailto:200200@virtualwindow.co.za)  
 GitHub: [@Tsebo](https://github.com/Tsebo200)
-
-&nbsp;
 
 **Sean Dubbelman**  
 Email: [231121@virtualwindow.co.za](mailto:231121@virtualwindow.co.za)  
 GitHub: [@Sean](https://github.com/Sean-D-231121)
 
-&nbsp;
-
 **Tshwetso Mokgatlhe**  
 Email: [221411@virtualwindow.co.za](mailto:221411@virtualwindow.co.za)  
 GitHub: [@Tshwetso](https://github.com/TshwetsoMo)
 
-&nbsp;
+
 
 **Project Link:**  
 [https://github.com/Tsebo200/Aureum-Elegance-Frontend](https://github.com/Tsebo200/Aureum-Elegance-Frontend)
