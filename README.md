@@ -74,7 +74,6 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
   - [.NET Core (C#)](https://dotnet.microsoft.com/)  
   - [PostgreSQL](https://www.postgresql.org/)  
   - [PgAdmin](https://www.pgadmin.org/)  
-  - [Aiven](https://aiven.io/) (managed database hosting)
 - **DevOps & Tooling**
   - [Docker](https://www.docker.com/)  
   - [Swagger](https://swagger.io/)  
@@ -340,7 +339,6 @@ The **Development Process** covers technical implementations on both frontend an
 
   * Set up **Vite** with HMR for rapid development.
   * Implemented global state management using React Context and custom hooks.
-  * Configured Axios interceptors for attaching JWT tokens and handling 401 responses.
   * Created reusable components (e.g., `<Card>`, `<Modal>`, `<DataTable>`, `<Chart>`) in `/client/src/components/`.
   * Integrated Electron to package the app for Windows/macOS distribution.
 
