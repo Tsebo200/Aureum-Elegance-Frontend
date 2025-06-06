@@ -264,7 +264,7 @@ Aureum Elegance is structured around a real-world warehouse workflow, specifical
 - **Employees Tab:**
   - View all staff.
   - Promote users to managers or remove them.
-  - **Add Employees Tab:**
+- **Add Employees Tab:**
   - Add new employees with role assignments.
 - **Warehouses Tab:**
   - Add and manage multiple warehouses.
@@ -284,12 +284,12 @@ Aureum Elegance is structured around a real-world warehouse workflow, specifical
   - Log incoming deliveries with item breakdown, cost, and warehouse destination.
 - **Record Waste:**
   - Record damaged, expired, or lost stock.
-  - **Waste Loss:**
+- **Waste Loss:**
   - Track reasons for loss and user accountability.
 
 ---
 
-This flow mirrors the real-world experience of a perfume warehouse — from fragrance creation and stock handling, to administrative oversight and waste management.
+This flow mirrors the real-world experience of a perfume warehouse; from fragrance creation and stock handling, to administrative oversight and waste management.
 
 
 ## Concept Process
@@ -308,14 +308,16 @@ These insights helped shape a system that emphasizes visual clarity, real-time r
 
 Initial wireframes were created in Figma, focusing on:
 
-1. **Login / Registration Flow**
-2. **Dashboard Overview** with card-based metrics
-3. **Product CRUD Interfaces**
-4. **Order Management Pages**
+1. **Login Flow**
+2. **Dashboard Overview**
+3. **Product CRUD Interfaces in the Production Page**
+4. **Stock Requests**
+5. **Add Stock**
+6. **Warehouse Management**
+7. **Admin Management**
+8. **Stock Management**
 
-![Wireframe - Login](client/src/assets/wireframe-login.png)
-![Wireframe - Dashboard](client/src/assets/wireframe-dashboard.png)
-![Wireframe - Product CRUD](client/src/assets/wireframe-product-crud.png)
+    <img src="client/src/ui/assets/Logo White.png" align="center" alt="Aureum Elegance Logo" width="80%" height="140">
 
 These wireframes served as a blueprint to balance functionality with minimalism. We prioritized intuitive user flows, ensuring users could perform key actions like updating inventory or processing orders in under three clicks.
 
