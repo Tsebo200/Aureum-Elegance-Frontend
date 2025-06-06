@@ -407,21 +407,21 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 * **Team of Developers**:
-  Name: Anemi Breytenbach
-  Email: [231178@virtualwindow.co.za]
-  GitHub: [@Anemi](https://github.com/AnemiB)
+ * Name: Anemi Breytenbach
+ * Email: [231178@virtualwindow.co.za]
+ * GitHub: [@Anemi](https://github.com/AnemiB)
 
-  Name: Tsebo Ramonyalioa
-  Email: [200200@virtualwindow.co.za]
-  GitHub: [@Tsebo](https://github.com/Tsebo200)
+ * Name: Tsebo Ramonyalioa
+ * Email: [200200@virtualwindow.co.za]
+ * GitHub: [@Tsebo](https://github.com/Tsebo200)
 
-  Name: Sean Dubbelman
-  Email: [231121@virtualwindow.co.za]
-  GitHub: [@Sean](https://github.com/Sean-D-231121)
+ * Name: Sean Dubbelman
+ * Email: [231121@virtualwindow.co.za]
+ * GitHub: [@Sean](https://github.com/Sean-D-231121)
 
-  Name: Tshwetso Mokgatlhe
-  Email: [221411@virtualwindow.co.za]
-  GitHub: [@Tshwetso](https://github.com/TshwetsoMo)
+ * Name: Tshwetso Mokgatlhe
+ * Email: [221411@virtualwindow.co.za]
+ * GitHub: [@Tshwetso](https://github.com/TshwetsoMo)
 
 * **Project Link**:
   [https://github.com/Tsebo200/Aureum-Elegance-Frontend](https://github.com/Tsebo200/Aureum-Elegance-Frontend)
