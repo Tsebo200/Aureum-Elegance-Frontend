@@ -15,7 +15,7 @@
 </br>
 <p align="center">
   <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend">
-    <img src="client/src/ui/assets/Logo White.png" align="center" alt="Aureum Elegance Logo" width="auto" height="140">
+    <img src="client/src/ui/assets/Wordmark Logo.png" align="center" alt="Aureum Elegance Logo" width="140" height="140">
   </a>
   <br />
   <br />
@@ -228,13 +228,13 @@ We conducted several brainstorming sessions to identify pain points in warehouse
 
 * **Fragile Packaging**: Perfume bottles can break easily, so careful stock handling and alerting mechanisms were prioritized.
 * **Batch Tracking**: Lot numbers and expiration dates are critical for fragrances.
-* **Seasonal Demand**: Analytics on seasonal surges (e.g., holidays, Black Friday).
+* **Fragrance Demand**: The capabilities for staff to create and update perfumes and fragrances.
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec nisl ipsum. Donec at felis non arcu tristique elementum.*
+These insights helped shape a system that emphasizes visual clarity, real-time responsiveness, and traceability. Our goal was to create a tool that is not only technically robust but also aligns with the aesthetics of the perfume industry; elegance, simplicity, and precision
 
 ### Wireframes
 
-Initial wireframes were sketched in Figma, focusing on:
+Initial wireframes were created in Figma, focusing on:
 
 1. **Login / Registration Flow**
 2. **Dashboard Overview** with card-based metrics
@@ -245,7 +245,7 @@ Initial wireframes were sketched in Figma, focusing on:
 ![Wireframe - Dashboard](client/src/assets/wireframe-dashboard.png)
 ![Wireframe - Product CRUD](client/src/assets/wireframe-product-crud.png)
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.*
+These wireframes served as a blueprint to balance functionality with minimalism. We prioritized intuitive user flows, ensuring users could perform key actions like updating inventory or processing orders in under three clicks.
 
 ### Custom UI
 
@@ -253,7 +253,7 @@ Initial wireframes were sketched in Figma, focusing on:
 * **Typography**: ‘Poppins’ for headings, ‘Roboto’ for body text.
 * **Icons**: Custom SVGs for perfume bottles, crates, and shipping boxes.
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie sapien non nisi pharetra sollicitudin.*
+The design choices reinforce the premium feel associated with perfume branding. UI components are customized for clarity, with responsive layouts ensuring consistent performance on tablets and desktops used in warehouse environments.
 
 ---
 
@@ -300,7 +300,8 @@ The `Development Process` covers technical implementations on both frontend and 
 * **Mobile App Integration**: Build a React Native companion app for on-the-go scanning and inventory updates.
 * **Third-Party Integrations**: Integrate with courier APIs (e.g., DHL, FedEx) for shipping rate calculations.
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus, lectus at vulputate pulvinar, metus lacus fermentum magna, nec porttitor velit massa vitae urna.*
+These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralized hub for operational intelligence, compliance tracking, and user collaboration.
+
 
 ---
 
@@ -355,4 +356,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * **Color Hunt** for palette inspiration
 * **Lorem ipsum** for placeholder text
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*
+We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.
+
