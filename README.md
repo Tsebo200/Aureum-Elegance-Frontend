@@ -50,6 +50,7 @@
 * [Conclusion](#conclusion)
 * [License](#license)
 * [Contact](#contact)
+* [Responsibilities](#responsibilities)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -79,6 +80,7 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
   - [Swagger](https://swagger.io/)  
 - **Testing**
   - [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
+  - [xUnit](https://xunit.net/) (for backend testing)
 
 ---
 
@@ -348,7 +350,7 @@ The **Development Process** covers technical implementations on both frontend an
 * **Mobile App Integration**: Build a React Native companion app for on-the-go scanning and inventory updates.
 * **Third-Party Integrations**: Integrate with courier APIs (e.g., DHL, FedEx) for shipping rate calculations.
 
-These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralized hub for operational intelligence, compliance tracking, and user collaboration.
+These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralised hub for operational intelligence, compliance tracking, and user collaboration.
 
 
 ---
@@ -372,7 +374,7 @@ See the [open issues](https://github.com/Tsebo200/Aureum-Elegance-Frontend/issue
 
 ## Conclusion
 
-Aureum Elegance delivers a comprehensive solution for perfume warehouse management by combining modern web technologies with intuitive design. The system addresses the unique challenges of handling fragile products and batch tracking, while also providing real-time analytics and desktop support for offline usage.
+Aureum Elegance delivers a comprehensive solution for a new up-and-coming perfume warehouse management by combining modern web technologies with intuitive design. The system addresses the unique challenges of handling fragile products and batch tracking, while also providing real-time analytics.
 
 ---
 
@@ -399,6 +401,33 @@ GitHub: [@Sean](https://github.com/Sean-D-231121)
 **Tshwetso Mokgatlhe**  
 Email: [221411@virtualwindow.co.za](mailto:221411@virtualwindow.co.za)  
 GitHub: [@Tshwetso](https://github.com/TshwetsoMo)
+
+## Responsibilities
+
+Team work was the greatest priority in this project. Helping team members were emphasised. The full extent can be seen on the github commits for the [Frontend](https://github.com/Tsebo200/Aureum-Elegance-Frontend) and [Backend](https://github.com/Tsebo200/Aureum-Elegance-Backend).
+
+Each team member contributed to the development of Aureum Elegance as follows:
+
+- **Anemi**  
+  - Designed the application wireframes in Figma   
+  - Backend: Users, Suppliers, Finished Products (Controller, Model, Service, Interface, Data, DTO's)
+  - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab
+  - UI styling and integration of Material UI components to abide by the wireframes 
+
+- **Tsebo**  
+  - dcfghjuhgfdfdgh
+  - fgdhfjgkhfd
+  - gfhjfd  
+
+- **Sean**  
+  - dcfghjuhgfdfdgh
+  - fgdhfjgkhfd
+  - gfhjfd  
+
+- **Tshwetso**  
+  - dcfghjuhgfdfdgh
+  - fgdhfjgkhfd
+  - gfhjfd  
 
 
 
