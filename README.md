@@ -15,7 +15,7 @@
 </br>
 <p align="center">
   <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend">
-    <img src="client/src/assets/logo.png" align="center" alt="Aureum Elegance Logo" width="140" height="140">
+    <img src="client/src/ui/assets/Wordmark Logo.png" align="center" alt="Aureum Elegance Logo" width="140" height="140">
   </a>
   <br />
   <br />
@@ -93,7 +93,7 @@ Follow these instructions to get a local copy of the project up and running for 
 ```sh
   node --version
   npm --version
-
+```
 
 * **.NET SDK** (v6.0+) installed for backend services:
 
@@ -119,7 +119,7 @@ Follow these instructions to get a local copy of the project up and running for 
 
    Navigate into the cloned directory:
 
-   
+   ```sh
    cd Aureum-Elegance-Frontend
    ```
 
@@ -356,6 +356,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * **Lorem ipsum** for placeholder text
 
 *Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*
-
-```
-```
