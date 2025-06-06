@@ -412,10 +412,10 @@ Team work was the greatest priority in this project. Helping team members were e
 Each team member contributed to the development of Aureum Elegance as follows:
 
 - **Anemi**  
-  - Designed the application wireframes in Figma   
-  - Backend: Users, Suppliers, Finished Products (Controller, Model, Service, Interface, Data, DTO's)
-  - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab
-  - UI styling and integration of Material UI components to abide by the wireframes 
+  - Designed the application wireframes, logo, name and colour palette in Figma.
+  - Backend: Users, Suppliers, Finished Products (Controller, Model, Service, Interface, Data, DTO's).
+  - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab.
+  - UI styling and integration of Material UI components to abide by the wireframes.
 
 - **Tsebo**  
   - dcfghjuhgfdfdgh
