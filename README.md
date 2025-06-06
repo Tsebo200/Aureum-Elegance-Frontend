@@ -90,21 +90,22 @@ Follow these instructions to get a local copy of the project up and running for 
 ### Prerequisites
 
 - **Node.js** (v16+) and **npm** (v8+) installed on your machine:  
-
+```sh
   node --version
   npm --version
 
 
 * **.NET SDK** (v6.0+) installed for backend services:
 
-  
+  ```sh
   dotnet --version
-  
+  ```
+
 * **Docker** installed (optional, for containerized setup):
 
-  
+   ```sh
   docker --version
-  
+  ```
 * **Git** or **GitHub Desktop** to clone the repository.
 * A **PostgreSQL** database (local or hosted via Aiven).
 
@@ -112,9 +113,9 @@ Follow these instructions to get a local copy of the project up and running for 
 
 1. **Clone the Repository**
 
-
+```sh
    git clone https://github.com/Tsebo200/Aureum-Elegance-Frontend.git
-   
+   ```
 
    Navigate into the cloned directory:
 
@@ -127,7 +128,6 @@ Follow these instructions to get a local copy of the project up and running for 
   ```sh
    npm install
    ```
-   npm install
  
 
 3. **Set Up Environment Variables**
