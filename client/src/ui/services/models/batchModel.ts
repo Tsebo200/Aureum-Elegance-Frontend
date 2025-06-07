@@ -5,19 +5,18 @@ export interface PostBatch{
 }
 
 export interface Batch {
-    BatchID: number,
-    ProductionDate: string;
-    BatchSize: number;
-    Status: string;
-    batchFinishedProductInBatch?: BatchFinishedProductInBatch[];
+  batchID: number;
+  productionDate: string;
+  batchSize: number;
+  status: string;
+  batchFinishedProducts?: BatchFinishedProductInBatch[];
 }
 
 export interface BatchFinishedProductInBatch {
-  batchID: number;
   productID: number;
+  productName: string;
   quantity: number;
   unit: string;
   status: string;
   warehouseID: number;
-  ProductName: string;
 }
