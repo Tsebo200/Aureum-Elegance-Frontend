@@ -150,56 +150,53 @@ const FinishedProductsTab = () => {
     field: keyof typeof editForm,
     value: string | number
   ) => {
-    setEditForm((prev) => ({ ...prev, [field]: value }));
+    setEditForm((prev) => ({
+      ...prev,
+      [field]: typeof value === "string" && value === "" ? 0 : value,
+    }));
   };
+  
 
   const handlePackagingAmountChange = (packagingId: number, value: number) => {
     console.log("Packaging change:", packagingId, value);
     setPackagingEdits((prev) => ({ ...prev, [packagingId]: value }));
   };
 
-  const handleSaveEdit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!editingProduct) return;
-    console.log("Saving FinishedProduct:", {
-      productID: editingProduct.productID,
-      productName: editForm.productName,
-      quantity: editForm.quantity,
-      fragranceID: editForm.fragranceID,
-      packagingEdits,
-    });
-    
+  async function handleSaveEdit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); // Important!
+
+    if (!editingProduct) {
+      alert("No product selected for editing.");
+      return;
+    }
+
     try {
+      console.log("Saving product:", editingProduct);
+      console.log("Packaging edits:", packagingEdits);
+
       await UpdateFinishedProduct({
         productID: editingProduct.productID,
         productName: editForm.productName,
         quantity: editForm.quantity,
         fragranceID: editForm.fragranceID,
       });
-
-      if (editingProduct.finishedProductPackaging) {
-        
-        await Promise.all(
-          editingProduct.finishedProductPackaging.map(async (pack) => {
-            if (!pack.packaging) return;
-            const newAmount = packagingEdits[pack.packaging.id] ?? pack.amount;
-            await UpdateFinishedProductPackaging({
-              ProductID: editingProduct.productID,
-              PackagingId: pack.packaging.id,
-              Amount: newAmount,
-            });
-          })
-        );
+      for (const [packagingIdStr, amount] of Object.entries(packagingEdits)) {
+        const packagingId = Number(packagingIdStr);
+        await UpdateFinishedProductPackaging({
+          ProductID: editingProduct.productID,
+          PackagingId: packagingId,
+          Amount: amount,
+        });
       }
 
-      const refreshed = await getFinishedProducts();
-      setFinishedProducts(refreshed);
-      setEditingProduct(null);
+      alert("Finished product and packaging updated!");
+      setEditingProduct(null); // optionally close modal on success
     } catch (error) {
       console.error("Error updating finished product:", error);
-      alert("Failed to update finished product.");
+      alert("Failed to update finished product. Check console.");
     }
-  };
+  }
+  
   
   
 
