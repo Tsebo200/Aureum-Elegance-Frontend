@@ -50,3 +50,55 @@ export async function addFinishedProductPackaging(
 
   return await res.json();
 }
+
+export async function UpdateFinishedProduct(finishedProduct: {
+  productID: number;
+  productName: string;
+  quantity: number;
+  fragranceID: number;
+}) {
+  const response = await fetch(
+    `http://localhost:5167/api/FinishedProduct/${finishedProduct.productID}`,
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(finishedProduct),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to update finished product.");
+  }
+
+  // If status 204 No Content, return null or something
+  if (response.status === 204) {
+    return null;
+  }
+
+  // Otherwise parse JSON if present
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
+}
+
+
+export async function UpdateFinishedProductPackaging(packaging: {
+  ProductID: number;
+  PackagingId: number;
+  Amount: number;
+}) {
+  const PACKAGING_URL = "http://localhost:5167/api/FinishedProductPackaging";
+  const response = await fetch(
+    `${PACKAGING_URL}/${packaging.ProductID}/${packaging.PackagingId}`,
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(packaging),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to update finished product packaging.");
+  }
+}
+
+

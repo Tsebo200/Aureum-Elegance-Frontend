@@ -42,3 +42,133 @@
     border: none;
     width: 100%;
   }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .modalField {
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+  
+    input[type="text"],
+    input[type="number"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .tableContainer {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Inner table wrapper for background and padding */
+  .tableWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 219, 177, 0);
+    border-radius: 0 35px 35px 35px;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* Header row laid out horizontally */
+  .tableHeader {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Header cells flex equally */
+  .headerCell {
+    flex: 1;
+    font-weight: 500;
+  }
+  
+  /* Divider between header and rows */
+  .divider {
+    width: 100%;
+    margin: 1rem 0;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  /* Data row laid out horizontally */
+  .tableRow {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 0;
+  }
+  
+  /* Data cells flex equally */
+  .cell {
+    flex: 1;
+  }
+  
+  
+  
+  .error {
+    color: red;
+    margin: 1rem 0;
+    font-weight: 500;
+  }
+  
+  .editBtn {
+    background-color: #28A745 !important; 
+    color: white !important;
+    padding: 0.4rem 1rem !important;
+    border-radius: 2rem !important;
+    font-size: 0.9rem !important;
+    min-width: 100px;
+  }
+  
+  .deleteBtn {
+    background-color: #E03E47 !important; 
+    color: white !important;
+    padding: 0.4rem 1rem !important;
+    border-radius: 2rem !important;
+    font-size: 0.9rem !important;
+    min-width: 100px;
+  }
+  

@@ -5,9 +5,7 @@ import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
 import FragrancesComponent from '../../Components/FragrancesComponent/FragrancesComponent';
 import { IngredientsPanel } from '../Ingredients/Ingredients';
-import type { Fragrance } from '../../services/models/fragranceModel';
 import { getFinishedProducts } from '../../services/BatchFinishedProductServiceRoute';
-import type { BatchFinishedProduct } from '../../services/models/batchFinishedProductModel';
 import FinishedProductsTab from '../../components/FinishedProductsTab/FinishedProductsTab';
 import AddProductForm from '../../components/Forms/FinishedProductComponents/AddProductForm';
 import { PackagingPanel } from '../Packaging/Packaging';
@@ -17,22 +15,7 @@ export default function FinishedProducts() {
   const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery('(max-width:768px)');
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
-
-  const [finishedProducts, setFinishedProducts] = useState<BatchFinishedProduct[]>([]);
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const data = await getFinishedProducts();
-      setFinishedProducts(data);
-    } catch (error) {
-      console.error("Error fetching finished products:", error);
-    }
-  };
-  fetchData();
-}, []);
-
- 
+  
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -46,16 +29,16 @@ useEffect(() => {
           value={tab}
           onChange={handleTabChange}
           className={styles.tabs}
-          variant={isMobile ? "scrollable" : "standard"}
+          variant="scrollable"
           scrollButtons="auto"
         >
           <Tab label="Fragrances" />
           <Tab label="Ingredients" />
           <Tab label="Packaging" />
           <Tab label="Produce Perfume" />
-          <Tab label="Batch" />
-          <Tab label="Products" />
           <Tab label="Add Product" />
+          <Tab label="Products" />
+          <Tab label="Batch overview" />
         </Tabs>
 
         {tab === 0 && <FragrancesComponent />}
@@ -72,13 +55,12 @@ useEffect(() => {
           </section>
         )}
 
-        {tab === 3 && <BatchComponent />}
+        {tab === 3 && <ProducePerfumeForm />}
 
-        {tab === 4 && (
-          <FinishedProductsTab />
-        )}
-      
-        {tab == 5 && <AddProductForm/>}
+        {tab === 4 && <AddProductForm />}
+
+        {tab == 5 && <FinishedProductsTab />}
+        {tab == 6 && <BatchComponent />}
       </main>
     </div>
   );
