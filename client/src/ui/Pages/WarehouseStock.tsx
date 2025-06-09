@@ -6,12 +6,20 @@ import { Link } from "react-router-dom";
 
 const WarehouseStock = () => {
   const [tab, setTab] = React.useState(0);
-  const [stockType, setStockType] = React.useState("Ingredients");
   const isMobile = useMediaQuery("(max-width:768px)");
+  const [stockType, setStockType] = React.useState<StockTypes>("Ingredients");
+
   const handleTabChange = (_event: React.SyntheticEvent, val: number) =>
     setTab(val);
 
-  const warehouseStockData = {
+  type StockItem = {
+    name: string;
+    amount: number;
+    volume: string;
+  };
+  type StockTypes = "Ingredients" | "Fragrances" | "Packaging";
+
+  const warehouseStockData: Record<number, Record<StockTypes, StockItem[]>> = {
     0: {
       Ingredients: [
         { name: "Bergamot Oil", amount: 100, volume: "10L" },
@@ -42,8 +50,8 @@ const WarehouseStock = () => {
     },
   };
 
-  const currentStock =
-    warehouseStockData[tab][stockType as keyof (typeof warehouseStockData)[0]];
+  const currentStock = warehouseStockData[tab][stockType];
+
 
   return (
     <div className={styles.container}>
@@ -96,7 +104,7 @@ const WarehouseStock = () => {
               </tr>
             </thead>
             <tbody>
-              {currentStock.map((item, index) => (
+              {currentStock.map((item: StockItem, index: number) => (
                 <tr key={index}>
                   <td>{item.name}</td>
                   <td>{item.amount}</td>
@@ -120,7 +128,12 @@ const WarehouseStock = () => {
           >
             <div>Total Items</div>
             <div>
-              {currentStock.reduce((total, item) => total + item.amount, 0)}
+              <div>
+                {currentStock.reduce(
+                  (total: number, item: StockItem) => total + item.amount,
+                  0
+                )}
+              </div>
             </div>
           </div>
         </div>

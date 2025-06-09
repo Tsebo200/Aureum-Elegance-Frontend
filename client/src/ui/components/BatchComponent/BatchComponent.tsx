@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import styles from "./BatchComponent.module.scss";
 import { getBatch } from "../../services/BatchFinishedProductServiceRoute";
 import type {
   Batch,
-  BatchFinishedProductInBatch,
 } from "../../services/models/batchModel";
 import { Button } from "@mui/material";
 
@@ -63,7 +62,7 @@ const BatchComponent = () => {
                   <td>
                     {batch.batchFinishedProducts?.map((p) => (
                       <div key={`${batch.batchID}-${p.productID}`}>
-                        {p.productName} – {p.quantity} {p.unit}
+                        {p.productName} – {p.quantity}  {p.unit}
                       </div>
                     ))}
                   </td>

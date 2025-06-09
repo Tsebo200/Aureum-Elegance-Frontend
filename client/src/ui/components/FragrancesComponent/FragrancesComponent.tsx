@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import styles from "./FragrancesComponent.module.scss";
 import { getFragrances, deleteFragrance, updateFragrance, updateFragranceIngredient } from "../../services/FragranceServiceRoute";
-import type { Fragrance, FragranceIngredient } from "../../services/models/fragranceModel";
-import type { PostFragrance, PostFragranceIngredient } from "../../services/models/fragranceModel";
+import type { Fragrance } from "../../services/models/fragranceModel";
+import type { PostFragrance } from "../../services/models/fragranceModel";
 
 const FragrancesComponent = () => {
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);

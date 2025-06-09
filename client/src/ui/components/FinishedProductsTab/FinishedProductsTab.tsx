@@ -9,8 +9,6 @@ import {
 } from "../../services/FinishedProductService";
 import type {
   FinishedProductDTO,
-  FinishedProductPackaging,
-  PostFinishedProductPackaging,
 } from "../../services/models/finishedProductModel";
 import {
   addBatch,
