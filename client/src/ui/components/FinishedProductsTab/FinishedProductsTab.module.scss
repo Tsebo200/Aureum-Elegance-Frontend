@@ -95,6 +95,7 @@
     border: none !important;
     background-color: white;
     border-radius: 8px !important;
+    max-width: 100px !important;
   }
   
   .modalButtons {
@@ -166,7 +167,7 @@
   .editBtn {
     background-color: #28A745 !important; 
     color: white !important;
-    padding: 0.4rem 1rem !important;
+    padding: 0.4rem 0.3rem !important;
     border-radius: 2rem !important;
     font-size: 0.9rem !important;
     min-width: 100px;
@@ -183,9 +184,37 @@
   .deleteBtn {
     background-color: #E03E47 !important; 
     color: white !important;
-    padding: 0.4rem 1rem !important;
+    padding: 0.4rem 0.8rem !important;
     border-radius: 2rem !important;
     font-size: 0.9rem !important;
     min-width: 100px;
   }
+
+  .headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .confirmSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left;
+  }
+  
+  .confirmSection h2 {
+    margin: 0 1rem 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
   

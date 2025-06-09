@@ -206,28 +206,33 @@ const FinishedProductsTab = () => {
 
   return (
     <section className={styles.content}>
-      <h1>Finished Products</h1>
+      <div className={styles.headerRow}>
+        <h1>Finished Products</h1>
 
-      {/* Produce confirmation buttons */}
-      {Object.keys(producedAmounts).length > 0 && (
-        <div className={styles.buttonGroup}>
-          <Button
-            color="secondary"
-            onClick={handleCancelProduce}
-            className={styles.deleteBtn}
-          >
-            Cancel
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleConfirmProduce}
-            className={styles.editBtn}
-          >
-            Confirm
-          </Button>
-        </div>
-      )}
+        {/* Produce confirmation buttons */}
+        {Object.keys(producedAmounts).length > 0 && (
+          <div className={styles.confirmSection}>
+            <h2>Confirm Batch</h2>
+            <div className={styles.buttonGroup}>
+              <Button
+                color="secondary"
+                onClick={handleCancelProduce}
+                className={styles.deleteBtn}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleConfirmProduce}
+                className={styles.editBtn}
+              >
+                Confirm
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
 
       <table className={styles.table}>
         <thead>
@@ -307,7 +312,6 @@ const FinishedProductsTab = () => {
                 <label>Product Name</label>
                 <input
                   type="text"
-
                   value={editForm.productName}
                   onChange={(e) =>
                     handleEditFormChange("productName", e.target.value)
