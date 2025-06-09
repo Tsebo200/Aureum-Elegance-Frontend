@@ -283,6 +283,10 @@ We conducted several brainstorming sessions to identify pain points in warehouse
 
 These insights helped shape a system that emphasizes visual clarity, real-time responsiveness, and traceability. Our goal was to create a tool that is not only technically robust but also aligns with the aesthetics of the perfume industry; elegance, simplicity, and precision
 
+### ER Diagram
+
+   <img src="client/src/ui/assets/ER Diagram.png" align="center" alt="Wireframes" width="80%" height="auto">
+
 ### Wireframes
 
 Initial wireframes were created in Figma, focusing on:
@@ -352,7 +356,6 @@ The **Development Process** covers technical implementations on both frontend an
 
 These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralised hub for operational intelligence, compliance tracking, and user collaboration.
 
-
 ---
 
 ## Final Outcome
@@ -413,25 +416,23 @@ Each team member contributed to the development of Aureum Elegance as follows:
 
 - **Anemi**  
   - Designed the application wireframes, logo, name and colour palette in Figma.
-  - Backend: Users, Suppliers, Finished Products (Controller, Model, Service, Interface, Data, DTO's).
+  - Backend: Controller, Model, Service, Interface, Data, DTO's for; (Users, Suppliers, Finished Products)
   - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab.
   - UI styling and integration of Material UI components to abide by the wireframes.
 
 - **Tsebo**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
+  - Backend setup; Installing necessary dependencies & file structuring for Dotnet. Entity Framework, AspNetCore. Setup unit test environment (Xunit). Integrate Aiven Console with PostgreSQL Database (PgAdmin)
+  - Backend: Controller, Model, Service, Interface, Data, Tests, DTO's for; (Packaging, StockRequest Ingredients, StockRequest Packaging, All the WasteLossRecords)
+  - Frontend: Setup Frontend; (Installing necessary dependencies & file structuring For Electron, Vite, React, Typescript, Material UI, Scss, ReactChartJs2, Setup & write all unit test (Jest & Testing Library).      Dashboard Page, Stock Request Page, Record Loss Tab, Stock Request(Admin Management Tab Assistance)
 
 - **Sean**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
-
+  - Database ERD creation, Terms of Service and Privacy Policy
+  - Backend: Controller, Model, Service, Interface, Data,Tests, DTO's for; (Fragrance, FragranceIngredients, Warehouse, WarehouseStock, BatchFinishedProduct, Batch). Monitoring migrations
+  - Frontend: Products Tab, Batches Tab, Fragrances Tab, WarehouseStock Page
+    
 - **Tshwetso**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
-
+  - Backend: Controller, Model, Service, Interface, Data, DTO's for; (Ingredients , Warehouse Ingredients, Ingredients, Batch Ingredients, Delivery, Delivery Ingredients)
+  - Frontend: Login, Navbar Creation, Ingredients Tab, Packaging Tab, AddStock Page, Deliveries Tab
 
 
 **Project Link:**  

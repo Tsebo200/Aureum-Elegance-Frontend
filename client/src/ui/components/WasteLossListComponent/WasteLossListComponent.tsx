@@ -1,8 +1,8 @@
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import styles from './WasteLossListComponent.module.scss'
 import { useEffect, useState } from 'react';
-import type { GetWastelossFragrance, GetWastelossIngredient } from '../../services/models/wasteLossModels';
-import { GetWastelossFragrances, GetWastelossIngredients } from '../../services/WasteLossApiRoutes';
+import type { GetWastelossBatchFinishedProduct, GetWastelossFragrance, GetWastelossIngredient, GetWastelossPackaging } from '../../services/models/wasteLossModels';
+import { GetWastelossFragrances, GetWastelossIngredients, GetWastelossPackagings, GetWastelossBatchFinished } from '../../services/WasteLossApiRoutes';
 
 
 
@@ -10,6 +10,12 @@ const WasteLossListComponent = () => {
   const [filter, setFilter] = useState("All");
   const [wasteLossFragrances, setWasteLossFragrances] = useState<GetWastelossFragrance[]>([]);
   const[wasteLossIngredients, setWasteLossIngredients] = useState<GetWastelossIngredient[]>([]);
+  const [wasteLossPackagings, setWasteLossPackagings] = useState<
+    GetWastelossPackaging[]
+  >([]);
+  const [wasteLossBatchFinishedProducts, setWasteLossBatchFinishedProducts] =
+    useState<GetWastelossBatchFinishedProduct[]>([]);
+
 
   useEffect(() => {
     const fetchFragrances = async () => {
@@ -30,8 +36,34 @@ const WasteLossListComponent = () => {
       }
     };
 
+    const fetchPackagings = async () => {
+      try {
+        const data = await GetWastelossPackagings();
+        setWasteLossPackagings(data);
+      } catch (error) {
+        console.error("Failed to fetch waste loss packaging:", error);
+      }
+    };
+
+    const fetchBatchFinishedProducts = async () => {
+      try {
+        const data = await GetWastelossBatchFinished();
+        setWasteLossBatchFinishedProducts(data);
+      } catch (error) {
+        console.error(
+          "Failed to fetch waste loss batch finished products:",
+          error
+        );
+      }
+    };
+
+    
+    
+
     fetchFragrances();
     fetchIngredients();
+    fetchPackagings();
+    fetchBatchFinishedProducts();
   }, []);
 
   // Combine lists based on filter
@@ -44,10 +76,17 @@ const WasteLossListComponent = () => {
     case "Ingredients":
       filteredList = wasteLossIngredients;
       break;
+    case "Packaging":
+      filteredList = wasteLossPackagings;
+      break;
+    case "Finished Products":
+      filteredList = wasteLossBatchFinishedProducts;
+      break;
     case "All":
     default:
       // Here you can decide if you want to merge or show just fragrances first
-      filteredList = [...wasteLossFragrances, ...wasteLossIngredients];
+      filteredList = [...wasteLossFragrances, ...wasteLossIngredients,...wasteLossPackagings,
+        ...wasteLossBatchFinishedProducts];
       break;
   }
   return (
@@ -70,7 +109,6 @@ const WasteLossListComponent = () => {
             <MenuItem value="Fragrance">Fragrances</MenuItem>
             <MenuItem value="Packaging">Packaging</MenuItem>
             <MenuItem value="Finished Products">Finished Products</MenuItem>
-            <MenuItem value="Batches">Batches</MenuItem>
             <MenuItem value="Ingredients">Ingredients</MenuItem>
           </Select>
         </div>
@@ -91,20 +129,30 @@ const WasteLossListComponent = () => {
         </thead>
         <tbody>
           {filteredList.map((loss, index) => {
-            // Discriminate type based on properties
             const isFragrance = "fragrance" in loss;
             const isIngredient = "Ingredients" in loss || "ingredients" in loss;
+            const isPackaging = "packaging" in loss;
+            const isBatch = "finishedProduct" in loss;
 
             const itemName = isFragrance
               ? (loss as GetWastelossFragrance).fragrance?.name || "Unknown"
               : isIngredient
               ? (loss as GetWastelossIngredient).Ingredients?.name || "Unknown"
+              : isPackaging
+              ? (loss as GetWastelossPackaging).packaging?.name || "Unknown"
+              : isBatch
+              ? (loss as GetWastelossBatchFinishedProduct).finishedProduct
+                  ?.ProductName || "Unknown"
               : "Unknown";
 
             const itemType = isFragrance
               ? "Fragrance"
               : isIngredient
               ? "Ingredient"
+              : isPackaging
+              ? "Packaging"
+              : isBatch
+              ? "Finished Product"
               : "Unknown";
 
             const quantityLoss = loss.quantityLoss;

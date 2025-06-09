@@ -99,7 +99,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
           addFragranceIngredient({
             fragranceID: createdFragrance.id,
             ingredientsID: ingredient.id,
-            amount: ingredient.amount,
+            Amount: ingredient.amount,
           })
         )
       );
