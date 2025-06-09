@@ -1,4 +1,5 @@
-import React from 'react';
+// import * as React from 'react';
+import '@testing-library/jest-dom'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Login } from '../src/ui/Pages/Login/login';
 import { addLoginUser } from '../src/ui/services/UserServiceRoute';

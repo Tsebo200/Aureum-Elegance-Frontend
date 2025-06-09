@@ -33,6 +33,7 @@ export default function UserSelect({ value, onChange }: Props) {
     <FormControl sx={{ m: 0.1, minWidth: 250 }}>
       <InputLabel id="user-select-label">Select User</InputLabel>
       <Select
+        aria-label="user"
         labelId="user-select-label"
         value={value}
         onChange={handleChange}

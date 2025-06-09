@@ -123,6 +123,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Name</label>
           <TextField
+          label="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="..."
@@ -135,6 +136,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Description</label>
           <TextField
+            label="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="..."
@@ -149,6 +151,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Cost Per Unit</label>
           <TextField
+          label="Cost Per Unit"
             type="number"
             value={cost}
             onChange={(e) => setCost(Number(e.target.value))}
@@ -162,6 +165,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Volume Per Bottle (in millilitres)</label>
           <TextField
+          label="Volume Per Bottle"
             type="number"
             value={volume}
             onChange={(e) => setVolume(Number(e.target.value))}

@@ -10,6 +10,7 @@ function RecordWasteBtn({ onClick, disabled = false }: Props) {
   return (
     <div>
       <Button
+        aria-label="record"
         variant="contained"
         onClick={onClick}
         disabled={disabled}
