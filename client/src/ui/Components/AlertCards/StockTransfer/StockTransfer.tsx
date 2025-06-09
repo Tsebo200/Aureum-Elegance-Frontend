@@ -37,7 +37,9 @@ function StockTransfer() {
           <div className={styles.iconStatus}></div>
         </div>
       ) : (
-        <div className={styles.cardContainer}></div> // Optional loading state
+        <div className={styles.cardContainer}>
+          <p className={styles.noDataText}>No Stock Transfer Data Available.</p>
+        </div> // Optional loading state
       )}
     </div>
   );

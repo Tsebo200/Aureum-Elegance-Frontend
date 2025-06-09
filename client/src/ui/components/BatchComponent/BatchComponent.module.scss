@@ -1,0 +1,62 @@
+
+  
+
+  
+  
+  .Btn {
+    background: #E03E47 !important;
+    color: white !important;
+    margin: 2px !important;
+  }
+
+  
+  .content {
+    background: #fff;
+    border-radius: 35px;
+    padding: 3rem 5rem;
+    background-image: url('../../assets/Large Element.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th, td {
+      text-align: left;
+      padding: 1rem;
+    }
+  
+    th {
+      font-weight: 500;
+    }
+  
+    td {
+      vertical-align: top;
+    }
+  
+    tr:not(:last-child) {
+      border-bottom: 1px solid #000;
+    }
+  }
+  
+  
+  
+  
+  .addBtn {
+    margin-bottom: 2rem !important;
+    width: 196px !important;
+    height: 53px !important;
+    border-radius: 35px !important;
+    background-color: #E03E47 !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-family: Roboto, sans-serif !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: block !important;
+    align-self: flex-start !important;
+  }
+  

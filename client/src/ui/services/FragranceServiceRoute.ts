@@ -40,7 +40,7 @@ export async function addFragranceIngredient(
 }
 
 export const updateFragrance = async (id: number, fragrance: PostFragrance) => {
-  const response = await fetch(`/api/Fragrance/${id}`, {
+  const response = await fetch(`http://localhost:5167/api/Fragrance/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(fragrance),
@@ -51,18 +51,24 @@ export const updateFragrance = async (id: number, fragrance: PostFragrance) => {
 export const updateFragranceIngredient = async (
   fragranceID: number,
   ingredientsID: number,
-  data: { fragranceID: number; ingredientsID: number; amount: number }
+  data: { fragranceID: number; ingredientsID: number; Amount: number }
 ) => {
+
   const response = await fetch(
-    `/api/Fragrance/${fragranceID}/${ingredientsID}`,
+    `http://localhost:5167/api/FragranceIngredients/${fragranceID}/${ingredientsID}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     }
   );
-  if (!response.ok) throw new Error("Failed to update fragrance ingredient.");
+  if (!response.ok) {
+    const text = await response.text();
+    console.error("Failed to update fragrance ingredient:", text);
+    throw new Error("Failed to update fragrance ingredient.");
+  }
 };
+
 
 export async function deleteFragrance(id: number) {
   const response = await fetch(`http://localhost:5167/api/Fragrance/${id}`, {
