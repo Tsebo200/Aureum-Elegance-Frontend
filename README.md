@@ -356,7 +356,6 @@ The **Development Process** covers technical implementations on both frontend an
 
 These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralised hub for operational intelligence, compliance tracking, and user collaboration.
 
-
 ---
 
 ## Final Outcome
