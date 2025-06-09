@@ -10,6 +10,7 @@ export default function ItemType({ value, onChange }: Props) {
     <FormControl sx={{ m: 0.1, minWidth: 250 }}>
       <InputLabel id="item-type-label">Select Item Type</InputLabel>
       <Select
+        aria-label="item type"
         labelId="item-type-label"
         value={value}
         onChange={(e) => onChange(e.target.value)}

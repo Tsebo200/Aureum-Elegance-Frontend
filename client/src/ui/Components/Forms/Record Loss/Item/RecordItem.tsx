@@ -66,6 +66,7 @@ export default function RecordItem({ itemType, value, onChange }: Props) {
     <FormControl sx={{ m: 0.1, minWidth: 250 }}>
       <InputLabel id="item-select-label">{getItemLabel()}</InputLabel>
       <Select
+        aria-label="item"
         labelId="item-select-label"
         value={value}
         onChange={(e) => onChange(e.target.value)}
