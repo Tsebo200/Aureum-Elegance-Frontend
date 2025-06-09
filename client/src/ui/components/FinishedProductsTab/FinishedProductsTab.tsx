@@ -212,20 +212,19 @@ const FinishedProductsTab = () => {
       {Object.keys(producedAmounts).length > 0 && (
         <div className={styles.buttonGroup}>
           <Button
+            color="secondary"
+            onClick={handleCancelProduce}
+            className={styles.deleteBtn}
+          >
+            Cancel
+          </Button>
+          <Button
             variant="contained"
             color="primary"
             onClick={handleConfirmProduce}
-            className={styles.Btn}
+            className={styles.editBtn}
           >
             Confirm
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={handleCancelProduce}
-            className={styles.Btn}
-          >
-            Cancel
           </Button>
         </div>
       )}
@@ -266,13 +265,12 @@ const FinishedProductsTab = () => {
                           Number(e.target.value)
                         )
                       }
-                      className={styles.amountInput}
+                      className={styles.textfield}
                     />
                   ) : (
                     <Button
-                      variant="outlined"
                       onClick={() => startProducing(product.productID)}
-                      className={styles.Btn}
+                      className={styles.produceBtn}
                     >
                       Produce
                     </Button>
@@ -281,14 +279,14 @@ const FinishedProductsTab = () => {
                 <td>
                   <Button
                     onClick={() => handleEditClick(product)}
-                    className={styles.Btn}
+                    className={styles.editBtn}
                   >
                     Edit
                   </Button>
                   <Button
                     color="error"
                     onClick={() => handleDelete(product.productID)}
-                    className={styles.Btn}
+                    className={styles.deleteBtn}
                   >
                     Delete
                   </Button>
@@ -303,12 +301,13 @@ const FinishedProductsTab = () => {
       {editingProduct && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2>Edit Finished Product</h2>
+            <h2>Edit Product</h2>
             <form className={styles.modalForm} onSubmit={handleSaveEdit}>
               <div className={styles.modalField}>
                 <label>Product Name</label>
                 <input
                   type="text"
+
                   value={editForm.productName}
                   onChange={(e) =>
                     handleEditFormChange("productName", e.target.value)

@@ -130,14 +130,14 @@ const FragrancesComponent = () => {
               <td>
                 <Button
                   onClick={() => handleEditClick(fragrance)}
-                  className={styles.Btn}
+                  className={styles.editBtn}
                 >
                   Edit
                 </Button>
                 <Button
                   color="error"
                   onClick={() => handleDelete(fragrance.id)}
-                  className={styles.Btn}
+                  className={styles.deleteBtn}
                 >
                   Delete
                 </Button>
@@ -158,57 +158,74 @@ const FragrancesComponent = () => {
                 handleSave();
               }}
             >
-              <label>
-                Name:
-                <input
-                  value={editForm.name}
-                  onChange={(e) => handleEditChange("name", e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Description:
-                <textarea
-                  value={editForm.description}
-                  onChange={(e) =>
-                    handleEditChange("description", e.target.value)
-                  }
-                  required
-                />
-              </label>
-              <label>
-                Cost:
-                <input
-                  type="number"
-                  value={editForm.cost}
-                  onChange={(e) =>
-                    handleEditChange("cost", parseFloat(e.target.value))
-                  }
-                  required
-                />
-              </label>
-              <label>
-                Expiry Date:
-                <input
-                  type="date"
-                  value={editForm.expiryDate}
-                  onChange={(e) =>
-                    handleEditChange("expiryDate", e.target.value)
-                  }
-                  required
-                />
-              </label>
-              <label>
-                Volume:
-                <input
-                  type="number"
-                  value={editForm.volume}
-                  onChange={(e) =>
-                    handleEditChange("volume", parseInt(e.target.value))
-                  }
-                  required
-                />
-              </label>
+              <div className={styles.modalField}>
+                <label>
+                  Name:
+                  <input
+                  type="text"
+                    value={editForm.name}
+                    onChange={(e) => handleEditChange("name", e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className={styles.modalField}>
+                <label>
+                  Description:
+                  <textarea
+                  
+                    className={styles.modalField}
+                    value={editForm.description}
+                    onChange={(e) =>
+                      handleEditChange("description", e.target.value)
+                    }
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className={styles.modalField}>
+                <label>
+                  Cost:
+                  <input
+                    type="number"
+                    value={editForm.cost}
+                    onChange={(e) =>
+                      handleEditChange("cost", parseFloat(e.target.value))
+                    }
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className={styles.modalField}>
+                <label>
+                  Expiry Date:
+                  <input
+                    type="date"
+                    value={editForm.expiryDate}
+                    onChange={(e) =>
+                      handleEditChange("expiryDate", e.target.value)
+                    }
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className={styles.modalField}>
+                <label>
+                  Volume:
+                  <input
+                    type="number"
+                    value={editForm.volume}
+                    onChange={(e) =>
+                      handleEditChange("volume", parseInt(e.target.value))
+                    }
+                    required
+                  />
+                </label>
+              </div>
 
               <h3>Ingredients</h3>
               {editingFragrance.fragranceIngredients?.map((fi) => (
