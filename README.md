@@ -285,7 +285,7 @@ These insights helped shape a system that emphasizes visual clarity, real-time r
 
 ### ER Diagram
 
-   <img src="client/src/ui/assets/ERDiagram.png" align="center" alt="Wireframes" width="80%" height="auto">
+   <img src="client/src/ui/assets/ER Diagram.png" align="center" alt="Wireframes" width="80%" height="auto">
 
 ### Wireframes
 
