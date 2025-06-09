@@ -2,14 +2,19 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-    preset: 'ts-jest/presets/default',
-  testEnvironment: 'node',
-  transform: {
-    '^.+\\.tsx?$': ['ts-jest', { isolatedModules: true }],
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    '\\.(scss|sass|css)$': 'identity-obj-proxy', // mock CSS/SCSS
   },
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
-
-
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',                // Transform TS/TSX using ts-jest
+    '^.+\\.(js|jsx)$': 'babel-jest',             // Transform JS/JSX with Babel
+  },
+  transformIgnorePatterns: [
+    '/node_modules/',                            // Ignore node_modules
+  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 }
 export default config;
 
