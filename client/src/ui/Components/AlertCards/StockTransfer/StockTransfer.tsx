@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './StockTransfer.module.scss';
-import { getStockRequests } from '../../../services/StockRequestServiceRoute'; // update path if needed
+import { getStockRequests } from '../../../services/StockRequestServiceRoute'; 
 import type { StockRequestAdminDTO } from '../../../services/models/stockRequestAdminModel';
 
 function StockTransfer() {

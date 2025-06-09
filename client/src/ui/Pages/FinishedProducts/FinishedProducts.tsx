@@ -75,34 +75,6 @@ useEffect(() => {
 
         {tab === 4 && (
           <FinishedProductsTab />
-          // <section className={styles.content}>
-          //   <h1>Finished Products</h1>
-          //   <table className={styles.table}>
-          //     <thead>
-          //       <tr>
-          //         <th>Product ID</th>
-          //         <th>Quantity</th>
-          //         <th>Unit</th>
-          //         <th>Status</th>
-          //         <th>Batch ID</th>
-          //         <th>Warehouse ID</th>
-          //       </tr>
-          //       <hr />
-          //     </thead>
-          //     <tbody>
-          //       {finishedProducts.map((item) => (
-          //         <tr key={`${item.batchID}-${item.productID}`}>
-          //           <td>{item.productID}</td>
-          //           <td>{item.quantity}</td>
-          //           <td>{item.unit}</td>
-          //           <td>{item.status}</td>
-          //           <td>{item.batchID}</td>
-          //           <td>{item.warehouseID}</td>
-          //         </tr>
-          //       ))}
-          //     </tbody>
-          //   </table>
-          // </section>
         )}
       
         {tab == 5 && <AddProductForm/>}
