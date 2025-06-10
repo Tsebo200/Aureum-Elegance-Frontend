@@ -123,6 +123,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Name</label>
           <TextField
+          aria-label="Name"
           label="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -136,6 +137,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Description</label>
           <TextField
+                    aria-label="Description"
             label="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -151,6 +153,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Cost Per Unit</label>
           <TextField
+          aria-label="Cost Per Unit"
           label="Cost Per Unit"
             type="number"
             value={cost}
@@ -165,6 +168,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Volume Per Bottle (in millilitres)</label>
           <TextField
+           aria-label="Volume Per Bottle"
           label="Volume Per Bottle"
             type="number"
             value={volume}
@@ -179,6 +183,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Expiry Date</label>
           <TextField
+           aria-label="date"
             type="date"
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
@@ -191,6 +196,7 @@ const handleIngredientSelectChange = (event: SelectChangeEvent<string[]>) => {
         <div className={styles.field}>
           <label>Ingredients</label>
           <Select
+            aria-label="Ingredients"
             multiple
             value={selectedIngredients.map((i) => i.name)}
             onChange={handleIngredientSelectChange}
