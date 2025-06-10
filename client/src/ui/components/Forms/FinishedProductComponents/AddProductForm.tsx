@@ -36,7 +36,7 @@ interface SelectedPackaging {
 const AddProductForm = () => {
   const [productName, setProductName] = useState("");
   const [quantity, setQuantity] = useState<number>(0);
-  const [fragranceID, setFragranceID] = useState<number>(0);
+  const [, setFragranceID] = useState<number>(0);
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);
   const [selectedFragranceName, setSelectedFragranceName] = useState<string>("");
 

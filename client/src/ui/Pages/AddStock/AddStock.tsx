@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AddStock.scss";
 import Sidebar from "../../Components/Sidebar";
-import WarehouseForm from "../../Components/Forms/StockRequest/WarehouseSelect";
 
 import {
   addIngredient,

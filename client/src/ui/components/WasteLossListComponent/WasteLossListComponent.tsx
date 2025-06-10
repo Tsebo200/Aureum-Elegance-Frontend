@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { Button, FormControl, MenuItem, Select } from '@mui/material';
 import styles from './WasteLossListComponent.module.scss'
 import { useEffect, useState } from 'react';
 import type { GetWastelossFragrance, GetWastelossIngredient } from '../../services/models/wasteLossModels';

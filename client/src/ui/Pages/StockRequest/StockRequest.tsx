@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './StockRequest.module.scss';
 import Sidebar from '../../Components/Sidebar';
 import { Button } from '@mui/material';

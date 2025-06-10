@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styles from "./Packaging.module.scss";
-import type { Packaging, PostPackaging } from "../../services/models/packagingModel";
+import type { Packaging } from "../../services/models/packagingModel";
 import {
   getAllPackaging,
   deletePackaging,
@@ -112,12 +112,6 @@ export const PackagingPanel: React.FC = () => {
     e.preventDefault();
     if (!editing) return;
 
-    const payload: PostPackaging & { id: number } = {
-      id: editing.id,
-      name: editName,
-      type: editType,
-      stock: Number(editStock),
-    };
 
     try {
       await updatePackaging(editing.id, { name: editName, type: editType, stock: Number(editStock) });

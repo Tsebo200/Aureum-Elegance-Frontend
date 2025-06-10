@@ -5,11 +5,10 @@ import Sidebar from '../../Components/Sidebar';
 import ProducePerfumeForm from '../../Components/Forms/FinishedProductComponents/ProducePerfumeForm';
 import FragrancesComponent from '../../Components/FragrancesComponent/FragrancesComponent';
 import { IngredientsPanel } from '../Ingredients/Ingredients';
-import type { Fragrance } from '../../services/models/fragranceModel';
 import { getFinishedProducts } from '../../services/BatchFinishedProductServiceRoute';
 import type { BatchFinishedProduct } from '../../services/models/batchFinishedProductModel';
-import FinishedProductsTab from '../../components/FinishedProductsTab/FinishedProductsTab';
-import AddProductForm from '../../components/Forms/FinishedProductComponents/AddProductForm';
+import FinishedProductsTab from '../../Components/FinishedProductsTab/FinishedProductsTab';
+import AddProductForm from '../../Components/Forms/FinishedProductComponents/AddProductForm';
 import { PackagingPanel } from '../Packaging/Packaging';
 
 export default function FinishedProducts() {
@@ -17,7 +16,7 @@ export default function FinishedProducts() {
   const isMobile = useMediaQuery('(max-width:768px)');
   const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
 
-  const [finishedProducts, setFinishedProducts] = useState<BatchFinishedProduct[]>([]);
+  const [, setFinishedProducts] = useState<BatchFinishedProduct[]>([]);
 
 useEffect(() => {
   const fetchData = async () => {

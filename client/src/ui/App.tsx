@@ -1,6 +1,4 @@
-import { useState } from 'react'
-// @ts-ignore
-// import reactLogo from './assets/react.svg'
+
 import './App.css';
 import Login from './Pages/Login/login.js';
 import AddStock from './Pages/AddStock/AddStock.js';
@@ -15,11 +13,6 @@ import Employees from './Pages/Admin Management/Employees.js';
 
 function App() {
 
-  const Placeholder = ({ name}) => (
-    <div>
-      <h2>{name} Page</h2>
-    </div>
-  );
   return (
     <>
       <Routes>

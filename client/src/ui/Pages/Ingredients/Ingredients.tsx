@@ -107,7 +107,6 @@ export const IngredientsPanel: React.FC = () => {
   // When “Edit” is clicked, open the modal and prefill form fields
   const handleEditClick = (ing: Ingredient) => {
     setEditing(ing);
-    setEditCost(ing.cost);
     // Convert to yyyy-MM-dd for input type="date" value
     setEditExpiry(ing.expiryDate.split("T")[0]);
   };
