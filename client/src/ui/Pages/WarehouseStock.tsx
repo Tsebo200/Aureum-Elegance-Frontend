@@ -4,13 +4,54 @@ import { Tabs, Tab, useMediaQuery, Button } from "@mui/material";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 
-function WarehouseStock() {
+const WarehouseStock = () => {
   const [tab, setTab] = React.useState(0);
   const isMobile = useMediaQuery("(max-width:768px)");
-  const handleTabChange = (_event: React.SyntheticEvent, val: number) => setTab(val);
+  const [stockType, setStockType] = React.useState<StockTypes>("Ingredients");
 
-  // Dummy data for now
-  const stockData = [{ ingredient: "Bergamot Oil", quantity: 100 }];
+  const handleTabChange = (_event: React.SyntheticEvent, val: number) =>
+    setTab(val);
+
+  type StockItem = {
+    name: string;
+    amount: number;
+    volume: string;
+  };
+  type StockTypes = "Ingredients" | "Fragrances" | "Packaging";
+
+  const warehouseStockData: Record<number, Record<StockTypes, StockItem[]>> = {
+    0: {
+      Ingredients: [
+        { name: "Bergamot Oil", amount: 100, volume: "10L" },
+        { name: "Cedarwood", amount: 50, volume: "5L" },
+      ],
+      Fragrances: [
+        { name: "Citrus Bliss", amount: 30, volume: "15L" },
+        { name: "Ocean Breeze", amount: 20, volume: "12L" },
+      ],
+      Packaging: [
+        { name: "Glass Bottle 100ml", amount: 200, volume: "20L" },
+        { name: "Spray Cap", amount: 300, volume: "N/A" },
+      ],
+    },
+    1: {
+      Ingredients: [
+        { name: "Lavender", amount: 120, volume: "12L" },
+        { name: "Rosemary", amount: 80, volume: "8L" },
+      ],
+      Fragrances: [
+        { name: "Floral Mist", amount: 25, volume: "10L" },
+        { name: "Herbal Garden", amount: 18, volume: "9L" },
+      ],
+      Packaging: [
+        { name: "Plastic Bottle 200ml", amount: 150, volume: "30L" },
+        { name: "Dropper Cap", amount: 400, volume: "N/A" },
+      ],
+    },
+  };
+
+  const currentStock = warehouseStockData[tab][stockType];
+
 
   return (
     <div className={styles.container}>
@@ -27,116 +68,78 @@ function WarehouseStock() {
           <Tab label="Warehouse 2" />
         </Tabs>
 
-        {tab === 0 && (
-          <div className={styles.content}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: "2rem",
-              }}
-            >
-              <div>
-                <select className={styles.select}>
-                  <option>Stock Selection</option>
-                </select>
-                <div className={styles.ingredientBtn}>Ingredients</div>
-              </div>
-
-              <Link to="/add-stock" className={styles.link}>
-                <Button className={styles.addBtn}>Add Stock</Button>
-              </Link>
+        <div className={styles.content}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "2rem",
+            }}
+          >
+            <div>
+              <select
+                className={styles.select}
+                value={stockType}
+                onChange={(e) => setStockType(e.target.value)}
+              >
+                <option value="Ingredients">Ingredients</option>
+                <option value="Fragrances">Fragrances</option>
+                <option value="Packaging">Packaging</option>
+              </select>
+              <div className={styles.ingredientBtn}>{stockType}</div>
             </div>
 
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th> Ingredients</th>
-                  <th>Units in litres In Stock</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stockData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.ingredient}</td>
-                    <td>{item.quantity}</td>
-                    <td>
-                      <Button className={styles.Btn}>Request Stock</Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <hr />
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "2rem",
-              }}
-            >
-              <div>Total Stock</div>
-              <div>100</div>
-            </div>
-          </div>
-        )}
-        {tab === 1 && (
-          <div className={styles.content}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: "2rem",
-              }}
-            >
-              <div>
-                <select className={styles.select}>
-                  <option>Stock Selection</option>
-                </select>
-                <div className={styles.ingredientBtn}>Ingredients</div>
-              </div>
+            <Link to="/add-stock" className={styles.link}>
               <Button className={styles.addBtn}>Add Stock</Button>
-            </div>
+            </Link>
+          </div>
 
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th> Ingredients</th>
-                  <th>Units in litres In Stock</th>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Volume</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentStock.map((item: StockItem, index: number) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.volume}</td>
+                  <td>
+                    <Button className={styles.Btn}>Request Stock</Button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {stockData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.ingredient}</td>
-                    <td>{item.quantity}</td>
-                    <td>
-                      <Button className={styles.Btn}>Request Stock</Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              ))}
+            </tbody>
+          </table>
 
-            <hr />
+          <hr />
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "2rem",
-              }}
-            >
-              <div>Total Stock</div>
-              <div>100</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "2rem",
+            }}
+          >
+            <div>Total Items</div>
+            <div>
+              <div>
+                {currentStock.reduce(
+                  (total: number, item: StockItem) => total + item.amount,
+                  0
+                )}
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </main>
     </div>
   );
-}
+};
 
 export default WarehouseStock;

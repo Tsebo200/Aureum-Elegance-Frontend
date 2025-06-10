@@ -1,13 +1,17 @@
 import { Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import styles from "./FragrancesComponent.module.scss";
 import { getFragrances, deleteFragrance, updateFragrance, updateFragranceIngredient } from "../../services/FragranceServiceRoute";
-import type { Fragrance, FragranceIngredient } from "../../services/models/fragranceModel";
-import type { PostFragrance, PostFragranceIngredient } from "../../services/models/fragranceModel";
+import type { Fragrance } from "../../services/models/fragranceModel";
+import type { PostFragrance } from "../../services/models/fragranceModel";
 
 const FragrancesComponent = () => {
   const [fragrances, setFragrances] = useState<Fragrance[]>([]);
-  const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
+  const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(
+    null
+  );
+ 
+   
   const [editForm, setEditForm] = useState<PostFragrance>({
     name: "",
     description: "",
@@ -15,7 +19,9 @@ const FragrancesComponent = () => {
     expiryDate: "",
     volume: 0,
   });
-  const [ingredientEdits, setIngredientEdits] = useState<{ [key: string]: number }>({});
+  const [ingredientEdits, setIngredientEdits] = useState<{
+    [key: string]: number;
+  }>({});
 
   useEffect(() => {
     getFragrances()
@@ -34,11 +40,13 @@ const FragrancesComponent = () => {
 
   const handleEditClick = (fragrance: Fragrance) => {
     setEditingFragrance(fragrance);
+    
+    const getExpiryDate = new Date(fragrance.expiryDate).toISOString().split("T")[0];
     setEditForm({
       name: fragrance.name,
       description: fragrance.description,
       cost: fragrance.cost,
-      expiryDate: fragrance.expiryDate,
+      expiryDate: getExpiryDate,
       volume: fragrance.volume,
     });
 
@@ -47,28 +55,31 @@ const FragrancesComponent = () => {
       const fragranceID = fragrance.id; // use the main fragrance ID
       console.log(fi.amount);
       ingredientMap[`${fragranceID}-${fi.ingredientsID}`] = fi.amount;
-      
     });
-    console.log(ingredientMap)
+    console.log(ingredientMap);
     setIngredientEdits(ingredientMap);
   };
 
-  const handleEditChange = (field: keyof PostFragrance, value: string | number) => {
+  const handleEditChange = (
+    field: keyof PostFragrance,
+    value: string | number
+  ) => {
     setEditForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleIngredientChange = (fragranceID: number, ingredientsID: number, amount: number) => {
+  const handleIngredientChange = (
+    fragranceID: number,
+    ingredientsID: number,
+    amount: number
+  ) => {
     const key = `${fragranceID}-${ingredientsID}`;
     setIngredientEdits((prev) => ({ ...prev, [key]: amount }));
   };
 
   const handleSave = async () => {
     if (!editingFragrance) return;
-    console.log("Updating fragrance with ID:", editingFragrance.id); // or however you're passing the ID
-    console.log(ingredientEdits)
     try {
       await updateFragrance(editingFragrance.id, editForm);
-      console.log("Updating fragrance ID:", editingFragrance.id);
       const updates = editingFragrance.fragranceIngredients || [];
       await Promise.all(
         updates.map((fi) => {
@@ -113,6 +124,7 @@ const FragrancesComponent = () => {
             <th>Ingredients</th>
             <th>Cost per unit</th>
             <th>Amount in Stock</th>
+            <th>Expiry Date</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -127,6 +139,7 @@ const FragrancesComponent = () => {
               </td>
               <td>R {fragrance.cost.toFixed(2)}</td>
               <td>{fragrance.volume}</td>
+              <td>{new Date(fragrance.expiryDate).toISOString().split("T")[0]}</td>
               <td>
                 <Button
                   onClick={() => handleEditClick(fragrance)}
@@ -162,7 +175,7 @@ const FragrancesComponent = () => {
                 <label>
                   Name:
                   <input
-                  type="text"
+                    type="text"
                     value={editForm.name}
                     onChange={(e) => handleEditChange("name", e.target.value)}
                     required
@@ -174,7 +187,6 @@ const FragrancesComponent = () => {
                 <label>
                   Description:
                   <textarea
-                  
                     className={styles.modalField}
                     value={editForm.description}
                     onChange={(e) =>
