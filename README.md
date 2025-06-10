@@ -437,7 +437,7 @@ The **Development Process** covers technical implementations on both frontend an
 
 #### Challenges
 
-* Securing APIs and preventing **SQL Injection** in custom queries.
+* Connecting the **frontend** to the backend database.
 * Ensuring **responsive design** for complex dashboard charts on smaller screens.
 
 ---
