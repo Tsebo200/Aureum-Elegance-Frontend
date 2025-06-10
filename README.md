@@ -77,7 +77,7 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
   - [React Router DOM](https://reactrouter.com/)  
     [<img src="https://cdn.worldvectorlogo.com/logos/react-router.svg](https://www.svgrepo.com/show/354262/react-router.svg" width="6%" height="6%">](https://reactrouter.com/)  
   - [Chart.js](https://www.chartjs.org/)  
-    [<img src="https://www.chartjs.org/media/logo/logo.svg" width="6%" height="6%">](https://www.chartjs.org/)  
+    [<img src="[https://www.chartjs.org/media/logo/logo.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1200px-Chart.js_logo.svg.png)" width="6%" height="6%">](https://www.chartjs.org/)  
   - [Electron](https://www.electronjs.org/)  
     [<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" width="6%" height="6%">](https://www.electronjs.org/)
 
