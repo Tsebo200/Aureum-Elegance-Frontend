@@ -442,7 +442,7 @@ Each team member contributed to the development of Aureum Elegance as follows:
 ---
 
 ## Acknowledgements
-
+* [Lecturer](https://github.com/Armand-OW)
 * **Figma** for wireframing
 * **Material UI** for component library
 * **Chart.js** for visualization tools
