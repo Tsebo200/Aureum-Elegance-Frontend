@@ -91,9 +91,9 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
 
 - **DevOps & Tooling**
   - [Aiven](https://aiven.io/)  
-    [<img src="https://aiven.io/images/logos/aiven-logo.svg" width="6%" height="6%">](https://aiven.io/)  
+    [<img src="[https://aiven.io/images/logos/aiven-logo.svg](https://cdn.brandfetch.io/idXBJEbkqC/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B)" width="6%" height="6%">](https://aiven.io/)  
   - [Swagger](https://swagger.io/)  
-    [<img src="https://swagger.io/img/logoLanding.svg" width="6%" height="6%">](https://swagger.io/)
+    [<img src="[https://swagger.io/img/logoLanding.svg](https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png)" width="6%" height="6%">](https://swagger.io/)
 
 - **Testing**
   - [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
