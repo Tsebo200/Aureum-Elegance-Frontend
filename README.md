@@ -65,42 +65,116 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
 
 - **Frontend**
   - [React](https://reactjs.org/)  
-    [<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="6%" height="6%">](https://reactjs.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      width="6%"
+      height="6%"
+      alt="React logo"
+    />](https://reactjs.org/)
   - [TypeScript](https://www.typescriptlang.org/)  
-    [<img src="[https://cdn.worldvectorlogo.com/logos/typescript-icon.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1200px-Typescript.svg.png](https://www.svgrepo.com/show/354479/typescript.svg)" width="6%" height="6%">](https://www.typescriptlang.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1200px-Typescript.svg.png"
+      width="6%"
+      height="6%"
+      alt="TypeScript logo"
+    />](https://www.typescriptlang.org/)
   - [Vite](https://vitejs.dev/)  
-    [<img src="https://vitejs.dev/logo-with-shadow.png" width="6%" height="6%">](https://vitejs.dev/)  
+    [<img
+      src="https://vitejs.dev/logo-with-shadow.png"
+      width="6%"
+      height="6%"
+      alt="Vite logo"
+    />](https://vitejs.dev/)
   - [Material UI](https://mui.com/)  
-    [<img src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" width="6%" height="6%">](https://mui.com/)  
+    [<img
+      src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg"
+      width="6%"
+      height="6%"
+      alt="Material UI logo"
+    />](https://mui.com/)
   - [SCSS](https://sass-lang.com/)  
-    [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" width="6%" height="6%">](https://sass-lang.com/)  
+    [<img
+      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+      width="6%"
+      height="6%"
+      alt="Sass logo"
+    />](https://sass-lang.com/)
   - [React Router DOM](https://reactrouter.com/)  
-    [<img src="https://cdn.worldvectorlogo.com/logos/react-router.svg](https://www.svgrepo.com/show/354262/react-router.svg" width="6%" height="6%">](https://reactrouter.com/)  
+    [<img
+      src="https://cdn.worldvectorlogo.com/logos/react-router.svg"
+      width="6%"
+      height="6%"
+      alt="React Router logo"
+    />](https://reactrouter.com/)
   - [Chart.js](https://www.chartjs.org/)  
-    [<img src="[https://www.chartjs.org/media/logo/logo.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1200px-Chart.js_logo.svg.png)" width="6%" height="6%">](https://www.chartjs.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1200px-Chart.js_logo.svg.png"
+      width="6%"
+      height="6%"
+      alt="Chart.js logo"
+    />](https://www.chartjs.org/)
   - [Electron](https://www.electronjs.org/)  
-    [<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg" width="6%" height="6%">](https://www.electronjs.org/)
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg"
+      width="6%"
+      height="6%"
+      alt="Electron logo"
+    />](https://www.electronjs.org/)
 
 - **Backend**
   - [.NET Core (C#)](https://dotnet.microsoft.com/)  
-    [<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" width="6%" height="6%">](https://dotnet.microsoft.com/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg"
+      width="6%"
+      height="6%"
+      alt=".NET Core logo"
+    />](https://dotnet.microsoft.com/)
   - [PostgreSQL](https://www.postgresql.org/)  
-    [<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width="6%" height="6%">](https://www.postgresql.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+      width="6%"
+      height="6%"
+      alt="PostgreSQL logo"
+    />](https://www.postgresql.org/)
   - [PgAdmin](https://www.pgadmin.org/)  
-    [<img src="https://www.pgadmin.org/static/images/pgadmin4_logo.png" width="6%" height="6%">](https://www.pgadmin.org/)
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+      width="6%"
+      height="6%"
+      alt="pgAdmin logo"
+    />](https://www.pgadmin.org/)
 
 - **DevOps & Tooling**
   - [Aiven](https://aiven.io/)  
-    [<img src="[https://aiven.io/images/logos/aiven-logo.svg](https://cdn.brandfetch.io/idXBJEbkqC/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B)" width="6%" height="6%">](https://aiven.io/)  
+    [<img
+      src="https://cdn.brandfetch.io/idXBJEbkqC/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+      width="6%"
+      height="6%"
+      alt="Aiven logo"
+    />](https://aiven.io/)
   - [Swagger](https://swagger.io/)  
-    [<img src="[https://swagger.io/img/logoLanding.svg](https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png)" width="6%" height="6%">](https://swagger.io/)
+    [<img
+      src="https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png"
+      width="6%"
+      height="6%"
+      alt="Swagger logo"
+    />](https://swagger.io/)
 
 - **Testing**
   - [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
-    [<img src="https://jestjs.io/img/jest-logo-transparent.svg" width="6%" height="6%">](https://jestjs.io/)  
-    [<img src="https://testing-library.com/img/octopus-64x64.png" width="6%" height="6%">](https://testing-library.com/)  
+    [<img
+      src="https://testing-library.com/img/octopus-64x64.png"
+      width="6%"
+      height="6%"
+      alt="Testing Library logo"
+    />](https://testing-library.com/)
   - [xUnit](https://xunit.net/)  
-    [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xunit/xunit-original.svg" width="6%" height="6%">](https://xunit.net/)
+    [<img
+      src="https://wrightfully.com/images/posts/unittestworkshop/xunit-logo.png"
+      width="6%"
+      height="6%"
+      alt="xUnit logo"
+    />](https://xunit.net/)
 
 
 ---
