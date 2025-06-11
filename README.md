@@ -437,8 +437,9 @@ The **Development Process** covers technical implementations on both frontend an
 
 #### Challenges
 
-* Connecting the **frontend** to the backend database.
-* Ensuring **responsive design** for complex dashboard charts on smaller screens.
+* Removing or updating redundant backend relationships in .NET, such as severing the link between FinishedProduct and PackagingId, which were tightly integrated across DTOs, controllers, and services.
+* Posting fragrance ingredients from the frontend, including building a dropdown to select ingredients, entering quantities in a table, and sending the combined data with the fragrance.
+* Maintaining synchronisation between frontend and backend logic, particularly when working with interconnected models like Deliveries, Ingredients, and Users, to prevent data mismatches or missing entity links.
 
 ---
 
