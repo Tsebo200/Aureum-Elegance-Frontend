@@ -448,6 +448,7 @@ Each team member contributed to the development of Aureum Elegance as follows:
 * **Chart.js** for visualization tools
 * **Electron** for desktop packaging
 * **React** for app building
+* [YouTube](https://www.youtube.com/)
 
 
 We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.
