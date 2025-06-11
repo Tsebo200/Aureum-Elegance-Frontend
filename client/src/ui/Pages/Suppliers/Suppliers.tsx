@@ -4,7 +4,7 @@ import { Tabs, Tab, TextField, Button, useMediaQuery } from '@mui/material';
 import Sidebar from '../../Components/Sidebar';
 import RecordLoss from '../../Components/Tabs/Record Loss/RecordLoss';
 import WasteLossListComponent from '../../Components/WasteLossListComponent/WasteLossListComponent';
-import { DeliveriesPanel } from '../StockManagement/SMDeliveries';
+import { DeliverablesPanelStandalone } from '../StockManagement/Deliveries'
 import { getSuppliers, addSupplier, deleteSupplier } from '../../services/SupplierServiceRoute';
 import type { Supplier } from '../../services/models/supplierModel';
 
@@ -162,7 +162,7 @@ export default function Suppliers() {
 
         {tab === 1 && (
           <section className={styles.content}>
-            <DeliveriesPanel />
+            <DeliverablesPanelStandalone />
           </section>
         )}
 
