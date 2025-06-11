@@ -70,8 +70,7 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
       width="6%"
       height="6%"
       alt="React logo"
-    />](https://reactjs.org/)
-  - [TypeScript](https://www.typescriptlang.org/)  
+    />](https://reactjs.org/) [TypeScript](https://www.typescriptlang.org/)  
     [<img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1200px-Typescript.svg.png"
       width="6%"
