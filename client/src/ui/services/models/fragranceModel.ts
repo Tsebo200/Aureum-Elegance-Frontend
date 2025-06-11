@@ -6,6 +6,7 @@ export interface Ingredient {
 }
 
 export interface FragranceIngredient {
+  fragranceID: number;
   ingredientsID: number;
   amount: number;
   ingredients: Ingredient[];
@@ -24,7 +25,7 @@ export interface Fragrance {
 export interface PostFragranceIngredient {
   fragranceID: number;
   ingredientsID: number;
-  amount: number;
+  Amount: number;
   
 }
 export interface PostFragrance {

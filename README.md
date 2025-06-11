@@ -64,23 +64,118 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
 ### Built With
 
 - **Frontend**
-  - [React](https://reactjs.org/) with **TypeScript**  
+  - [React](https://reactjs.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      width="6%"
+      height="6%"
+      alt="React logo"
+    />](https://reactjs.org/)
+  - [TypeScript](https://www.typescriptlang.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1200px-Typescript.svg.png"
+      width="6%"
+      height="6%"
+      alt="TypeScript logo"
+    />](https://www.typescriptlang.org/)
   - [Vite](https://vitejs.dev/)  
+    [<img
+      src="https://vitejs.dev/logo-with-shadow.png"
+      width="6%"
+      height="6%"
+      alt="Vite logo"
+    />](https://vitejs.dev/)
   - [Material UI](https://mui.com/)  
+    [<img
+      src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg"
+      width="6%"
+      height="6%"
+      alt="Material UI logo"
+    />](https://mui.com/)
   - [SCSS](https://sass-lang.com/)  
+    [<img
+      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+      width="6%"
+      height="6%"
+      alt="Sass logo"
+    />](https://sass-lang.com/)
   - [React Router DOM](https://reactrouter.com/)  
+    [<img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcqlMysEc2iuijPLdv3XIPa9TTOkDogm739zarHC4zou-g3D-vNuFg_RtxIKgk6G1W6M0&usqp=CAU"
+      width="6%"
+      height="6%"
+      alt="React Router logo"
+    />](https://reactrouter.com/)
   - [Chart.js](https://www.chartjs.org/)  
-  - [Electron](https://www.electronjs.org/) (for desktop deployment)
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/1200px-Chart.js_logo.svg.png"
+      width="6%"
+      height="6%"
+      alt="Chart.js logo"
+    />](https://www.chartjs.org/)
+  - [Electron](https://www.electronjs.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg"
+      width="6%"
+      height="6%"
+      alt="Electron logo"
+    />](https://www.electronjs.org/)
+
 - **Backend**
   - [.NET Core (C#)](https://dotnet.microsoft.com/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg"
+      width="6%"
+      height="6%"
+      alt=".NET Core logo"
+    />](https://dotnet.microsoft.com/)
   - [PostgreSQL](https://www.postgresql.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+      width="6%"
+      height="6%"
+      alt="PostgreSQL logo"
+    />](https://www.postgresql.org/)
   - [PgAdmin](https://www.pgadmin.org/)  
+    [<img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+      width="6%"
+      height="6%"
+      alt="pgAdmin logo"
+    />](https://www.pgadmin.org/)
+
 - **DevOps & Tooling**
   - [Aiven](https://aiven.io/)  
+    [<img
+      src="https://cdn.brandfetch.io/idXBJEbkqC/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+      width="6%"
+      height="6%"
+      alt="Aiven logo"
+    />](https://aiven.io/)
   - [Swagger](https://swagger.io/)  
+    [<img
+      src="https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png"
+      width="6%"
+      height="6%"
+      alt="Swagger logo"
+    />](https://swagger.io/)
+
 - **Testing**
-  - [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
-  - [xUnit](https://xunit.net/) (for backend testing)
+  - [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
+    [<img
+      src="https://testing-library.com/img/octopus-64x64.png"
+      width="6%"
+      height="6%"
+      alt="Testing Library logo"
+    />](https://testing-library.com/)
+  - [xUnit](https://xunit.net/)  
+    [<img
+      src="https://wrightfully.com/images/posts/unittestworkshop/xunit-logo.png"
+      width="6%"
+      height="6%"
+      alt="xUnit logo"
+    />](https://xunit.net/)
+
 
 ---
 
@@ -283,6 +378,10 @@ We conducted several brainstorming sessions to identify pain points in warehouse
 
 These insights helped shape a system that emphasizes visual clarity, real-time responsiveness, and traceability. Our goal was to create a tool that is not only technically robust but also aligns with the aesthetics of the perfume industry; elegance, simplicity, and precision
 
+### ER Diagram
+
+   <img src="client/src/ui/assets/ER Diagram.png" align="center" alt="Wireframes" width="80%" height="auto">
+
 ### Wireframes
 
 Initial wireframes were created in Figma, focusing on:
@@ -338,8 +437,9 @@ The **Development Process** covers technical implementations on both frontend an
 
 #### Challenges
 
-* Securing APIs and preventing **SQL Injection** in custom queries.
-* Ensuring **responsive design** for complex dashboard charts on smaller screens.
+* Removing or updating redundant backend relationships in .NET, such as severing the link between FinishedProduct and PackagingId, which were tightly integrated across DTOs, controllers, and services.
+* Posting fragrance ingredients from the frontend, including building a dropdown to select ingredients, entering quantities in a table, and sending the combined data with the fragrance.
+* Maintaining synchronisation between frontend and backend logic, particularly when working with interconnected models like Deliveries, Ingredients, and Users, to prevent data mismatches or missing entity links.
 
 ---
 
@@ -352,16 +452,18 @@ The **Development Process** covers technical implementations on both frontend an
 
 These enhancements aim to make Aureum Elegance not just a warehouse tool, but a comprehensive logistics assistant. They will bring the system closer to being a centralised hub for operational intelligence, compliance tracking, and user collaboration.
 
-
 ---
 
 ## Final Outcome
 
 ### Mockups
 
-![Mockup - Dashboard](client/src/assets/mockup-dashboard.png)
-![Mockup - Inventory](client/src/assets/mockup-inventory.png)
-![Mockup - Orders](client/src/assets/mockup-orders.png)
+  <img src="client/src/ui/assets/Mockup 1.png" alt="Login" style="width:80%; height:auto;" />
+
+  <img src="client/src/ui/assets/Mockup 2.png" alt="Dashboard" style="width:80%; height:auto;" />
+
+  <img src="client/src/ui/assets/Mockup 3.png" alt="Supplier" style="width:80%; height:auto;" />
+
 
 ### Video Demonstration
 
@@ -409,26 +511,24 @@ Team work was the greatest priority in this project. Helping team members were e
 Each team member contributed to the development of Aureum Elegance as follows:
 
 - **Anemi**  
-  - Designed the application wireframes in Figma   
-  - Backend: Users, Suppliers, Finished Products (Controller, Model, Service, Interface, Data, DTO's)
-  - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab
-  - UI styling and integration of Material UI components to abide by the wireframes 
+  - Designed the application wireframes, logo, name and colour palette in Figma.
+  - Backend: Controller, Model, Service, Interface, Data, DTO's for; (Users, Suppliers, Finished Products)
+  - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab.
+  - UI styling and integration of Material UI components to abide by the wireframes.
 
 - **Tsebo**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
+  - Backend setup; Installing necessary dependencies & file structuring for Dotnet. Entity Framework, AspNetCore. Setup unit test environment (Xunit). Integrate Aiven Console with PostgreSQL Database (PgAdmin)
+  - Backend: Controller, Model, Service, Interface, Data, Tests, DTO's for; (Packaging, StockRequest Ingredients, StockRequest Packaging, All the WasteLossRecords)
+  - Frontend: Setup Frontend; (Installing necessary dependencies & file structuring For Electron, Vite, React, Typescript, Material UI, Scss, ReactChartJs2, Setup & write all unit test (Jest & Testing Library).      Dashboard Page, Stock Request Page, Record Loss Tab, Stock Request(Admin Management Tab Assistance)
 
 - **Sean**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
-
+  - Database ERD creation, Terms of Service and Privacy Policy
+  - Backend: Controller, Model, Service, Interface, Data,Tests, DTO's for; (Fragrance, FragranceIngredients, Warehouse, WarehouseStock, BatchFinishedProduct, Batch). Monitoring migrations
+  - Frontend: Products Tab, Batches Tab, Fragrances Tab, WarehouseStock Page
+    
 - **Tshwetso**  
-  - dcfghjuhgfdfdgh
-  - fgdhfjgkhfd
-  - gfhjfd  
-
+  - Backend: Controller, Model, Service, Interface, Data, DTO's for; (Ingredients , Warehouse Ingredients, Ingredients, Batch Ingredients, Delivery, Delivery Ingredients)
+  - Frontend: Login, Navbar Creation, Ingredients Tab, Packaging Tab, AddStock Page, Deliveries Tab
 
 
 **Project Link:**  
@@ -438,12 +538,13 @@ Each team member contributed to the development of Aureum Elegance as follows:
 ---
 
 ## Acknowledgements
-
+* [Lecturer](https://github.com/Armand-OW)
 * **Figma** for wireframing
 * **Material UI** for component library
 * **Chart.js** for visualization tools
 * **Electron** for desktop packaging
 * **React** for app building
+* [YouTube](https://www.youtube.com/)
 
 
 We are grateful to the open-source community and the platforms above for the tools and guidance that made this project possible.

@@ -40,6 +40,7 @@ export default function WarehouseSelect({ value, onChange }: Props) {
     >
       <InputLabel id="warehouse-select-label">Select Warehouse</InputLabel>
       <Select
+        aria-label="warehouse"
         labelId="warehouse-select-label"
         value={value}
         onChange={handleChange}
