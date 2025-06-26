@@ -1,4 +1,20 @@
-import type { User } from "./models/userModel";
+import type { LoginDto, LoginResponseDto, User } from './models/userModel';
+
+/* POST /api/user/login */
+export async function addLoginUser(
+  dto: LoginDto
+): Promise<LoginResponseDto> {
+  const res = await fetch('http://localhost:5167/api/user/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dto),
+  });
+
+  if (!res.ok) throw new Error('Login failed');
+  return res.json();
+}
+
+
 
 // Get all Users
 export async function getUsers(): Promise<User[]> {
@@ -23,6 +39,9 @@ export async function addUser(user: Omit<User, "userId">): Promise<User> {
 }
 
 
+
+
+
 // Delete a User
 export async function deleteUser(id: number): Promise<void> {
   const response = await fetch(`http://localhost:5167/api/User/users/${id}`, {
@@ -34,15 +53,15 @@ export async function deleteUser(id: number): Promise<void> {
   }
 }
 
-// Add a new login
-export async function addLoginUser(user: Omit<User, "userId">): Promise<User> {
-  const response = await fetch("http://localhost:5167/api/user/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(user),
+export const verifyTwoFactorCode = async (
+  userId: number,
+  code: string
+) => {
+  const r = await fetch('http://localhost:5167/api/twofactor/verify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId, code })
   });
-
-  if (!response.ok) throw new Error("Failed to create user");
-
-  return response.json();
-}
+  if (!r.ok) throw new Error('2FA verify failed');
+  return r.json();   // { valid: true/false }
+};
