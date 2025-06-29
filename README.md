@@ -19,9 +19,9 @@
   </a>
   <br />
   <br />
-  <a href="[https://github.com/Tsebo200/Aureum-Elegance-Frontend](https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing)">View Demo</a>
+  <a href="https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing">View Demo</a>
   ·
-   <a href="[https://github.com/Tsebo200/Aureum-Elegance-Frontend](https://drive.google.com/file/d/1vctqcvN8bk86Xs8cchWjTuv0GMj5rkYS/view?usp=sharing)">2FA Demo</a>
+   <a href="https://drive.google.com/file/d/1vctqcvN8bk86Xs8cchWjTuv0GMj5rkYS/view?usp=sharing">2FA Demo</a>
   ·
   <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend/issues">Report Bug</a>
   ·
