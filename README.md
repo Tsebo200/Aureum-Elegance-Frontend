@@ -471,6 +471,7 @@ These enhancements aim to make Aureum Elegance not just a warehouse tool, but a 
 
 To watch a run-through of the application, click below:
 [View Demonstration](https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing)
+[2FA Demo](https://drive.google.com/file/d/1vctqcvN8bk86Xs8cchWjTuv0GMj5rkYS/view?usp=sharing)
 
 See the [open issues](https://github.com/Tsebo200/Aureum-Elegance-Frontend/issues) for a list of proposed features and known issues.
 
