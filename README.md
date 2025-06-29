@@ -516,7 +516,8 @@ Each team member contributed to the development of Aureum Elegance as follows:
   - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab.
   - UI styling and integration of Material UI components to abide by the wireframes.
 
-- **Tsebo**  
+- **Tsebo**
+  - 2 Factor Authentication with no external service
   - Backend setup; Installing necessary dependencies & file structuring for Dotnet. Entity Framework, AspNetCore. Setup unit test environment (Xunit). Integrate Aiven Console with PostgreSQL Database (PgAdmin)
   - Backend: Controller, Model, Service, Interface, Data, Tests, DTO's for; (Packaging, StockRequest Ingredients, StockRequest Packaging, All the WasteLossRecords)
   - Frontend: Setup Frontend; (Installing necessary dependencies & file structuring For Electron, Vite, React, Typescript, Material UI, Scss, ReactChartJs2, Setup & write all unit test (Jest & Testing Library).      Dashboard Page, Stock Request Page, Record Loss Tab, Stock Request(Admin Management Tab Assistance)
