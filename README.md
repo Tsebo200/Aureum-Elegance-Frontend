@@ -19,7 +19,9 @@
   </a>
   <br />
   <br />
-  <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend">View Demo</a>
+  <a href="https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing">View Demo</a>
+  ·
+   <a href="https://drive.google.com/file/d/1vctqcvN8bk86Xs8cchWjTuv0GMj5rkYS/view?usp=sharing">2FA Demo</a>
   ·
   <a href="https://github.com/Tsebo200/Aureum-Elegance-Frontend/issues">Report Bug</a>
   ·
@@ -468,7 +470,8 @@ These enhancements aim to make Aureum Elegance not just a warehouse tool, but a 
 ### Video Demonstration
 
 To watch a run-through of the application, click below:
-[View Demonstration](https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing)
+[View Demonstration](https://drive.google.com/file/d/1hTTzt8Ub2KT1pQ-a4QSCeUXLwcR9dkCf/view?usp=sharing) · 
+[2FA Demo](https://drive.google.com/file/d/1vctqcvN8bk86Xs8cchWjTuv0GMj5rkYS/view?usp=sharing)
 
 See the [open issues](https://github.com/Tsebo200/Aureum-Elegance-Frontend/issues) for a list of proposed features and known issues.
 
@@ -516,7 +519,8 @@ Each team member contributed to the development of Aureum Elegance as follows:
   - Frontend: Full Admin Management Page (Employees, Add Employee, Warehouses, Stock Requests), Suppliers Tab, Finished Products Tab.
   - UI styling and integration of Material UI components to abide by the wireframes.
 
-- **Tsebo**  
+- **Tsebo**
+  - 2 Factor Authentication with no external service
   - Backend setup; Installing necessary dependencies & file structuring for Dotnet. Entity Framework, AspNetCore. Setup unit test environment (Xunit). Integrate Aiven Console with PostgreSQL Database (PgAdmin)
   - Backend: Controller, Model, Service, Interface, Data, Tests, DTO's for; (Packaging, StockRequest Ingredients, StockRequest Packaging, All the WasteLossRecords)
   - Frontend: Setup Frontend; (Installing necessary dependencies & file structuring For Electron, Vite, React, Typescript, Material UI, Scss, ReactChartJs2, Setup & write all unit test (Jest & Testing Library).      Dashboard Page, Stock Request Page, Record Loss Tab, Stock Request(Admin Management Tab Assistance)
