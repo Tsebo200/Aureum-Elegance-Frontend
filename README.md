@@ -256,7 +256,7 @@ Follow these instructions to get a local copy of the project up and running for 
    npm run dev
    ```
 
-   The frontend will be available at `http://localhost:5173/` (or the port indicated by Vite).
+   The frontend will be available at `http://localhost:5123/` (or the port indicated by Vite).
 
    This will build and launch both the frontend and backend containers.
 
