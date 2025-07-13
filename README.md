@@ -66,6 +66,7 @@ Aureum Elegance is a full-stack warehouse management system tailored specificall
 ### Built With
 
 - **Frontend**
+[<img src="https://www.svgrepo.com/show/331488/mongodb.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=gs_emea_south_africa_search_core_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624560&adgroup=115749711783)
   - [React](https://reactjs.org/)  
     [<img
       src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
