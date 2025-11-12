@@ -206,7 +206,7 @@ export default function Employees() {
         {/* Employees Tab */}
         {tab === 0 && (
           <section className={styles.content}>
-            <h2>Managers</h2>
+            <h2 className={styles.headingTitle}>Managers</h2>
             {loadingEmployees ? (
               <p>Loading…</p>
             ) : managers.length > 0 ? (
@@ -241,7 +241,7 @@ export default function Employees() {
               <p>No managers found.</p>
             )}
 
-            <h2>Employees</h2>
+            <h2 className={styles.headingTitle}>Employees</h2>
             {!loadingEmployees && employees.length === 0 && <p>No employees.</p>}
             <div className={styles.list}>
               {employees.map(e => (
@@ -337,11 +337,11 @@ export default function Employees() {
         {/* Warehouses Tab */}
         {tab === 2 && (
           <section className={styles.content}>
-            <h2>Warehouses</h2>
+            <h2 className={styles.headingTitle}>Warehouses</h2>
             {loadingWarehouses ? (
               <p>Loading warehouses…</p>
             ) : warehousesWithManagers.length > 0 ? (
-              <div className={styles.list}>
+              <div className={styles.list} >
                 {warehousesWithManagers.map((wh) => (
                   <div key={wh.warehouseID} className={styles.item}>
                     <div className={styles.employeeInfo}>

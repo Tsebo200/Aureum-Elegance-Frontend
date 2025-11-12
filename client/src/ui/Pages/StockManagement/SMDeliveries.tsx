@@ -248,7 +248,7 @@ export const DeliveriesPanel: React.FC = () => {
 
             <form onSubmit={handleFormSubmit} className={styles.modalForm}>
               <div className={styles.modalField}>
-                <label>Supplier:</label>
+                <label className="font">Supplier:</label>
                 <select
                   value={supplierID}
                   onChange={(e) => setSupplierID(e.target.value)}

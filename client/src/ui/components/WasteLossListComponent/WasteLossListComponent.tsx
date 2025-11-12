@@ -91,7 +91,7 @@ const WasteLossListComponent = () => {
   }
   return (
     <section className={styles.content}>
-      <h1>Waste Loss</h1>
+      <h1 className={styles.font}>Waste Loss</h1>
 
       <FormControl
         fullWidth

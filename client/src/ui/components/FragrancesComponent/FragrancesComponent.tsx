@@ -10,7 +10,7 @@ const FragrancesComponent = () => {
   const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(
     null
   );
- 
+
    
   const [editForm, setEditForm] = useState<PostFragrance>({
     name: "",
@@ -116,7 +116,7 @@ const FragrancesComponent = () => {
 
   return (
     <section className={styles.content}>
-      <h1>Fragrances</h1>
+      <h1 className={styles.font}>Fragrances</h1>
       <table className={styles.table}>
         <thead>
           <tr className={styles.tr}>
@@ -163,7 +163,7 @@ const FragrancesComponent = () => {
       {editingFragrance && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2>Edit Fragrance</h2>
+            <h2 className={styles.font}>Edit Fragrance</h2>
             <form
               className={styles.modalForm}
               onSubmit={(e) => {

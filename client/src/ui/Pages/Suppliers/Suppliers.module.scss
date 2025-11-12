@@ -41,6 +41,7 @@
   border-radius: 20px 20px 0 0;
   margin-left: 2.8%;
   width: 580px;
+  font-family: RobotoRegular;
 
   :global {
     .MuiTabs-flexContainer {
@@ -84,6 +85,7 @@
 .list {
   margin-bottom: 2rem;
   width: 57%;
+  font-family: RobotoRegular;
 
   .item {
     display: flex;
@@ -203,3 +205,6 @@ hr {
   }
 }
 
+.font{
+  font-family: RobotoMedium;
+}

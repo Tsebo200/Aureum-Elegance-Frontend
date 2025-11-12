@@ -153,7 +153,7 @@ export const IngredientsPanel: React.FC = () => {
           onDelete={handleDelete}
           onEditClick={handleEditClick}
         />
-      )}
+      )} 
 
       {/* ---------- Modal Popup ---------- */}
       {editing && (

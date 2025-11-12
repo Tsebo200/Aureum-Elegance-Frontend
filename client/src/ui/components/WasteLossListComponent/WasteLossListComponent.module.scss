@@ -1,3 +1,25 @@
+@use '../../Sass/Styles.scss' as *;
+
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
 .Btn {
     background: #E03E47 !important;
     color: white !important;
@@ -18,6 +40,7 @@
   .table {
     width: 100%;
     border-collapse: collapse;
+    font-family: "RobotoRegular";
   
     th, td {
       text-align: left;
@@ -26,6 +49,7 @@
   
     th {
       font-weight: 500;
+      font-family: "RobotoMedium";
     }
   
     td {
@@ -50,7 +74,7 @@
     align-items: flex-start !important;
     gap: 2rem !important;
     flex-wrap: wrap !important;
-  
+    font-family: "RobotoRegular";
   
     .field {
       margin-bottom: 0.5rem !important;
@@ -58,12 +82,14 @@
       flex-direction: column !important;
       width: 18rem !important;
       background-color: white !important;
+      font-family: "RobotoRegular";
     
       .label {
         display: block !important;
         margin-bottom: 0.5rem !important;
         font-weight: 500 !important;
         margin-right: 200px;
+        font-family: "RobotoRegular" !important;
       }
     
       :global(.MuiFilledInput-root) {
@@ -83,4 +109,8 @@
       margin-bottom: 1rem !important;
     
     }
+  }
+
+  .font{
+        font-family: "RobotoRegular";
   }

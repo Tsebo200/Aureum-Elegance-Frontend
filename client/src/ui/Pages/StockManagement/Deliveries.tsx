@@ -193,7 +193,7 @@ export const DeliverablesPanelStandalone: React.FC = () => {
       {(adding || editing) && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2>{editing ? "Edit Delivery" : "Add Delivery"}</h2>
+            <h2 className="font">{editing ? "Edit Delivery" : "Add Delivery"}</h2>
 
             {error && <p className={styles.error}>{error}</p>}
 

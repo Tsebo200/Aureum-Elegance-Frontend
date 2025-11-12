@@ -35,7 +35,7 @@ export default function StockRequestAdmin() {
 
   return (
     <section className={styles.content}>
-      <h2>Stock Requests</h2>
+      <h2 className={styles.headingTitle}>Stock Requests</h2>
 
       {/* Filters */}
       <div style={{ margin: '1rem 0', display: 'flex', gap: '1rem' }}>
@@ -63,10 +63,10 @@ export default function StockRequestAdmin() {
       {/* Table */}
       <div className={styles.tableWrapper}>
         <div className={styles.tableHeader}>
-          <span>Name</span>
-          <span>Requested Amount</span>
-          <span>Warehouse</span>
-          <span>Action</span>
+          <span className={styles.headingTitle}>Name</span>
+          <span className={styles.headingTitle}>Requested Amount</span>
+          <span className={styles.headingTitle}>Warehouse</span>
+          <span className={styles.headingTitle}>Action</span>
         </div>
         <hr className={styles.hr} />
 

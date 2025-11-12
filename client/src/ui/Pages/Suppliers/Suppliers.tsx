@@ -89,7 +89,7 @@ export default function Suppliers() {
 
         {tab === 0 && (
           <section className={styles.content}>
-            <h1>Suppliers</h1>
+            <h1 className={styles.font}>Suppliers</h1>
 
             <div className={styles.list}>
               {suppliers.map((supplier, index) => (
@@ -107,7 +107,7 @@ export default function Suppliers() {
               ))}
             </div>
 
-            <h2>Add Supplier</h2>
+            <h2 className={styles.font}>Add Supplier</h2>
             <form
               className={styles.form}
               onSubmit={(e) => {

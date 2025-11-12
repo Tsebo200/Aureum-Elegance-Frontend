@@ -1,3 +1,26 @@
+@use '../../Sass/Styles.scss' as *;
+
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
+
 /* Outer panel wrapper matching Suppliers’ .content */
 .content {
   background: #ffffff00;
@@ -16,6 +39,7 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  font-family: "RobotoMedium";
 }
 
 /* Table container (scrollable if needed) */

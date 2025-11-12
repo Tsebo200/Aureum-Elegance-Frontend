@@ -1,3 +1,26 @@
+@use '../../Sass/Styles.scss' as *;
+
+  @font-face {
+    font-family: "RobotoLight";
+    src: url("../../Fonts/Roboto_Light.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoRegular";
+    src: url("../../Fonts/Roboto_Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoMedium";
+    src: url("../../Fonts/Roboto_Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "RobotoBold";
+    src: url("../../Fonts/Roboto_Bold.ttf");
+  }
+
+
 .Btn {
     background: #E03E47 !important;
     color: white !important;
@@ -30,10 +53,12 @@
   
     td {
       vertical-align: top;
+      font-family: "RobotoRegular";
     }
   
     .tr {
         border-bottom: 1px solid #000;
+        font-family: "RobotoMedium";
       }
   }
   
@@ -177,4 +202,6 @@
     font-size: 0.9rem !important;
     min-width: 100px;
   }
-  
+  .font{
+    font-family: "RobotoMedium";
+  }
